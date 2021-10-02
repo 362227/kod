@@ -40,13 +40,13 @@ function req( $method, $params = [] ) {
 $hpagename = basename($_SERVER['PHP_SELF']);
 
 if( isset( $_GET['stop'] ) ) {
-	shell_exec("killall aria2c");
+	shell_exec("killall /app/web/data/aria2c");
 	header("Location: $hpagename");
 	exit();	
 }
 
 if( isset( $_GET['start'] ) ) {
-	$ret = shell_exec("aria2c --enable-rpc=true --daemon=true --log=".__dir__."/test.log --log-level=error");
+	$ret = shell_exec("/app/web/data/aria2c --enable-rpc=true --daemon=true --log=".__dir__."/test.log --log-level=error");
 	sleep(2);
 	$res = req('changeGlobalOption', [ [ 'dir' => '/aria/files', 'max-connection-per-server' => '16', 'split' => '16', 'min-split-size' => '1M', 'file-allocation' => 'none', 'continue' => 'true', 'auto-file-renaming' => 'false' ] ] );
 	header("Location: $hpagename");
