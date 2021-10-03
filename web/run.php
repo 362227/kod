@@ -45,7 +45,7 @@ echo shell_exec("wget -i 1.txt -P /app/web/dl");
         exit;
     }else{
     $myfile = fopen("uploading.txt", "w");
-       echo shell_exec("/app/web/data/rclone  copy /app/web/dl ysf2020:Temp --transfers=6 -P --stats-one-line --contimeout 5h  --size-only --exclude *.{bak,txt,oexe,html}" );
+       echo shell_exec("/app/web/data/rclone  copy /app/web/dl ysf2020:Temp --transfers=6 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php}" );
        echo shell_exec("rm -rf uploading.txt");
     }
 
