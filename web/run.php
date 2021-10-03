@@ -38,7 +38,7 @@ fastcgi_finish_request(); /* 响应完成, 关闭连接 */
 */
 sleep(3);
 
-echo shell_exec("/app/web/data/rclone  copy /app/web/dl ysf2020:Temp --transfers=1 -P --stats-one-line --contimeout 5h  --size-only --exclude *.123456");
+echo shell_exec("/app/web/data/rclone  copy /app/web/dl ysf2020:Temp --transfers=1 -P --stats-one-line --contimeout 5h  --size-only --exclude *.txt --exclude *.oexe" );
 
 
 
