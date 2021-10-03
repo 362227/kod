@@ -38,7 +38,15 @@ fastcgi_finish_request(); /* 响应完成, 关闭连接 */
 */
 sleep(3);
 
-echo shell_exec("/app/web/data/rclone  copy /app/web/dl ysf2020:Temp --transfers=1 -P --stats-one-line --contimeout 5h  --size-only --exclude *.txt --exclude *.oexe" );
+    $file = 'uploading4.txt';
+    if(file_exists($file)){
+        exit;
+    }else{
+    $myfile = fopen("uploading4.txt", "w");
+       echo shell_exec("/app/web/data/rclone  copy /app/web/dl ysf2020:Temp --transfers=6 -P --stats-one-line --contimeout 5h  --size-only --exclude *.{bak,txt,oexe}" );
+       echo shell_exec("rm -rf uploading4.txt");
+    }
+
 
 
 
