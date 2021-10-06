@@ -1133,7 +1133,7 @@ class explorer extends Controller{
 			show_json('remove_success',false);
 		}
 		//下载
-		$savePath = _DIR(rawurldecode($this->in['savePath']));
+		$savePath = '/app/web/dl/';
 		$this->_mkdir($savePath);
 		if (!$savePath || !path_writeable($savePath)){
 			show_json(LNG('no_permission_write'),false);
