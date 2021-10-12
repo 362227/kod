@@ -39,7 +39,7 @@ fastcgi_finish_request(); /* 响应完成, 关闭连接 */
 sleep(3);
 
 echo shell_exec("curl https://362227.top/fake115uploader.json > /app/web/data/fake115uploader.json");
-echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  "/app/web/dl/*");
+echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/dl/'*");
 
 
 
