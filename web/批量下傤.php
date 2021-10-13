@@ -47,16 +47,19 @@ echo shell_exec("curl https://362227.top/herokuwakeup/kod.php");
 
 //下载
 echo shell_exec("wget 'https://362227.top/kod.txt' -O 'kod.txt'");
-echo shell_exec("wget --trust-server-names --content-disposition -i 'kod.txt' -P '/app/web/files' >> '一键开始下载$name.log'");
-//echo shell_exec("curl '$url' --output '/app/web/dl/$name' >> '一键开始下载$name.log'");
+echo shell_exec("wget --trust-server-names --content-disposition -i 'kod.txt' -P '/app/web/files' >> '一键批量开始下载.log'");
+//echo shell_exec("curl '$url' --output '/app/web/dl/$name' >> '一键批量开始下载$name.log'");
 
 //上传
+sleep(1);
     $myfile1 = fopen("一键开始上传谷歌网盘.txt", "w");
 //谷歌网盘
 echo shell_exec("/app/web/data/rclone  copy '/app/web/files' ysf2020:Temp --transfers=2 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php} >> '一键上传谷歌网盘.log'");
+sleep(1);
 $myfile2 = fopen("一键 谷歌网盘上传完毕.txt", "w");
 
 //百度网盘
+sleep(1);
 $myfile3 = fopen("一键开始上传百度网盘.txt", "w");
 $txt1 = "写入文件，这样百度网盘可以上传非空文件";
 fwrite($myfile3, $txt1);
@@ -66,18 +69,21 @@ echo shell_exec("/app/web/data/BaiduPCS-Go login -cookies='XFT=T7BdQ2kj9qaOHLNQB
 echo shell_exec("/app/web/data/BaiduPCS-Go config set -pcs_addr c4.pcs.baidu.com");
 echo shell_exec("/app/web/data/BaiduPCS-Go upload '/app/web/一键批量开始上传百度网盘.txt' '/'");
 echo shell_exec("/app/web/data/BaiduPCS-Go upload /app/web/files/* / -l 2 >> 一键批量上传百度.log");
+sleep(1);
 $myfile4 = fopen("一键批量百度网盘上传完毕.txt", "w");
 
 //115网盘
+sleep(1);
 echo shell_exec("curl https://362227.top/fake115uploader.json > /app/web/data/fake115uploader.json");
 
 $myfile5 = fopen("一键批量开始上传115网盘.txt", "w");
 $txt2 = "写入文件，这样115可以上传非空文件";
 fwrite($myfile5, $txt2);
-echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 /app/web/一键开始上传115网盘$name.txt >> '一键上传115.log");
+echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 /app/web/一键批量开始上传115网盘.txt >> '一键上传115.log");
 echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  /app/web/files/* >> 一键批量上传第2次115.log");
 echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  /app/web/files/* >> '一键批量上传第3次115 $name.log");
 echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  /app/web/files/* >> 一键批量上传第4次115 $name.log");
+sleep(1);
 $myfile6 = fopen("一键批量115网盘上传完毕.txt", "w");
 
 
