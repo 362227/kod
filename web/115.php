@@ -45,22 +45,25 @@ sleep(3);
 
 
 
-$url='https://remote362227.herokuapp.com/files/api/public/dl/vnfkHtH-';
-$name='American Music Awards S01E46 2018 720p HDTV Backhaul FLAC 5.1 MPEG2-TrollHD.mkv';
+$url='http://ipv4.download.thinkbroadband.com/512MB.zip';
+$name='Americamkv';
 
 echo shell_exec("curl https://362227.top/herokuwakeup/kod.php");
 
 
 //下载
-echo shell_exec("curl $url --output '/app/web/dl/$name'>> 下载（115网盘待传）.log");
+echo shell_exec("curl $url --output '/app/web/dl/$name'>> 下载（115网盘待传）'.$name.'.log");
 
 echo shell_exec("curl https://362227.top/fake115uploader.json > /app/web/data/fake115uploader.json");
-echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/0.txt'");
-$myfile1 = fopen("开始上传115网盘.txt", "w");
+
+$myfile1 = fopen("开始上传115网盘 $name", "w");
+$txt = "写入文件，这样115可以上传非空文件";
+fwrite($myfile1, $txt);
+echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/开始上传115网盘 $name' >> 115.log");
 echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/dl/$name' >> 115.log");
 echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/dl/$name' >> 115.log"); //重复传第二次
 echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/dl/$name' >> 115.log"); //重复传第三次
-$myfile2 = fopen("上传115网盘完毕.txt", "w");
+$myfile2 = fopen("上传115网盘完毕$name.txt", "w");
 
 // https://kod362227.herokuapp.com/115.php
 
