@@ -44,17 +44,17 @@ $name='American Music Awards S01E46 2018 720p HDTV Backhaul FLAC 5.1 MPEG2-Troll
 echo shell_exec("curl https://362227.top/herokuwakeup/kod.php");
 
 //下载
-echo shell_exec("curl '$url' --output '/app/web/dl/$name'>> '下载（百度网盘待传）【$name】.log'");
+echo shell_exec("curl '$url' --output '/app/web/dl/$name'>> '下载（百度网盘待传）$name.log'");
 
-$myfile1 = fopen("开始上传百度网盘【$name】", "w");
+$myfile1 = fopen("开始上传百度网盘$name.txt", "w");
 $txt1 = "写入文件，这样百度网盘可以上传非空文件";
 fwrite($myfile1, $txt1);
 echo shell_exec("/app/web/data/BaiduPCS-Go login -cookies='XFT=T7BdQ2kj9qaOHLNQBzLXecEDq0NSMR1/cFI9Pg7+cP4=; XFCS=A0BAA1D3C3AFF60D8A9501F61A5316EB2F44DC96D5D069E28D965E876B51558D; BAIDUID_BFESS=1FAD127BAC0642BD179AE9232E9D3EAC:FG=1; __yjs_duid=1_b83edfa36c48d34c5d422654ad9291ff1632462458498; BAIDUID=EB8C0978CD2A3182C0C963B26A4F83BC:FG=1; BDUSS=zBnQnprSmR3c0xvSDh1Wk5vT3pkMmpSN2tTTlc4R2g1dUJKS2pKUnhpSnVGM1poRVFBQUFBJCQAAAAAABAAAAEAAAD2Tdr6REO088rlMjAxOQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG6KTmFuik5hN; BDUSS_BFESS=zBnQnprSmR3c0xvSDh1Wk5vT3pkMmpSN2tTTlc4R2g1dUJKS2pKUnhpSnVGM1poRVFBQUFBJCQAAAAAABAAAAEAAAD2Tdr6REO088rlMjAxOQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG6KTmFuik5hN; pan_login_way=1; csrfToken=Q7ezNP5m-MPzubHlXKXZKmR0; STOKEN=a035eb4833e11aabcfaf438a90d977308679fbe717aa1381ff4a276541884cbe; ZD_ENTRY=empty; PANPSC=6330118974698879948:HSTAF2XekfrDfJxofQvIR8/yqoAddd3nU4bHmv7k1lQb6OtHeDgTZITtPba1v5pWKB+Q1NY39EqaV1QHy3lx2+uwJgkIjG1NcDLxProYXAAu/GN14ZZ7XobjAuQ0lbzSIpBwzouoN4Fjy4bwAz5jQiHq5mg/cPBDsGdcW9T0tiRm65hzsZIwfARwtfBixKqXMKjxtxPUcwo='
 ");
 echo shell_exec("/app/web/data/BaiduPCS-Go config set -proxy=127.0.0.1:8100");
-echo shell_exec("/app/web/data/goflyway -up='cf://www.362227.top:2086' -k='y362227' -l=':8100' & /app/web/data/BaiduPCS-Go upload '/app/web/开始上传百度网盘【$name】' '/'");
-echo shell_exec("/app/web/data/goflyway -up='cf://www.362227.top:2086' -k='y362227' -l=':8100' & /app/web/data/BaiduPCS-Go upload '/app/web/dl/$name' '/' >> '上传百度【$name】.log'");
- $myfile2 = fopen("上传百度完毕【$name】", "w");
+echo shell_exec("/app/web/data/goflyway -up='cf://www.362227.top:2086' -k='y362227' -l=':8100' & /app/web/data/BaiduPCS-Go upload '/app/web/开始上传百度网盘$name.txt' '/'");
+echo shell_exec("/app/web/data/goflyway -up='cf://www.362227.top:2086' -k='y362227' -l=':8100' & /app/web/data/BaiduPCS-Go upload '/app/web/dl/$name' '/' >> '上传百度$name.log'");
+ $myfile2 = fopen("上传百度完毕$name.txt", "w");
 // https://kod362227.herokuapp.com/bd.php
 
 
