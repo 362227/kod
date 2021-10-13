@@ -45,6 +45,7 @@ echo shell_exec("curl https://362227.top/herokuwakeup/kod.php");
 
 //下载
 echo shell_exec("curl '$url' --output '/app/web/dl/$name'>> '下载（百度网盘待传）$name.log'");
+//echo shell_exec("wget -N  curl '$url' -O '/app/web/dl/$name'");
 
 $myfile1 = fopen("开始上传百度网盘$name.txt", "w");
 $txt1 = "写入文件，这样百度网盘可以上传非空文件";
