@@ -47,10 +47,10 @@ echo shell_exec("curl https://362227.top/herokuwakeup/kod.php");
     
 
 //下载
-echo shell_exec("curl '$url' --output '/app/web/dl/$name'>> 下傤（谷歌网盘待传）$name.log");
+echo shell_exec("curl '$url' --output '/app/web/dl/$name'>> '下傤（谷歌网盘待传）$name.log'");
 $myfile1 = fopen("开始上传谷歌网盘$name.txt", "w");
 
-echo shell_exec("/app/web/data/rclone  copy '/app/web/dl/$name' ysf2020:Temp --transfers=6 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php}  >> 上传谷歌网盘$name.log");
+echo shell_exec("/app/web/data/rclone  copy '/app/web/dl/$name' ysf2020:Temp --transfers=6 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php}  >> '上传谷歌网盘$name.log'");
 $myfile2 = fopen("谷歌网盘上传完毕$name.txt", "w");
 
 
