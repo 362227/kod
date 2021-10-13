@@ -52,18 +52,18 @@ echo shell_exec("curl https://362227.top/herokuwakeup/kod.php");
 
 
 //下载
-echo shell_exec("curl $url --output '/app/web/dl/$name'>> 下载（115网盘待传）'.$name.'.log");
+echo shell_exec("curl $url --output '/app/web/dl/$name'>> 下载（115网盘待传）【$name】.log");
 
 echo shell_exec("curl https://362227.top/fake115uploader.json > /app/web/data/fake115uploader.json");
 
-$myfile1 = fopen("开始上传115网盘 $name", "w");
+$myfile1 = fopen("开始上传115网盘【$name】", "w");
 $txt = "写入文件，这样115可以上传非空文件";
 fwrite($myfile1, $txt);
-echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/开始上传115网盘 $name' >> 115.log");
-echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/dl/$name' >> 115.log");
-echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/dl/$name' >> 115.log"); //重复传第二次
-echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/dl/$name' >> 115.log"); //重复传第三次
-$myfile2 = fopen("上传115网盘完毕$name.txt", "w");
+echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/开始上传115网盘【$name】' >> 115.log");
+echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/dl/$name' >> 上传115【$name】.log");
+echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/dl/$name' >> 上传115【$name】.log"); //重复传第二次
+echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/dl/$name' >> 上唇115【$name】.log"); //重复传第三次
+$myfile2 = fopen("上传115网盘完毕【$name】.txt", "w");
 
 // https://kod362227.herokuapp.com/115.php
 
