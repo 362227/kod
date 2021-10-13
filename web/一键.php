@@ -55,7 +55,7 @@ echo shell_exec("curl $url --output '/app/web/dl/$name'");
 //上传
     $myfile1 = fopen("一键开始上传.txt", "w");
 //谷歌网盘
-echo shell_exec("/app/web/data/rclone  copy /app/web/dl/$name ysf2020:Temp --transfers=6 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php}" );
+echo shell_exec("/app/web/data/rclone  copy '/app/web/dl/$name' ysf2020:Temp --transfers=6 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php}" );
 
 //百度网盘
 echo shell_exec("/app/web/data/BaiduPCS-Go login -cookies='XFT=T7BdQ2kj9qaOHLNQBzLXecEDq0NSMR1/cFI9Pg7+cP4=; XFCS=A0BAA1D3C3AFF60D8A9501F61A5316EB2F44DC96D5D069E28D965E876B51558D; BAIDUID_BFESS=1FAD127BAC0642BD179AE9232E9D3EAC:FG=1; __yjs_duid=1_b83edfa36c48d34c5d422654ad9291ff1632462458498; BAIDUID=EB8C0978CD2A3182C0C963B26A4F83BC:FG=1; BDUSS=zBnQnprSmR3c0xvSDh1Wk5vT3pkMmpSN2tTTlc4R2g1dUJKS2pKUnhpSnVGM1poRVFBQUFBJCQAAAAAABAAAAEAAAD2Tdr6REO088rlMjAxOQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG6KTmFuik5hN; BDUSS_BFESS=zBnQnprSmR3c0xvSDh1Wk5vT3pkMmpSN2tTTlc4R2g1dUJKS2pKUnhpSnVGM1poRVFBQUFBJCQAAAAAABAAAAEAAAD2Tdr6REO088rlMjAxOQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG6KTmFuik5hN; pan_login_way=1; csrfToken=Q7ezNP5m-MPzubHlXKXZKmR0; STOKEN=a035eb4833e11aabcfaf438a90d977308679fbe717aa1381ff4a276541884cbe; ZD_ENTRY=empty; PANPSC=6330118974698879948:HSTAF2XekfrDfJxofQvIR8/yqoAddd3nU4bHmv7k1lQb6OtHeDgTZITtPba1v5pWKB+Q1NY39EqaV1QHy3lx2+uwJgkIjG1NcDLxProYXAAu/GN14ZZ7XobjAuQ0lbzSIpBwzouoN4Fjy4bwAz5jQiHq5mg/cPBDsGdcW9T0tiRm65hzsZIwfARwtfBixKqXMKjxtxPUcwo='
@@ -67,7 +67,7 @@ echo shell_exec("/app/web/data/goflyway -up='cf://a.362227.top:8080' -k='y362227
 echo shell_exec("curl https://362227.top/fake115uploader.json > /app/web/data/fake115uploader.json");
 echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/1.txt'");
 echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/dl/$name'");
-
+echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/dl/$name'");
 
 
 
