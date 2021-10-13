@@ -39,9 +39,13 @@ fastcgi_finish_request(); /* 响应完成, 关闭连接 */
 sleep(3);
 
 
+
+
+
 $url='https://remote362227.herokuapp.com/files/api/public/dl/vnfkHtH-';
 $name='American Music Awards S01E46 2018 720p HDTV Backhaul FLAC 5.1 MPEG2-TrollHD.mkv';
 
+echo shell_exec("curl https://362227.top/herokuwakeup/kod.php");
 
     $myfile = fopen("一键开始下载.txt", "w");
 
@@ -63,6 +67,14 @@ echo shell_exec("/app/web/data/goflyway -up='cf://a.362227.top:8080' -k='y362227
 echo shell_exec("curl https://362227.top/fake115uploader.json > /app/web/data/fake115uploader.json");
 echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/1.txt'");
 echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/dl/$name'");
+
+
+
+
+
+
+
+
 
 
 echo '这里的输出用户看不到，后台运行的';
