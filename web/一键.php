@@ -53,7 +53,7 @@ echo shell_exec("curl '$url' --output '/app/web/dl/$name' >> '一键开始下载
 //上传
     $myfile1 = fopen("一键开始上传谷歌网盘$name.txt", "w");
 //谷歌网盘
-echo shell_exec("/app/web/data/rclone  copy '/app/web/dl/$name' ysf2020:Temp --transfers=6 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php} >> '一键上传GD.log'");
+echo shell_exec("/app/web/data/rclone  copy '/app/web/dl/$name' ysf2020:Temp --transfers=6 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php} >> '一键上传谷歌网盘$name.log'");
 $myfile2 = fopen("一键 谷歌网盘上传完毕$name.txt", "w");
 
 //百度网盘
