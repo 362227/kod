@@ -44,10 +44,10 @@ echo shell_exec("wget -i 1.txt -P /app/web/dl");
     if(file_exists($file)){
         exit;
     }else{
-    $myfile = fopen("uploading.txt", "w");
+    $myfile1 = fopen("uploading.txt", "w");
        echo shell_exec("/app/web/data/rclone  copy /app/web/dl ysf2020:Temp --transfers=6 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php}  >> gd.log");
        echo shell_exec("rm -rf uploading.txt");
-      $myfile = fopen("谷歌网盘上传完毕.txt", "w");
+    $myfile2 = fopen("谷歌网盘上传完毕.txt", "w");
     }
 
 
