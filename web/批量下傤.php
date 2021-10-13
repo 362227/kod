@@ -47,7 +47,7 @@ echo shell_exec("curl https://362227.top/herokuwakeup/kod.php");
 
 //下载
 echo shell_exec("curl 'https://362227.top/kod.txt'");
-echo shell_exec("wget -i 'kod.txt' -P '/app/web/files' >> '一键开始下载$name.log'");
+echo shell_exec("wget --trust-server-names --content-disposition -i 'kod.txt' -P '/app/web/files' >> '一键开始下载$name.log'");
 //echo shell_exec("curl '$url' --output '/app/web/dl/$name' >> '一键开始下载$name.log'");
 
 //上传
