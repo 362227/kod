@@ -52,7 +52,7 @@ echo shell_exec("curl https://362227.top/herokuwakeup/kod.php");
 
 
 //下载
-echo shell_exec("curl $url --output '/app/web/dl/$name'>> 115网盘下载.log");
+echo shell_exec("curl $url --output '/app/web/dl/$name'>> 下载（115网盘待传）.log");
 
 echo shell_exec("curl https://362227.top/fake115uploader.json > /app/web/data/fake115uploader.json");
 echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/1.txt'");
