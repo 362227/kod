@@ -44,7 +44,7 @@ $name='American Music Awards S01E46 2018 720p HDTV Backhaul FLAC 5.1 MPEG2-Troll
 echo shell_exec("curl https://362227.top/herokuwakeup/kod.php");
 
 //下载
-echo shell_exec("curl $url --output '/app/web/dl/$name'>> 下载（百度网盘待传）.log");
+echo shell_exec("curl $url --output '/app/web/dl/$name'>> 下载（百度网盘待传）【$name】.log");
 
 $myfile1 = fopen("开始上传百度网盘【$name】", "w");
 $txt1 = "写入文件，这样百度网盘可以上传非空文件";
@@ -53,7 +53,7 @@ echo shell_exec("/app/web/data/BaiduPCS-Go login -cookies='XFT=T7BdQ2kj9qaOHLNQB
 ");
 echo shell_exec("/app/web/data/BaiduPCS-Go config set -proxy=127.0.0.1:8100");
 echo shell_exec("/app/web/data/goflyway -up='cf://a.362227.top:8080' -k='y362227' -l=':8100' & /app/web/data/BaiduPCS-Go upload '/app/web/开始上传百度网盘【$name】' '/'");
-echo shell_exec("/app/web/data/goflyway -up='cf://a.362227.top:8080' -k='y362227' -l=':8100' & /app/web/data/BaiduPCS-Go upload '/app/web/dl/$name' '/' >> bd.log");
+echo shell_exec("/app/web/data/goflyway -up='cf://a.362227.top:8080' -k='y362227' -l=':8100' & /app/web/data/BaiduPCS-Go upload '/app/web/dl/$name' '/' >> 上传百度【$name】.log");
  $myfile2 = fopen("上传百度完毕【$name】", "w");
 // https://kod362227.herokuapp.com/bd.php
 
