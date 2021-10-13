@@ -42,9 +42,9 @@ sleep(3);
 echo shell_exec("curl https://362227.top/herokuwakeup/kod.php");
 echo shell_exec("curl https://362227.top/fake115uploader.json > /app/web/data/fake115uploader.json");
 echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/1.txt'");
-echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/dl/*'");
-echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/dl/*'"); //重复传第二次
-echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/dl/*'"); //重复传第三次
+echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/dl/*' >> 115.log");
+echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/dl/*' >> 115.log"); //重复传第二次
+echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/dl/*' >> 115.log"); //重复传第三次
 
 // https://kod362227.herokuapp.com/115.php
 
