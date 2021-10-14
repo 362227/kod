@@ -48,7 +48,7 @@ $name='000.mkv';
 echo shell_exec("curl https://362227.top/herokuwakeup/kod.php");
 
 //下载
-echo shell_exec("wget -N '$url' -O '/app/web/dl/$name' >> '一键开始下载$name.log'");
+echo shell_exec("wget --trust-server-names --content-disposition -N '$url' -O '/app/web/dl/$name' >> '一键开始下载$name.log'");
 //echo shell_exec("curl '$url' --output '/app/web/dl/$name' >> '一键开始下载$name.log'");
 
 //上传
