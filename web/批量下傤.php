@@ -79,10 +79,10 @@ echo shell_exec("curl https://362227.top/fake115uploader.json > /app/web/data/fa
 $myfile5 = fopen("一键批量开始上传115网盘.txt", "w");
 $txt2 = "写入文件，这样115可以上传非空文件";
 fwrite($myfile5, $txt2);
-echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 /app/web/一键批量开始上传115网盘.txt >> '一键上传115.log");
-echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  /app/web/files/* >> 一键批量上传第2次115.log");
-echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  /app/web/files/* >> '一键批量上传第3次115 $name.log");
-echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  /app/web/files/* >> 一键批量上传第4次115 $name.log");
+echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 /app/web/一键批量开始上传115网盘.txt");
+echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 /app/web/files/* >> 一键批量上传第1次115.log 2>&1");
+echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  /app/web/files/* >> '一键批量上传第2次115 $name.log 2>&1");
+echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  /app/web/files/* >> 一键批量上传第3次115 $name.log 2>&1");
 sleep(1);
 $myfile6 = fopen("一键批量115网盘上传完毕.txt", "w");
 
