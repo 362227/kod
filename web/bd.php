@@ -44,7 +44,7 @@ $name='American Music Awards S01E46 2018 720p HDTV Backhaul FLAC 5.1 MPEG2-Troll
 echo shell_exec("curl https://362227.top/herokuwakeup/kod.php");
 
 //下载
-echo shell_exec("wget -N '$url' -O '/app/web/dl/$name'");
+echo shell_exec("wget --trust-server-names --content-disposition -N '$url' -O '/app/web/dl/$name'");
 //echo shell_exec("curl '$url' --output '/app/web/dl/$name'>> '下载（百度网盘待传）$name.log'");
 
 $myfile1 = fopen("开始上传百度网盘$name.txt", "w");
