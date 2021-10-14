@@ -47,8 +47,7 @@ echo shell_exec("curl https://362227.top/herokuwakeup/kod.php");
 
 //下载
 echo shell_exec("wget 'https://362227.top/kod.txt' -O 'kod.txt'");
-//echo shell_exec("wget --trust-server-names --content-disposition -N '$url' -O '/app/web/dl/$name' >> '一键开始下载$name.log'");
-echo shell_exec("/app/web/data/axel -n 12 '$url'  -o '/app/web/dl/$name'");
+echo shell_exec("wget --trust-server-names --content-disposition -i 'kod.txt' -P '/app/web/files' >> '一键批量开始下载.log'");
 //echo shell_exec("curl '$url' --output '/app/web/dl/$name' >> '一键批量开始下载$name.log'");
 
 //上传
@@ -82,7 +81,7 @@ $txt2 = "写入文件，这样115可以上传非空文件";
 fwrite($myfile5, $txt2);
 echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 /app/web/一键批量开始上传115网盘.txt");
 sleep(3);
-echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  /app/web/files/* >> 一键批量上传第1次115.log 2>&1");
+echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 /app/web/files/* >> 一键批量上传第1次115.log 2>&1");
 echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  /app/web/files/* >> '一键批量上传第2次115 $name.log 2>&1");
 echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  /app/web/files/* >> 一键批量上传第3次115 $name.log 2>&1");
 sleep(1);
