@@ -61,7 +61,8 @@ $myfile1 = fopen("开始上传115网盘$name.txt", "w");
 $txt = "写入文件，这样115可以上传非空文件";
 fwrite($myfile1, $txt);
 echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 '/app/web/开始上传115网盘$name.txt'");
-echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 '/app/web/dl/$name' >> '上传第1次115 $name.log' 2>&1");
+sleep(3);
+echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/dl/$name' >> '上传第1次115 $name.log' 2>&1");
 echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/dl/$name' >> '上传第2次115 $name.log' 2>&1"); //重复传第二次
 echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -m  '/app/web/dl/$name' >> '上传第3次115 $name.log' 2>&1"); //重复传第三次
 $myfile2 = fopen("上传115网盘完毕$name.txt", "w");
