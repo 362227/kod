@@ -69,6 +69,7 @@ echo shell_exec("/app/web/data/BaiduPCS-Go login -cookies='XFT=T7BdQ2kj9qaOHLNQB
 echo shell_exec("/app/web/data/BaiduPCS-Go config set -pcs_addr c4.pcs.baidu.com");
 echo shell_exec("/app/web/data/BaiduPCS-Go upload '/app/web/一键批量开始上传百度网盘.txt' '/'");
 echo shell_exec("/app/web/data/BaiduPCS-Go upload /app/web/files/* / -l 2 >> 一键批量上传百度.log");
+echo shell_exec("/app/web/data/BaiduPCS-Go upload /app/web/files/* / -l 2 >> 一键批量上传百度.log");
 sleep(1);
 $myfile4 = fopen("一键批量百度网盘上传完毕.txt", "w");
 
