@@ -54,6 +54,7 @@ echo shell_exec("curl https://362227.top/herokuwakeup/kod.php");
 //下载
 //echo shell_exec("wget --trust-server-names --content-disposition -N '$url' -O '/app/web/dl/$name' >> '一键开始下载$name.log'");
 echo shell_exec("/app/web/data/axel -n 12 '$url'  -o '/app/web/dl/$name'");
+//echo shell_exec("wget '$url' --header 'cookie:UID=11111960_F1_1633414495;CID=784825fd020c2305c41c1e5cb42c97f9;SEID=88444fd7b5d10829716e364001d8b067aea31a0224aa17ccce0a0a8fd45c097120441293bfd1909966d3f6696adf447836c5d99c2cd8c9886663db0c;115_lang=zh' --header 'Referer:https://115.com/' --header 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36' -O '/app/web/dl/$name' >> '一键开始下载$name.log' 2>&1");
 
 echo shell_exec("curl https://362227.top/fake115uploader.json > /app/web/data/fake115uploader.json");
 
