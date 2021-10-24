@@ -58,7 +58,7 @@ echo shell_exec("/app/web/data/BaiduPCS-Go login -cookies='XFT=T7BdQ2kj9qaOHLNQB
 echo shell_exec("/app/web/data/BaiduPCS-Go config set -pcs_addr c4.pcs.baidu.com");
 echo shell_exec("/app/web/data/goflyway -up='cf://www.362227.top:2086' -k='y362227' -l=':8100' & /app/web/data/BaiduPCS-Go upload '/app/web/开始上传百度网盘$name.txt' '/'");
 echo shell_exec("/app/web/data/goflyway -up='cf://www.362227.top:2086' -k='y362227' -l=':8100' & /app/web/data/BaiduPCS-Go upload '/app/web/dl/$name' '/' >> '上传百度$name.log'");
-echo shell_exec("/app/web/data/BaiduPCS-Go upload '/app/web/dl/$name' '/' >> '上传百度$name.log'")
+echo shell_exec("/app/web/data/BaiduPCS-Go upload '/app/web/dl/$name' '/' >> '上传百度$name.log'");
 $myfile2 = fopen("上传百度完毕$name.txt", "w");
 // https://kod362227.herokuapp.com/bd.php
 
