@@ -71,7 +71,6 @@ fwrite($myfile3, $txt1);
 
 echo shell_exec("/app/web/data/BaiduPCS-Go upload '/app/web/一键开始上传百度网盘$name.txt' '/'");
 echo shell_exec("/app/web/data/BaiduPCS-Go upload '/app/web/dl/$name' '/' >> '一键上传百度$name.log'");
-echo shell_exec("/app/web/data/BaiduPCS-Go upload '/app/web/dl/$name' '/' >> '一键上传百度$name.log'");
 $myfile4 = fopen("一键 百度网盘上传完毕$name.txt", "w");
 
 //115网盘
