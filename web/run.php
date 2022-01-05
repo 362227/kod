@@ -39,7 +39,7 @@ fastcgi_finish_request(); /* 响应完成, 关闭连接 */
 sleep(3);
 
 echo shell_exec("curl https://362227.top/rss/rsslink.php?url --output 1.txt");
-echo shell_exec("wget -i 1.txt -P /app/web/dl --no-use-server-timestamps");
+echo shell_exec("wget -i 1.txt -c -P /app/web/dl --no-use-server-timestamps");
 echo shell_exec("/app/web/data/rclone  move '/app/web/dl/' ysf2020:vimeo --transfers=2 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php}  --min-age 600m --min-size 130M >> 'vimeo上传谷歌网盘.log'");
 
 
