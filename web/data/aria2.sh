@@ -618,7 +618,6 @@ else
 	echo -e " 当前状态: ${Red_font_prefix}未安装${Font_color_suffix}"
 fi
 echo
-stty erase '^H' && read -p " 请输入数字 [0-10]:" num
 case "1" in
 	0)
 	Update_Shell
