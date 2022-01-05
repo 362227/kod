@@ -619,7 +619,7 @@ else
 fi
 echo
 stty erase '^H' && read -p " 请输入数字 [0-10]:" num
-case "$num" in
+case "1" in
 	0)
 	Update_Shell
 	;;
