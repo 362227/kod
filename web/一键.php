@@ -69,7 +69,6 @@ $txt1 = "写入文件，这样百度网盘可以上传非空文件";
 fwrite($myfile3, $txt1);
 //echo shell_exec("/app/web/data/BaiduPCS-Go config set -proxy=127.0.0.1:8100");
 
-echo shell_exec("/app/web/data/BaiduPCS-Go upload '/app/web/一键开始上传百度网盘$name.txt' '/'");
 echo shell_exec("/app/web/data/BaiduPCS-Go upload '/app/web/dl/$name' '/' >> '一键上传百度$name.log'");
 $myfile4 = fopen("一键 百度网盘上传完毕$name.txt", "w");
 
@@ -79,7 +78,6 @@ echo shell_exec("curl https://362227.top/fake115uploader.json > /app/web/data/fa
 $myfile5 = fopen("一键开始上传115网盘$name.txt", "w");
 $txt2 = "写入文件，这样115可以上传非空文件";
 fwrite($myfile5, $txt2);
-echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -u '/app/web/一键开始上传115网盘$name.txt'");
 sleep(3);
 echo shell_exec("/app/web/data/fake115uploader -retry 3 -c 2051109780465909616 -m '/app/web/dl/$name' >> '上传115 $name.log' 2>&1");
 $myfile6 = fopen("一键 115网盘上传完毕$name.txt", "w");
