@@ -40,7 +40,32 @@ sleep(3);
 
 echo shell_exec("curl https://362227.top/rss/rsslink.php?url --output 1.txt");
 echo shell_exec("wget -i 1.txt -nc -P /app/web/dl --no-use-server-timestamps");
-echo shell_exec("/app/web/data/rclone  move '/app/web/dl/' ysf2020:vimeo --transfers=1 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php}  --min-age 600m --min-size 130M >> 'vimeo上传谷歌网盘.log'");
+//echo shell_exec("/app/web/data/rclone  move '/app/web/dl/' ysf2020:vimeo --transfers=1 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php}  --min-age 600m --min-size 130M >> 'vimeo上传谷歌网盘.log'");
+
+
+
+//设置中国时区
+date_default_timezone_set('PRC');
+//时间格式的时间
+//echo date('Y-m-d H:i:s');
+ 
+    $time = time();
+    $timeBetween=['12:00:00','17:50:00'];
+    
+    echo getTime($time,$timeBetween);
+    
+    function getTime($time,$timeBetween){
+    	
+    	$checkDayStr = date('Y-m-d ',time());
+   	 	$timeBegin1 = strtotime($checkDayStr.$timeBetween[0]);
+    	$timeEnd1 = strtotime($checkDayStr.$timeBetween[1]);
+    	
+    	if($time > $timeBegin1 && $time < $timeEnd1){
+	       echo shell_exec("rclone  copy '/app/web/dl/' ysf2020:vimeo --transfers=1 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --min-size 130M >> 'vimeo上传谷歌网盘.log'");
+	    }else{
+	    	echo "不在区间内";
+	    }
+    }
 
 
 
