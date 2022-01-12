@@ -61,7 +61,7 @@ date_default_timezone_set('PRC');
     	$timeEnd1 = strtotime($checkDayStr.$timeBetween[1]);
     	
     	if($time > $timeBegin1 && $time < $timeEnd1){
-	       echo shell_exec("rclone  copy '/app/web/dl/' ysf2020:vimeo --transfers=1 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --min-size 130M >> 'vimeo上传谷歌网盘.log'");
+	       echo shell_exec("rclone  copy '/app/web/dl/' ysf2020:vimeo --transfers=1 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --max-age 45m --min-size 130M >> 'vimeo上传谷歌网盘.log'");
 	    }else{
 	    	echo "不在区间内";
 	    }
