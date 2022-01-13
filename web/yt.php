@@ -11,6 +11,6 @@ shell_exec($cmd.'>> yt.log');
 
 echo $cmd;
 
-$url = 'http://kod10362227.herokuapp.com/'.$id.'.mp4';
+$url = 'https://kod10362227.herokuapp.com/'.$id.'.mp4';
 echo $url;
 header('Location: ' . $url);
