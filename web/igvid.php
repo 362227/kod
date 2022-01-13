@@ -32,7 +32,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 $result = curl_exec($ch);
 $cookie = preg_replace('/[\s\S]*Cookie1\"\:\"(.+?)\"\}[\s\S]*/','$1', $result);
 
-$cmd='yt-dlp https://www.instagram.com/p/'.$id.' --ffmpeg-location /app/web/data/ffmpeg --add-header "cookie: '.$cookie.'" -o '.$id.'.mov';
+$cmd='/app/web/data/yt-dlp https://www.instagram.com/p/'.$id.' --ffmpeg-location /app/web/data/ffmpeg --add-header "cookie: '.$cookie.'" -o '.$id.'.mov';
 
 shell_exec($cmd.'>> 1.log');
 
