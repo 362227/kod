@@ -3,7 +3,7 @@ $id=$_GET["id"];
 
     $file = $id.'.mp4';
     if(file_exists($file)){
-        $url = 'https://362227.top/igvid/'.$id.'.mp4';
+        $url = 'https://kod362227.herokuapp.com/'.$id.'.mp4';
         echo $url;
         header('Location: ' . $url);
     }else{
@@ -15,7 +15,7 @@ shell_exec($cmd.'>> yt.log');
 
 echo $cmd;
 
-$url = 'https://kod10362227.herokuapp.com/'.$id.'.mp4';
+$url = 'https://kod362227.herokuapp.com/'.$id.'.mp4';
 echo $url;
 header('Location: ' . $url);
     }
