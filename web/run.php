@@ -36,8 +36,9 @@ fastcgi_finish_request(); /* 响应完成, 关闭连接 */
  休眠的作用只是让php先把前面的输出作完，不要急于马上执行下面的代码，休息一下而已，也就是说下面的代码
  执行的时候前面的输出应该到达浏览器了
 */
-sleep(3);
-shell_exec("curl -L https://kod10362227.herokuapp.com");
+
+shell_exec("wget https://kod10362227.herokuapp.com -nc -O kod10362227.txt");
+shell_exec("wget https://kod10362227.herokuapp.com -nc -O kod10362227-1.txt");
 echo shell_exec("/app/web/data/rclone  move '/app/web/dl/' ysf2020:vimeo --transfers=1 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php}  --min-size 130M >> 'vimeo上传谷歌网盘.log'");
 //echo shell_exec("/app/web/data/rclone  move '/app/web/dl/' ysf2020:vimeo --transfers=1 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php}  --min-age 600m --min-size 130M >> '10小时前vimeo上传谷歌网盘.log'");
 echo shell_exec("curl https://362227.top/rss/rsslink.php?url --output 1.txt");
