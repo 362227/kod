@@ -1,6 +1,6 @@
 <?php
 $id=$_GET["id"];
-shell_exec("curl https://kod362227.herokuapp.com");
+shell_exec("curl -L https://kod362227.herokuapp.com");
     $file = $id.'.mp4';
     if(file_exists($file)){
         $url = 'https://kod362227.herokuapp.com/'.$id.'.mp4';
