@@ -1,7 +1,6 @@
 <?php
  
-include "Snoopy.class.php";
-$snoopy = new Snoopy;
+
 
 
 $regex_link = '/(?<=\<a class\=\"item\_info\" href\=\")(.+?)(?=\"\>)/';
@@ -51,16 +50,29 @@ $url = 'https://vimeo.com/search/sort:latest?q='.$arr[$key].'&uploaded=this-week
         $url1 = preg_replace('/ /','%20', $url);
 
 
-      $ch=new Snoopy;
-      //$ch->agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36"; //PC版
-      $ch->agent = "Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; Redmi 6 Pro Build/OPM1.171019.019) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 UCBrowser/12.5.5.1035 Mobile Safari/537.36"; //手机版
-      $ch->rawheaders["COOKIE"]= "sb=bhttYNW2dzPe7cbA1lhdPhug; wd=1920x917; datr=bhttYJOSfXFkD8rIC-ofuG_V; locale=zh_CN; c_user=100065599189914; xs=19%3At4iyGmJllrmRuA%3A2%3A1617763230%3A-1%3A-1; fr=1q1sjoeJJYgBZr38D.AWWYqFH2NMq-pzwuVDipjKyulTU.BgbRtu.40.AAA.0.0.BgbRuc.AWWItNWtTTI; spin=r.1003577549_b.trunk_t.1617763232_s.1_v.2_";  //登录
-      
-      //$ch->rawheaders["COOKIE"]= "datr=ilJgYLSnXSs45CEYM07zKU6I; sb=t1JgYJyq79SxhUUSlisLLw7x; m_pixel_ratio=1; locale=zh_CN; wd=1504x885; fr=1ZbMNGIjk2ImhUaf5..BgYFKx.Ez.AAA.0.0.BgYHkL.AWXFFh80hfk"; //游客 英文
-      
-      $ch->fetch($url1);
+$ch = curl_init();
 
-$html = $ch->results;
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+
+
+$headers = array();
+$headers[] = 'Authority: cr8tiverow.com';
+$headers[] = 'Upgrade-Insecure-Requests: 1';
+$headers[] = 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36';
+$headers[] = 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9';
+$headers[] = 'Sec-Fetch-Site: none';
+$headers[] = 'Sec-Fetch-Mode: navigate';
+$headers[] = 'Sec-Fetch-User: ?1';
+$headers[] = 'Sec-Fetch-Dest: document';
+$headers[] = 'Sec-Ch-Ua: \" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"';
+$headers[] = 'Sec-Ch-Ua-Mobile: ?0';
+$headers[] = 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,ja;q=0.7,fr;q=0.6,ru;q=0.5';
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+$html = curl_exec($ch);
 //echo $html;
 //echo $url1;
 
