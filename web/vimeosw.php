@@ -61,7 +61,7 @@ curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 $headers = array();
 $headers[] = 'Authority: cr8tiverow.com';
 $headers[] = 'Upgrade-Insecure-Requests: 1';
-$headers[] = 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36';
+$headers[] = 'User-Agent: Mozilla/5.0 (Linux; U; Android 8.1.0; zh-CN; Redmi 6 Pro Build/OPM1.171019.019) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.108 UCBrowser/12.5.5.1035 Mobile Safari/537.36';
 $headers[] = 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9';
 $headers[] = 'Sec-Fetch-Site: none';
 $headers[] = 'Sec-Fetch-Mode: navigate';
