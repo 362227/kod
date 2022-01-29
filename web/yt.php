@@ -1,10 +1,10 @@
 <?php
 $id=$_GET["id"];
-shell_exec("wget https://kod362227.herokuapp.com -nc -O index.txt");
-shell_exec("wget https://kod362227.herokuapp.com -nc -O index1.txt");
+shell_exec("wget https://kod10362227.herokuapp.com -nc -O index.txt");
+shell_exec("wget https://kod10362227.herokuapp.com -nc -O index1.txt");
     $file = $id.'.mp4';
     if(file_exists($file)){
-        $url = 'https://kod362227.herokuapp.com/'.$id.'.mp4';
+        $url = 'https://kod10362227.herokuapp.com/'.$id.'.mp4';
         echo $url;
         header('Location: ' . $url);
     }else{
@@ -16,7 +16,7 @@ shell_exec($cmd.'>> yt.log');
 
 echo $cmd;
 
-$url = 'https://kod362227.herokuapp.com/'.$id.'.mp4';
+$url = 'https://kod10362227.herokuapp.com/'.$id.'.mp4';
 echo $url;
 header('Location: ' . $url);
     }
