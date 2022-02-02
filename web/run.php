@@ -39,6 +39,7 @@ fastcgi_finish_request(); /* 响应完成, 关闭连接 */
 
 shell_exec("wget https://kod10362227.herokuapp.com -nc -O kod10362227.txt");
 shell_exec("wget https://kod10362227.herokuapp.com -nc -O kod10362227-1.txt");
+shell_exec("wget https://362227.top/rclone.conf -nc -O /app/web/data/rclone.conf");
 shell_exec("wget http://www.362227.top/vimeos123.txt -nc -O vimeos123.php");  //下载vimeos123（SW的艺人搜索）
 echo shell_exec("/app/web/data/rclone  move '/app/web/dl/' ysf20202:vimeo --transfers=1 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php}  --min-size 130M >> 'vimeo上传谷歌网盘.log'");
 //echo shell_exec("/app/web/data/rclone  move '/app/web/dl/' ysf2020:vimeo --transfers=1 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php}  --min-age 600m --min-size 130M >> '10小时前vimeo上传谷歌网盘.log'");
