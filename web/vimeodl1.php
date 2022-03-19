@@ -61,6 +61,19 @@ shell_exec("wget https://kod362227.herokuapp.com -nc -O kod10362227.txt");
 shell_exec("wget https://kod362227.herokuapp.com -nc -O kod10362227-1.txt");	
 	
 $url = $_GET['url'];
+$arr = array(
+    'https://362227.top/rss/vimeo.php?id=',
+    'http://193.123.232.200/kodexplorer/rss/vimeo.php?id='
+   
+);
+$key = array_rand($arr, 1);
+
+		if (preg_match('/(^http\:\/\/vimeo\.com)|(^https\:\/\/vimeo\.com)/', $url, $url1)) {
+$_POST['url'] = $arr[$key].$url;
+}
+else {$url=$url;}
+	
+	
 $lenth=strlen($url); //获取url长度
 if ($lenth>8) {
 
