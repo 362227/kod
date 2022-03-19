@@ -34,7 +34,7 @@ if ($lenth>8) {
 //echo exec("yt-dlp $url 2>&1", $output);
 //print_r($output);
 
-echo exec("cd /app/web/vimeodl/ && /web/data/yt-dlp $url > 下载日志.txt");
+echo exec("cd /app/web/vimeodl/ && /app/web/data/yt-dlp $url > 下载日志.txt");
 //$output = file_get_contents ("1.log");
 //echo $output;
 
@@ -99,7 +99,7 @@ function readableBytes($size0) {
    
 echo shell_exec("curl https://kod362227.herokuapp.com/vimeodl上传百度网盘.php"); 
 $content = file_get_contents("https://kod362227.herokuapp.com/vimeodl上传百度网盘.php");	
-	
+echo $content;
 ?>
 </p>
 
