@@ -33,10 +33,10 @@ $url = $_POST['url'];
 $lenth=strlen($url); //获取url长度
 if ($lenth>8) {
 
-
-//echo exec("yt-dlp $url 2>&1", $output);
-//print_r($output);
-
+shell_exec("rm -rf /app/web/vimeodl/*");
+shell_exec("pkill BaiduPCS-Go");
+shell_exec("pkill yt-dlp");
+	
 echo exec("cd /app/web/vimeodl/ && /app/web/data/yt-dlp $url > 下载日志.txt");
 //$output = file_get_contents ("1.log");
 //echo $output;
