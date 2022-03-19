@@ -54,7 +54,7 @@ $url = $_POST['url'];
 $lenth=strlen($url); //获取url长度
 if ($lenth>8) {
 
-shell_exec("rm -rf /app/web/vimeodl/*.part");
+shell_exec("rm -rf /app/web/vimeodl/*.part"); //删除临时文件
 shell_exec("pkill BaiduPCS-Go");
 shell_exec("pkill yt-dlp");
 header("Refresh:0"); //刷新一次
