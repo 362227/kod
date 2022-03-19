@@ -86,7 +86,7 @@ function readableBytes($size0) {
 
    	 	echo '<tr bgcolor='.$bgcolor.'>';
    	 	echo '<td>'.$num.'</td>';//序号
-   	 	echo '<td><a href="'.$file.'" target="_blank">'.$file.'</a></td>'; //名称 链接
+   	 	echo '<td><a href="/vimeodl/'.$file.'" target="_blank">'.$file.'</a></td>'; //名称 链接
    	 	echo '<td>'.readableBytes(filesize($dirFile)).'</td>';//大小
    	 	echo '<td>'.filetype($dirFile).'</td>';//类型
    	 	echo '<td>'.date("Y/n/t",filemtime($dirFile)).'</td>';//修改时间
