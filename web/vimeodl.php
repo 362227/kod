@@ -2,7 +2,8 @@
 
 header("content-type:text/html;charset=utf-8");
 
-echo "页面每15秒刷新一次";
+echo "页面每15秒刷新一次
+";
      
 
 // 该函数每15秒钟刷新一次页面
@@ -60,12 +61,13 @@ echo shell_exec("cd /app/web/vimeodl/ && /app/web/data/yt-dlp $url > /app/web/�
 //$output = file_get_contents ("1.log");
 //echo $output;
 
-echo "Operation completed successfully.";
+echo "下载";
 	
 echo shell_exec("curl https://kod362227.herokuapp.com/vimeodl上传百度网盘.php"); 
 $content = file_get_contents("https://kod362227.herokuapp.com/vimeodl上传百度网盘.php");	
 //shell_exec("wget https://kod362227.herokuapp.com/vimeodl上传百度网盘.php -nc -O kod10362227-1-1.txt");
 echo $content;
+
 	
 ?>
 </div>
@@ -78,7 +80,10 @@ echo $content;
 
 
 
-
+echo "上传百度网盘进度";
+$content = file_get_contents("/app/web/vimeodl上传百度网盘.txt");	
+//shell_exec("wget https://kod362227.herokuapp.com/vimeodl上传百度网盘.php -nc -O kod10362227-1-1.txt");
+echo $content;
 
 
 
