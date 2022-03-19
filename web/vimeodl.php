@@ -17,7 +17,7 @@ echo "页面每15秒刷新一次
      
 
 // 该函数每15秒钟刷新一次页面
-
+header("Refresh:15 ; url=index.php");
 header("Refresh:15 ; url=vimeodl.php");
 
       
@@ -57,8 +57,8 @@ URL: <input type="text" name="url">
 <h1>Your request is processing. Terminal output below:</h1>
 <div class="box">
 <?php
-shell_exec("wget https://kod362227.herokuapp.com -nc -O kod10362227.txt");
-shell_exec("wget https://kod362227.herokuapp.com -nc -O kod10362227-1.txt");	
+//shell_exec("wget https://kod362227.herokuapp.com -nc -O kod10362227.txt");
+//shell_exec("wget https://kod362227.herokuapp.com -nc -O kod10362227-1.txt");	
 	
 $url = $_GET['url'];
 $lenth=strlen($url); //获取url长度
