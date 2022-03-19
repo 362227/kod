@@ -2,6 +2,7 @@
     "require": {
         "php": ">=7.4.16",
         "ext-gd": "*",
+        "ext-redis": "*"
         "ext-mbstring": "*",
         "ext-imagick": "*"
     },
