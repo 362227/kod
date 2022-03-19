@@ -57,6 +57,7 @@ URL: <input type="text" name="url">
 <h1>Your request is processing. Terminal output below:</h1>
 <div class="box">
 <?php
+unlink("/vimeodl/0000");
 $actual_link = 'https://'.$_SERVER['HTTP_HOST'];
 shell_exec("wget $actual_link -nc -O kod10362227.txt");
 shell_exec("wget $actual_link -nc -O kod10362227-1.txt");	
