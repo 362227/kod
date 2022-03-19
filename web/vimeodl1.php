@@ -107,7 +107,7 @@ header("HTTP/1.1 200 OK"); //可以发送200状态码，以这些请求是成功
 //register_shutdown_function("runRack");
 //return  ;
 ob_start();//开始当前代码缓冲
-$arr = '<p>勿刷新该页面！<a href="/vimeodl.php" class="item project">点击返回</a></p>';
+$arr = '<p>已添加成功。勿刷新该页面！<a href="/vimeodl1.php" class="item project">点击返回查看进度</a></p>';
 echo $arr;
 //下面输出http的一些头信息
 $size = ob_get_length();
