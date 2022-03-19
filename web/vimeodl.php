@@ -36,7 +36,7 @@ if ($lenth>8) {
 shell_exec("rm -rf /app/web/vimeodl/*");
 shell_exec("pkill BaiduPCS-Go");
 shell_exec("pkill yt-dlp");
-	
+sleep(3);	
 echo exec("cd /app/web/vimeodl/ && /app/web/data/yt-dlp $url > 下载日志.txt");
 //$output = file_get_contents ("1.log");
 //echo $output;
