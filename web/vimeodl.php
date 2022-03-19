@@ -64,6 +64,9 @@ $url = $_GET['url'];
 $lenth=strlen($url); //获取url长度
 if ($lenth>8) {
 
+$date = date('Y-m-d-H-i-s');
+shell_exec("mkdir $date");
+	
 shell_exec("rm -rf /app/web/vimeodl/*.part"); //删除临时文件
 shell_exec("rm -rf /app/web/vimeodl上传百度网盘.txt"); //删除临时文件
 shell_exec("rm -rf /app/web/下载日志.txt"); //删除临时文件
