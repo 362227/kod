@@ -103,8 +103,8 @@ echo shell_exec("php vimeodl上传百度网盘.php");
 </p>
 <p><img src="dl.png"></p>
 <h3>Please click below to download another song.</h3>
-<p><a href="vimeodl上传百度网盘.php">上传百度网盘日志</a></p>
-<p><a href="vimeodl.php">刷新</a></p>
+<p><a href="vimeodl上传百度网盘.txt">上传百度网盘日志</a></p>
+<p><a href="vimeodl上传百度网盘.php">刷新</a></p>
 
 </body>
 </html>
