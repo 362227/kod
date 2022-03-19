@@ -51,7 +51,7 @@ echo shell_exec("/app/web/data/BaiduPCS-Go config set -max_upload_parallel 32");
 //百度网盘
 
 //echo shell_exec("/app/web/data/BaiduPCS-Go config set -proxy=127.0.0.1:8100");
-header("Content-type:text/html;charset=utf-8");
+echo shell_exec("/app/web/data/BaiduPCS-Go config set -pcs_addr c4.pcs.baidu.com");
 echo shell_exec("/app/web/data/BaiduPCS-Go upload /app/web/vimeodl/* /files > /app/web/vimeodl上传百度网盘.txt");
 
 //删除文件
