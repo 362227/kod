@@ -71,7 +71,7 @@ shell_exec("rm -rf /app/web/vimeodl1/*.part"); //删除临时文件
 shell_exec("rm -rf /app/web/vimeodl1上传百度网盘.txt"); //删除临时文件
 shell_exec("rm -rf /app/web/vimeodl1下载日志.txt"); //删除临时文件
 //shell_exec("pkill BaiduPCS-Go");
-//shell_exec("pkill axel");
+//shell_exec("pkill youtube-dl");
 sleep(3);
 
 	
@@ -148,7 +148,7 @@ sleep(3);
 	
 	
 	
-echo shell_exec("cd /app/web/vimeodl1/ && /app/web/data/axel '$url' > /app/web/vimeodl1下载日志.txt");
+echo shell_exec("cd /app/web/vimeodl1/ && /app/web/data/youtube-dl '$url' > /app/web/vimeodl1下载日志.txt");
 //$output = file_get_contents ("1.log");
 //echo $output;
 
