@@ -23,8 +23,7 @@ URL: <input type="text" name="url">
 <input type="submit" value="下载">
 </form>
 
-<h1>Your request is processing. Terminal output below:</h1>
-<div class="box">
+<p><a href="vimeodl.php">刷新</a></p>
 <?php
 $url = $_POST['url'];
 $lenth=strlen($url); //获取url长度
@@ -105,7 +104,7 @@ echo $content;
 
 <h3>Please click below to download another song.</h3>
 <p><a href="vimeodl上传百度网盘.txt">上传百度网盘日志</a></p>
-<p><a href="vimeodl.php">刷新</a></p>
+
 
 </body>
 </html>
