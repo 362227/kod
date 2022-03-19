@@ -1,4 +1,4 @@
-<?php
+l<?php
 ignore_user_abort(true); // 后台运行，不受前端断开连接影响
 set_time_limit(7600); // 脚本最多运行3个小时
 //后台运行的后面还要，set_time_limit(0); 除非在服务器上关闭这个程序，否则下面的代码将永远执行下去止到完成为止。
@@ -51,7 +51,7 @@ echo shell_exec("/app/web/data/BaiduPCS-Go config set -max_upload_parallel 32");
 
 //echo shell_exec("/app/web/data/BaiduPCS-Go config set -proxy=127.0.0.1:8100");
 
-echo shell_exec("/app/web/data/BaiduPCS-Go upload '/app/web/vimeodl/*' '/files' > '/app/web/上传百度网盘.txt'");
+echo shell_exec("/app/web/data/BaiduPCS-Go upload '/app/web/vimeodl/*' '/files' > '/app/web/vimeodl上传百度网盘.txt'");
 
 //删除文件
 echo shell_exec("rm -rf /app/web/vimeodl/*");
