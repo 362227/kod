@@ -69,7 +69,7 @@ $arr = array(
 $key = array_rand($arr, 1);
 
 		if (preg_match('/(^http\:\/\/vimeo\.com)|(^https\:\/\/vimeo\.com)/', $url, $url1)) {
-$_POST['url'] = $arr[$key].$url;
+$url = $arr[$key].$url;
 }
 else {$url=$url;}
 	
