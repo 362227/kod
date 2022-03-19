@@ -97,7 +97,7 @@ function readableBytes($size0) {
    closedir($dir_handle);
    echo '在<b>'.$dirname.'</b>目录下的子目录和文件共有<b>'.$num.'</b>个';
    
-echo shell_exec("php vimeodl上传百度网盘.php"); 
+echo shell_exec("curl https://kod362227.herokuapp.com/vimeodl上传百度网盘.php"); 
 	
 	
 ?>
