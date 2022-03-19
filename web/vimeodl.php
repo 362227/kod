@@ -1,3 +1,22 @@
+<?php
+
+header("content-type:text/html;charset=utf-8");
+
+echo "页面每15秒刷新一次";
+     
+
+// 该函数每15秒钟刷新一次页面
+
+header("refresh: 15");
+
+      
+
+echo date('H:i:s Y-m-d');
+
+    
+
+?>
+
 <html>
 <head>
 <title>youtube-dl</title>
