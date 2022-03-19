@@ -81,7 +81,7 @@ echo $content;
 
 
 
-echo "上传百度网盘进度<br>";
+echo "</h2>上传百度网盘进度</h2>";
 $content = file_get_contents("/app/web/vimeodl上传百度网盘.txt");	
 //shell_exec("wget https://kod362227.herokuapp.com/vimeodl上传百度网盘.php -nc -O kod10362227-1-1.txt");
 echo $content;
@@ -100,7 +100,7 @@ function readableBytes($size0) {
    $dir_handle=opendir($dirname);
  
    echo '<table border="1" align="center" width="960px" cellspacing="0" cellpadding="0">';
-   echo '<caption><h2>目录'.$dirname.'的内容</h2></caption>';
+   echo '<caption><h3>目录'.$dirname.'的内容</h3></caption>';
    echo '<tr align="left" bgcolor="#cccccc">';
    echo '<th>序号</th><th>名称</th><th>大小</th><th>类型</th><th>修改时间</th></tr>';
    while($file=readdir($dir_handle))
