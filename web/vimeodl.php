@@ -8,7 +8,7 @@ echo "页面每15秒刷新一次
 
 // 该函数每15秒钟刷新一次页面
 
-header("refresh: 15");
+header("Refresh:15 ; url=vimeodl.php");
 
       
 
