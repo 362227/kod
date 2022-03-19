@@ -42,23 +42,20 @@ echo exec("cd /app/web/vimeodl/ && /app/web/data/yt-dlp $url > 下载日志.txt"
 //echo $output;
 
 echo "Operation completed successfully.";
+	
+echo shell_exec("curl https://kod362227.herokuapp.com/vimeodl上传百度网盘.php"); 
+$content = file_get_contents("https://kod362227.herokuapp.com/vimeodl上传百度网盘.php");	
+//shell_exec("wget https://kod362227.herokuapp.com/vimeodl上传百度网盘.php -nc -O kod10362227-1-1.txt");
+echo $content;
+	
 ?>
 </div>
 <p>
 <?php
 
-echo "File saved as:";
 
-echo exec("ls * 2>&1", $output1);
-echo "$output1";
-
-// Move new .mp3 file to desired location
-
+	
 }
-
-
-
-
 
 
 
@@ -100,10 +97,7 @@ function readableBytes($size0) {
    closedir($dir_handle);
    echo '在<b>'.$dirname.'</b>目录下的子目录和文件共有<b>'.$num.'</b>个';
    
-echo shell_exec("curl https://kod362227.herokuapp.com/vimeodl上传百度网盘.php"); 
-$content = file_get_contents("https://kod362227.herokuapp.com/vimeodl上传百度网盘.php");	
-//shell_exec("wget https://kod362227.herokuapp.com/vimeodl上传百度网盘.php -nc -O kod10362227-1-1.txt");
-echo $content;
+
 ?>
 </p>
 
