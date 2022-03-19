@@ -48,12 +48,12 @@ body{
 <center>
 <h1>youtube-dl</h1>
 <p>Paste the URL below, and press GO.</p>
-<form action="vimeodl.php" method="get">
+<form action="vimeodl1.php" method="get">
 URL: <input type="text" name="url">
 <input type="submit" value="下载">
 </form>
 
-<p><a href="vimeodl.php">刷新</a></p>
+<p><a href="vimeodl1.php">刷新</a></p>
 <h1>Your request is processing. Terminal output below:</h1>
 <div class="box">
 <?php
@@ -67,8 +67,8 @@ if ($lenth>8) {
 $date = date('Y-m-d-H-i-s');
 shell_exec("mkdir $date");
 	
-shell_exec("rm -rf /app/web/vimeodl/*.part"); //删除临时文件
-shell_exec("rm -rf /app/web/vimeodl上传百度网盘.txt"); //删除临时文件
+shell_exec("rm -rf /app/web/vimeodl1/*.part"); //删除临时文件
+shell_exec("rm -rf /app/web/vimeodl1上传百度网盘.txt"); //删除临时文件
 shell_exec("rm -rf /app/web/下载日志.txt"); //删除临时文件
 shell_exec("pkill BaiduPCS-Go");
 shell_exec("pkill yt-dlp");
