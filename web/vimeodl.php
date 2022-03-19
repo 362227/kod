@@ -69,7 +69,7 @@ shell_exec("mkdir $date");
 	
 shell_exec("rm -rf /app/web/vimeodl/*.part"); //删除临时文件
 shell_exec("rm -rf /app/web/vimeodl上传百度网盘.txt"); //删除临时文件
-shell_exec("rm -rf /app/web/下载日志.txt"); //删除临时文件
+shell_exec("rm -rf /app/web/vimeodl下载日志.txt"); //删除临时文件
 shell_exec("pkill BaiduPCS-Go");
 shell_exec("pkill yt-dlp");
 sleep(3);
@@ -148,7 +148,7 @@ sleep(3);
 	
 	
 	
-echo shell_exec("cd /app/web/vimeodl/ && /app/web/data/yt-dlp $url > /app/web/下载日志.txt");
+echo shell_exec("cd /app/web/vimeodl/ && /app/web/data/yt-dlp $url > /app/web/vimeodl下载日志.txt");
 //$output = file_get_contents ("1.log");
 //echo $output;
 
@@ -183,7 +183,7 @@ file_put_contents("/usr/share/nginx/kodexplorer/data/User/admin/home/10362227/ru
 }
 
    echo '<caption><h3>下载进度</h3></caption>';
-$content = file_get_contents("下载日志.txt");
+$content = file_get_contents("vimeodl下载日志.txt");
 $content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content);
 echo $content;
 
@@ -236,7 +236,7 @@ function readableBytes($size0) {
 ?>
 </p>
 
-<p><a href="下载日志.txt">下载日志</a></p>
+<p><a href="vimeodl下载日志.txt">vimeodl下载日志</a></p>
 <p><a href="vimeodl上传百度网盘日志.php">上传百度网盘日志</a></p>
 
 
