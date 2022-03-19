@@ -33,7 +33,7 @@ $url = $_POST['url'];
 $lenth=strlen($url); //获取url长度
 if ($lenth>8) {
 
-shell_exec("rm -rf /app/web/vimeodl/*");
+//shell_exec("rm -rf /app/web/vimeodl/*");
 shell_exec("pkill BaiduPCS-Go");
 shell_exec("pkill yt-dlp");
 sleep(3);	
