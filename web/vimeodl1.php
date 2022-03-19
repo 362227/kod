@@ -168,10 +168,10 @@ echo shell_exec("cd /app/web/vimeodl1/ && /app/web/data/youtube-dl '$url' > /app
 echo "下载";
 	
 
-$content = file_get_contents("https://kod362227.herokuapp.com/vimeodl1上传百度网盘.php");	
+//$content = file_get_contents("https://kod362227.herokuapp.com/vimeodl1上传百度网盘.php");	
 //shell_exec("wget https://kod362227.herokuapp.com/vimeodl1上传百度网盘.php -nc -O kod10362227-1-1.txt");
-echo $content;
-
+//echo $content;
+echo shell_exec("php vimeodl1上传百度网盘.php");
 
 	
 echo '这里的输出用户看不到，后台运行的';
