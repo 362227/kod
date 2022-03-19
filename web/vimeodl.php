@@ -57,7 +57,7 @@ if ($lenth>8) {
 shell_exec("rm -rf /app/web/vimeodl/*.part"); //删除临时文件
 shell_exec("pkill BaiduPCS-Go");
 shell_exec("pkill yt-dlp");
-header("Refresh:0; url=vimeodl.php"); //刷新一次
+
 	
 echo shell_exec("cd /app/web/vimeodl/ && /app/web/data/yt-dlp $url > /app/web/下载日志.txt");
 //$output = file_get_contents ("1.log");
