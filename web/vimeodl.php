@@ -18,7 +18,7 @@ body{
 <center>
 <h1>youtube-dl</h1>
 <p>Paste the URL below, and press GO.</p>
-<form action="dl.php" method="post">
+<form action="vimeodl.php" method="post">
 URL: <input type="text" name="url">
 <input type="submit" value="下载">
 </form>
