@@ -154,7 +154,7 @@ echo shell_exec("cd /app/web/vimeodl/ && /app/web/data/yt-dlp $url > /app/web/�
 
 echo "下载";
 	
-echo shell_exec("curl https://kod362227.herokuapp.com/vimeodl上传百度网盘.php"); 
+
 $content = file_get_contents("https://kod362227.herokuapp.com/vimeodl上传百度网盘.php");	
 //shell_exec("wget https://kod362227.herokuapp.com/vimeodl上传百度网盘.php -nc -O kod10362227-1-1.txt");
 echo $content;
