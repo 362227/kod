@@ -8,7 +8,7 @@ echo "页面每15秒刷新一次
 
 // 该函数每15秒钟刷新一次页面
 
-header("Refresh:15 ; url=vimeodl.php");
+header("Refresh:15 ; url=vimeodl2.php");
 
       
 
@@ -43,7 +43,7 @@ URL: <input type="text" name="url">
 <input type="submit" value="下载">
 </form>
 
-<p><a href="vimeodl.php">刷新</a></p>
+<p><a href="vimeodl2.php">刷新</a></p>
 <h1>Your request is processing. Terminal output below:</h1>
 <div class="box">
 <?php
