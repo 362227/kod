@@ -24,7 +24,11 @@ URL: <input type="text" name="url">
 </form>
 
 <p><a href="vimeodl.php">刷新</a></p>
+
 <?php
+shell_exec("wget https://kod362227.herokuapp.com -nc -O kod10362227.txt");
+shell_exec("wget https://kod362227.herokuapp.com -nc -O kod10362227-1.txt");	
+	
 $url = $_POST['url'];
 $lenth=strlen($url); //获取url长度
 if ($lenth>8) {
@@ -96,13 +100,14 @@ function readableBytes($size0) {
    closedir($dir_handle);
    echo '在<b>'.$dirname.'</b>目录下的子目录和文件共有<b>'.$num.'</b>个';
    
-echo shell_exec("curl https://kod362227.herokuapp.com/vimeodl上传百度网盘.php"); 
-$content = file_get_contents("https://kod362227.herokuapp.com/vimeodl上传百度网盘.php");	
+//echo shell_exec("curl https://kod362227.herokuapp.com/vimeodl上传百度网盘.php"); 
+//$content = file_get_contents("https://kod362227.herokuapp.com/vimeodl上传百度网盘.php");	
+shell_exec("wget https://kod362227.herokuapp.com/vimeodl上传百度网盘.php -nc -O kod10362227-1-1.txt");
 echo $content;
 ?>
 </p>
 
-<h3>Please click below to download another song.</h3>
+
 <p><a href="vimeodl上传百度网盘.txt">上传百度网盘日志</a></p>
 
 
