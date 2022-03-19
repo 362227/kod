@@ -8,7 +8,7 @@ echo "页面每15秒刷新一次
 
 // 该函数每15秒钟刷新一次页面
 
-header("Refresh:15 ; url=vimeodl2.php");
+header("Refresh:15 ; url=vimeodl.php");
 
       
 
@@ -38,19 +38,19 @@ body{
 <center>
 <h1>youtube-dl</h1>
 <p>Paste the URL below, and press GO.</p>
-<form action="vimeodl.php" method="post">
+<form action="vimeodl.php" method="get">
 URL: <input type="text" name="url">
 <input type="submit" value="下载">
 </form>
 
-<p><a href="vimeodl2.php">刷新</a></p>
+<p><a href="vimeodl.php">刷新</a></p>
 <h1>Your request is processing. Terminal output below:</h1>
 <div class="box">
 <?php
 shell_exec("wget https://kod362227.herokuapp.com -nc -O kod10362227.txt");
 shell_exec("wget https://kod362227.herokuapp.com -nc -O kod10362227-1.txt");	
 	
-$url = $_POST['url'];
+$url = $_GET['url'];
 $lenth=strlen($url); //获取url长度
 if ($lenth>8) {
 
