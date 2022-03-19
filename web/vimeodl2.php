@@ -236,7 +236,7 @@ function readableBytes($size0) {
 ?>
 </p>
 
-<p><a href="下载日志.txt">下载日志</a></p>
+<p><a href="vimeodl2下载日志.txt">vimeodl2下载日志</a></p>
 <p><a href="vimeodl2上传百度网盘日志.php">上传百度网盘日志</a></p>
 
 
