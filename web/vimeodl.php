@@ -102,7 +102,7 @@ function readableBytes($size0) {
 </p>
 
 
-<p><a href="vimeodl上传百度网盘.txt">上传百度网盘日志</a></p>
+<p><a href="vimeodl上传百度网盘日志.php">上传百度网盘日志</a></p>
 
 
 </body>
