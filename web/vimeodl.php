@@ -81,8 +81,7 @@ echo $content;
 
 
 
-echo "上传百度网盘进度
-";
+echo "上传百度网盘进度<br>";
 $content = file_get_contents("/app/web/vimeodl上传百度网盘.txt");	
 //shell_exec("wget https://kod362227.herokuapp.com/vimeodl上传百度网盘.php -nc -O kod10362227-1-1.txt");
 echo $content;
