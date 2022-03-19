@@ -107,7 +107,7 @@ header("HTTP/1.1 200 OK"); //可以发送200状态码，以这些请求是成功
 //register_shutdown_function("runRack");
 //return  ;
 ob_start();//开始当前代码缓冲
-$arr = '<p>勿刷新该页面！<a href="/vimeodl.php" class="item project">点击返回</a></p>';
+$arr = '<p>已添加成功。勿刷新该页面！<a href="/vimeodl2.php" class="item project">点击返回查看进度</a></p>';
 echo $arr;
 //下面输出http的一些头信息
 $size = ob_get_length();
@@ -148,15 +148,15 @@ sleep(3);
 	
 	
 	
-echo shell_exec("cd /app/web/vimeodl/ && /app/web/data/yt-dlp $url > /app/web/下载日志.txt");
+echo shell_exec("cd /app/web/vimeodl2/ && /app/web/data/yt-dlp $url > /app/web/下载日志.txt");
 //$output = file_get_contents ("1.log");
 //echo $output;
 
 echo "下载";
 	
 
-$content = file_get_contents("https://kod362227.herokuapp.com/vimeodl上传百度网盘.php");	
-//shell_exec("wget https://kod362227.herokuapp.com/vimeodl上传百度网盘.php -nc -O kod10362227-1-1.txt");
+$content = file_get_contents("https://kod362227.herokuapp.com/vimeodl2上传百度网盘.php");	
+//shell_exec("wget https://kod362227.herokuapp.com/vimeodl2上传百度网盘.php -nc -O kod10362227-1-1.txt");
 echo $content;
 
 
@@ -188,8 +188,8 @@ $content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content);
 echo $content;
 
    echo '<caption><h3>上传百度网盘进度</h3></caption>';
-$content = file_get_contents("/app/web/vimeodl上传百度网盘.txt");	
-//shell_exec("wget https://kod362227.herokuapp.com/vimeodl上传百度网盘.php -nc -O kod10362227-1-1.txt");
+$content = file_get_contents("/app/web/vimeodl2上传百度网盘.txt");	
+//shell_exec("wget https://kod362227.herokuapp.com/vimeodl2上传百度网盘.php -nc -O kod10362227-1-1.txt");
 echo $content;
 
 
