@@ -33,7 +33,7 @@ $url = $_POST['url'];
 $lenth=strlen($url); //获取url长度
 if ($lenth>8) {
 
-//shell_exec("rm -rf /app/web/vimeodl/*");
+shell_exec("rm -rf /app/web/vimeodl/*");
 shell_exec("pkill BaiduPCS-Go");
 shell_exec("pkill yt-dlp");
 sleep(3);	
@@ -101,7 +101,7 @@ function readableBytes($size0) {
 ?>
 </p>
 
-
+<p><a href="下载日志.txt">下载日志</a></p>
 <p><a href="vimeodl上传百度网盘日志.php">上传百度网盘日志</a></p>
 
 
