@@ -59,7 +59,7 @@ $A=strtotime("now");
 $D=$A - $C;
 
 
-if($D > 26000) {echo shell_exec("rm -rf uploading.txt");}
+if($D > 16000) {echo shell_exec("rm -rf uploading.txt");}
 
 
 
@@ -72,8 +72,8 @@ if($D > 26000) {echo shell_exec("rm -rf uploading.txt");}
     
 else{
 
-//files文件夹修改时间离现在大于10000s就执行
-$a=filemtime("files");
+//115文件夹修改时间离现在大于10000s就执行
+$a=filemtime("115");
 $b=filemtime("uploading.txt");
 
 $B = date($a);
@@ -90,12 +90,12 @@ if($D > 12000) {echo shell_exec("rm -rf uploading.txt");}
 if($C > 10000) {
 
 
-echo shell_exec("pkill fake115uploader & pkill BaiduPCS-Go");
+echo shell_exec("pkill fake115uploader");
 
 //新建uploading.txt文件
 $myfile = fopen("uploading.txt", "w");
 
-   echo shell_exec("find /usr/share/nginx/kodexplorer/aria2c/temp/* -type f -size -5M -delete"); //删除小文件
+   echo shell_exec("find /app/web/115/* -type f -size -5M -delete"); //删除小文件
    
  
 
@@ -103,8 +103,7 @@ $myfile = fopen("uploading.txt", "w");
 
 //暂时禁掉上传谷歌网盘   echo shell_exec("/usr/bin/rclone copy /usr/share/nginx/kodexplorer/aria2c/temp ysf2020:Temp --transfers=5 -P --contimeout 5h --local-no-check-updated --size-only --transfers=3 --config=/usr/share/nginx/kodexplorer/rclone.conf >> rclone.log 2>&1");
 //暂时禁掉上传谷歌网盘   echo shell_exec("/usr/bin/rclone copy /usr/share/nginx/kodexplorer/aria2c/temp ysf2020:Temp --transfers=5 -P --contimeout 5h --local-no-check-updated --size-only --transfers=3 --config=/usr/share/nginx/kodexplorer/rclone.conf >> rclone1.log 2>&1");
-   echo shell_exec("mv /usr/share/nginx/kodexplorer/aria2c/temp/* /usr/share/nginx/kodexplorer/aria2c/115");
- 
+
  //  echo shell_exec("sleep 5");
  
  //  echo shell_exec("pkill -9 v2ray");
