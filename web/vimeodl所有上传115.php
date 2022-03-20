@@ -49,43 +49,17 @@ sleep(3);
 unlink("/app/web/115/0000"); //删除空文件
 
 
-$b=filemtime("uploading.txt");
 
-
-$C = date($b);
-
-$A=strtotime("now");
-
-$D=$A - $C;
-
-
-if($D > 16000) {echo shell_exec("rm -rf uploading.txt");}
-
-
-
-
-//判断uploading.txt存在，如果存在就退出
-    $file = 'uploading.txt';
-        if(file_exists($file)){
-        exit;
-    }
-    
-else{
 
 //115文件夹修改时间离现在大于10000s就执行
 $a=filemtime("115");
-$b=filemtime("uploading.txt");
 
 $B = date($a);
-$C = date($b);
+
 
 $A=strtotime("now");
-$C=$A - $B;
-$D=$A - $C;
-echo $C;
 
-if($D > 12000) {echo shell_exec("rm -rf uploading.txt");}
-
+$C=$A-$B;
 //正式上传
 if($C > 10000) {
 
@@ -130,11 +104,11 @@ $myfile = fopen("uploading.txt", "w");
    
 if($num > 0) {
     echo shell_exec("curl https://362227.top/fake115uploader.json > /app/web/data/fake115uploader.json");
+    echo shell_exec("/app/web/data/fake115uploader -retry 5 -c 2051109780465909616 -u /app/web/115/* >> '上传115.log' 2>&1");
     echo shell_exec("/app/web/data/fake115uploader -retry 5 -c 2051109780465909616 -m /app/web/115/* >> '上传115.log' 2>&1");
-
 }  
 
-}}
+}
 
 
 
