@@ -55,7 +55,10 @@ echo shell_exec("/app/web/data/BaiduPCS-Go config set -pcs_addr c4.pcs.baidu.com
 echo shell_exec("/app/web/data/BaiduPCS-Go upload /app/web/vimeodl/* /files --retry 14 > /app/web/vimeodl上传百度网盘.txt");
 
 //删除文件
-echo shell_exec("rm -rf /app/web/vimeodl/*");
+//echo shell_exec("rm -rf /app/web/vimeodl/*");
+
+//移动到115文件夹，准备上传115网盘
+echo shell_exec("mv /app/web/vimeodl/* /app/web/115");
 
 
 
