@@ -216,7 +216,7 @@ function readableBytes($size0) {
    echo '<table border="1" align="center" width="auto" cellspacing="0" cellpadding="0">';
    echo '<caption><h3>目录'.$dirname.'的内容</h3></caption>';
    echo '<tr align="left" bgcolor="#cccccc">';
-   echo '<th>序号</th><th>名称</th><th>大小</th><th>类型</th><th>修改时间</th></tr>';
+   echo '<th>序号 (Num.)</th><th>名称 (Name)</th><th>大小 (Szie)</th><th>类型 (Type)</th><th>修改时间 (Mtime)</th></tr>';
    while($file=readdir($dir_handle))
    {
    	 if($file!="."&&$file!="..")
