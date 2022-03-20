@@ -60,7 +60,7 @@ URL: <input type="text" name="url">
 unlink("/app/web/vimeodl1/0000");
 $actual_link = 'https://'.$_SERVER['HTTP_HOST'];
 shell_exec("wget $actual_link -nc -O kod10362227.txt");
-shell_exec("wget $actual_link -nc -O kod10362227-1.txt");
+shell_exec("curl -L $actual_link");
 	
 $url = $_GET['url'];
 $arr = array(
