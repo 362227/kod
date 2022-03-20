@@ -196,7 +196,12 @@ file_put_contents("/usr/share/nginx/kodexplorer/data/User/admin/home/10362227/ru
 
 	
 }
+$B=date(filemtime("上传115.log"));
+$A=strtotime("now");
+$C=$A - $B;
 
+if($C < 4) {echo '<caption><h1><font color="#FF0000">正在上传115，请只打开一个网站，否则可能崩溃</font></h1></caption>';}
+	
    echo '<caption><h3>下载进度</h3></caption>';
 $content = file_get_contents("vimeodl1下载日志.txt");
 $content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content);
