@@ -51,29 +51,22 @@ unlink("/app/web/115/0000"); //删除空文件
 
 
 
-//115文件夹修改时间离现在大于10000s就执行
-    $file = 'uploading.txt';
-        if(file_exists($file)){
-        exit;
-    }
+//大于10000s就执行
 
 
-$a=filemtime("115");
-
-$B = date($a);
-
-
+$B=date(filemtime("115"));
+$D=date(filemtime("上传115.log"));
 $A=strtotime("now");
 
-$C=$A-$B;
-//正式上传
-if($C > 10000) {
+$C=$A-$B; //115文件夹修改时间离现在的时间
+$E=$D-$B; //115文件夹修改时间离115上传最后时间
+
+//正式上传 如果115文件夹修改时间离现在的时间大于1小时，且115上传最后时间离115文件夹修改时间大于2小时
+if($C > 3600 && $E > 7200) {
 
 
 echo shell_exec("pkill fake115uploader");
 
-//新建uploading.txt文件
-$myfile = fopen("uploading.txt", "w");
 
    echo shell_exec("find /app/web/115/* -type f -size -5M -delete"); //删除小文件
    
@@ -112,7 +105,6 @@ if($num > 0) {
     echo shell_exec("curl https://362227.top/fake115uploader.json > /app/web/data/fake115uploader.json");
     echo shell_exec("/app/web/data/fake115uploader -retry 5 -c 2214093215491948252 -u /app/web/115/* >> '上传115.log' 2>&1"); //上传“手机备份”文件夹
     echo shell_exec("/app/web/data/fake115uploader -retry 5 -c 2214093215491948252 -m /app/web/115/* >> '上传115.log' 2>&1"); //上传“手机备份”文件夹
-    unlink ("uploading.txt"); //删除uploading.txt
 }  
 
 }
