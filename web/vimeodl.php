@@ -225,41 +225,13 @@ echo $content;
 
 
 
-function readableBytes($size0) {
-    $i1 = floor(log($size0) / log(1024));
-    $sizes = array('B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
 
-    return sprintf('%.02F', $size0 / pow(1024, $i1)) * 1 . ' ' . $sizes[$i1];
-}
+$actual_link = 'https://'.$_SERVER['HTTP_HOST']; 
+$page = file_get_contents($actual_link.'/encodeexplorer.index.php?sort_by=mod&sort_as=desc&dir=115/');
 
-   $num=0;    //用来记录目录下的文件个数
-   $dirname='./115/'; //要遍历的目录名字
-   $dir_handle=opendir($dirname);
- 
-   echo '<table border="1" align="center" width="auto" cellspacing="0" cellpadding="0">';
-   echo '<caption><h3><font color="#0038CE">已离线的文件，每个文件大约1-2小时后删</font></h3></caption>';;
-   echo '<tr align="left" bgcolor="#cccccc">';
-   echo '<th>序号 (Num.)</th><th>名称 (Name)</th><th>大小 (Szie)</th><th>类型 (Type)</th><th>修改时间 (Mtime)</th></tr>';
-   while($file=readdir($dir_handle))
-   {
-   	 if($file!="."&&$file!="..")
-   	 {
-   	 	$dirFile=$dirname."/".$file;
-
-   	 	echo '<tr bgcolor='.$bgcolor.'>';
-   	 	echo '<td>'.$num.'</td>';//序号
- 	 	echo '<td style="word-wrap:break-word;word-break:break-all;" width="auto";><a href="115/'.$file.'" target="_blank"><font color="#0038CE">'.$file.'</font></a></td>'; //名称 链接
-   	 	echo '<td>'.readableBytes(filesize($dirFile)).'</td>';//大小
-   	 	echo '<td>'.filetype($dirFile).'</td>';//类型
-   	 	echo '<td>'.date("Y/n/t",filemtime($dirFile)).'</td>';//修改时间
-   	 	echo '</tr>';
-   	 }
-   }
-   echo '</table>';
-   closedir($dir_handle);
-   echo '在<b>'.$dirname.'</b>目录下的子目录和文件共有<b>'.$num.'</b>个';
-   
-
+$page = str_replace("src=\"?img","src=\"encodeexplorer.index.php?img",$page);
+//$page = str_replace("<span>Encode Explorer</span>","<span>已离线的文件，每个文件大约1-2小时后删</span>",$page);
+echo $page;
 	
 	
 	
