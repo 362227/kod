@@ -72,8 +72,6 @@ shell_exec("mkdir $date");
 shell_exec("rm -rf /app/web/vimeodl/*.part"); //删除临时文件
 shell_exec("rm -rf /app/web/vimeodl/*.ytdl"); //删除临时文件
 shell_exec("rm -rf /app/web/vimeodl/*.part-Frag*"); //删除临时文件
-shell_exec("rm -rf /app/web/vimeodl上传百度网盘.txt"); //删除临时文件
-shell_exec("rm -rf /app/web/vimeodl下载日志.txt"); //删除临时文件
 //shell_exec("pkill BaiduPCS-Go");
 shell_exec("pkill yt-dlp");
 sleep(3);
