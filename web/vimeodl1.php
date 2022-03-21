@@ -33,9 +33,9 @@ echo date('H:i:s Y-m-d');
 <title>youtube-dl</title>
 <style>
 body{
-	background-color:#708890;
+	background-color:#EAECEE;
 	font-family:Arial;
-	color:white;
+	color:black;
 }
 .box{
 	border: 1px solid;
@@ -220,7 +220,7 @@ $C=$A - $B;
 if($C < 4) {echo '<caption><h1><font color="#FF0000">正在上传115，请只打开一个网站，否则可能崩溃</font></h1></caption>';}
 	
 $url1 = file_get_contents("vimeodl1url.txt");
-echo '<p><a href="'.$url1.'">链接：'.$url1.'</a></p>';
+echo '<p><a href="'.$url1.'">'.$url1.'</a></p>';
 echo '<caption><h3>下载进度</h3></caption>';
 $content = file_get_contents("vimeodl1下载日志.txt");
 $content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content);
