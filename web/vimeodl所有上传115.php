@@ -47,7 +47,7 @@ sleep(3);
 
 //上传115网盘
 unlink("/app/web/115/0000"); //删除空文件
-
+shell_exec("find /app/web/115/* -type f -size -5M -delete"); //删除小文件
 
 
 
