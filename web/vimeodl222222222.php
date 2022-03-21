@@ -230,11 +230,11 @@ function readableBytes($size0) {
 }
 
    $num=0;    //用来记录目录下的文件个数
-   $dirname='./vimeodl2/'; //要遍历的目录名字
+   $dirname='./115/'; //要遍历的目录名字
    $dir_handle=opendir($dirname);
  
    echo '<table border="1" align="center" width="auto" cellspacing="0" cellpadding="0">';
-   echo '<caption><h3>目录'.$dirname.'的内容</h3></caption>';
+   echo '<caption><h3>已离线的文件，每个文件大约1-2小时后删</h3></caption>';
    echo '<tr align="left" bgcolor="#cccccc">';
    echo '<th>序号 (Num.)</th><th>名称 (Name)</th><th>大小 (Szie)</th><th>类型 (Type)</th><th>修改时间 (Mtime)</th></tr>';
    while($file=readdir($dir_handle))
