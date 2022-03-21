@@ -33,9 +33,9 @@ echo date('H:i:s Y-m-d');
 <title>youtube-dl</title>
 <style>
 body{
-	background-color:#1E8449;
+	background-color:#EAECEE;
 	font-family:Arial;
-	color:white;
+	color:black;
 }
 .box{
 	border: 1px solid;
@@ -211,7 +211,7 @@ if($C < 4) {echo '<caption><h1><font color="#FF0000">正在上传115，请只打
 
 
 $url1 = file_get_contents("vimeodlurl.txt");
-echo '<p><a href="'.$url1.'">链接：'.$url1.'</a></p>';
+echo '<p><a href="'.$url1.'">'.$url1.'</a></p>';
 
 echo '<caption><h3>下载进度</h3></caption>';
 $content = file_get_contents("vimeodl下载日志.txt");
