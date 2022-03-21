@@ -70,6 +70,8 @@ $date = date('Y-m-d-H-i-s');
 shell_exec("mkdir $date");
 	
 shell_exec("rm -rf /app/web/vimeodl2/*.part"); //删除临时文件
+shell_exec("rm -rf /app/web/vimeodl2/*.ytdl"); //删除临时文件
+shell_exec("rm -rf /app/web/vimeodl2/*.part-Frag*"); //删除临时文件
 shell_exec("rm -rf /app/web/vimeodl2上传百度网盘.txt"); //删除临时文件
 shell_exec("rm -rf /app/web/vimeodl2下载日志.txt"); //删除临时文件
 shell_exec("pkill BaiduPCS-Go");
