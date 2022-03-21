@@ -49,8 +49,8 @@ body{
 <h1>youtube-dl</h1>
 <p>Paste the URL below, and press GO.</p>
 <form action="vimeodl2.php" method="get">
-URL: <input type="text" name="url">
-<input type="submit" value="下载">
+URL: <input type="text" name="url" style="font-size:25px">
+<input type="submit" value="下载" style="font-size:23px">
 </form>
 
 <p><a href="vimeodl2.php">刷新</a></p>
