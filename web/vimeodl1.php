@@ -241,7 +241,7 @@ function readableBytes($size0) {
 }
 
    $num=0;    //用来记录目录下的文件个数
-   $dirname='./vimeodl1/'; //要遍历的目录名字
+   $dirname='./115/'; //要遍历的目录名字
    $dir_handle=opendir($dirname);
  
    echo '<table border="1" align="center" width="auto" cellspacing="0" cellpadding="0">';
