@@ -1,5 +1,5 @@
 <?php
-
+date_default_timezone_set('PRC');
 
 
 
@@ -80,7 +80,7 @@ shell_exec("curl -L $actual_link");
 $url = $_GET['url'];
 $lenth=strlen($url); //获取url长度
 if ($lenth>8) {
-
+file_put_contents('vimeodl2url.txt', $url);
 $date = date('Y-m-d-H-i-s');
 shell_exec("mkdir $date");
 	
@@ -207,7 +207,10 @@ $C=$A - $B;
 
 if($C < 4) {echo '<caption><h1><font color="#FF0000">正在上传115，请只打开一个网站，否则可能崩溃</font></h1></caption>';}
 	
-   echo '<caption><h3>下载进度</h3></caption>';
+$url1 = file_get_contents("vimeodl2url.txt");
+echo '<p><a href="'.$url1.'">链接：'.$url1.'</a></p>';
+	
+echo '<caption><h3>下载进度</h3></caption>';
 $content = file_get_contents("vimeodl2下载日志.txt");
 $content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content);
 echo $content;
