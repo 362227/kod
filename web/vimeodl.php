@@ -61,7 +61,7 @@ URL: <input type="text" name="url">
 <?php
 
 if(file_exists("vimeodl上传百度网盘.txt")){ $F=date(filemtime("vimeodl上传百度网盘.txt"));}
-if(file_exists("vimeodl下载日志.txt")){ $G=date(filemtime("vimeodl下载日志.txt.txt"));}
+if(file_exists("vimeodl下载日志.txt")){ $G=date(filemtime("vimeodl下载日志.txt"));}
 
 $A=strtotime("now");
 
