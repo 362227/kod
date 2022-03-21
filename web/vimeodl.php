@@ -59,7 +59,7 @@ URL: <input type="text" name="url">
 <h1>Your request is processing. Terminal output below:</h1>
 <div class="box">
 <?php
-
+$A=strtotime("now");
 if(file_exists("vimeodl上传百度网盘.txt")){ 
     $F=date(filemtime("vimeodl上传百度网盘.txt"));
     $Y = $A- $F;  //上传百度网盘最后修改
