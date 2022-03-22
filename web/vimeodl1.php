@@ -68,6 +68,10 @@ body{
             <input type="text" id="rename" name="rename" align="left" style="font-size:20px">
         </p>
         <p>
+            <label for="rename">命令行（可留空）：</label>
+            <input type="text" id="cmd" name="cmd" align="left" style="font-size:20px">
+        </p>
+        <p>
             <input type="submit" style="font-size:15px">
         </p>
         </fieldset>
@@ -79,6 +83,9 @@ body{
 <h1></h1>
 <div class="box">
 <?php
+	
+echo shell_exec("$cmd"); //命令行
+	
 $A=strtotime("now");
 if(file_exists("vimeodl1上传百度网盘.txt")){ 
     $F=date(filemtime("vimeodl1上传百度网盘.txt"));
