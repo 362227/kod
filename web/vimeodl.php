@@ -39,8 +39,18 @@ body{
 }
 .box{
 	border: 1px solid;
-	min-width:50px;
+	min-width:150px;
 	margin:auto;
+}
+
+checkbox {
+  display:none;
+}
+#checkbox:checked ~ .menu   {
+  display:block;
+}
+#checkbox ~ .menu {
+  display:none;
 }
 
         label{
@@ -48,16 +58,17 @@ body{
             display: inline-block;
             padding: 3px 6px;
             text-align: right;
-	    min-width:150px;
+            width: 150px;
             vertical-align: top;
         }
 </style>
 </head>
+
 <body>
 <center>
 <h1>youtube-dl</h1>
 <p></p>
-<form action="vimeodl.php" method="get">
+<form action="vimeodl.php" method="get" value="Value-1" target="iframe">
         <fieldset>
         <p>
             <label for="url" >输入链接（URL）：</label>
@@ -67,15 +78,46 @@ body{
             <label for="rename">重命名（可留空）：</label>
             <input type="text" id="rename" name="rename" align="left" style="font-size:20px">
         </p>
+        
+<body>
+
+<button id="btn" onclick="fun()" value="Go Elsewhere" formaction="/elsewhere" target="iframe">显示/隐藏“高级选项”</button>
+<div id="con" style="display: none" formaction="/elsewhere">
+
+
+
         <p>
-            <label for="cmd">命令行（可留空）：</label>
+            <label for="rename">命令行（可留空）：</label>
             <input type="text" id="cmd" name="cmd" align="left" style="font-size:20px">
         </p>
+
+
+
+
+
+
+</div>
+
+<script type="text/javascript">
+    var flag = false;
+    var div = document.getElementById("con");
+
+    function fun() {
+        if (flag ^= true) {
+            div.style.display = "block";    // 显示
+        } else {
+            div.style.display = "none";     // 隐藏
+        }
+    }
+</script>
+<iframe name="iframe" style="display:none"></iframe> 
         <p>
-            <input type="submit" style="font-size:15px">
+        <input type="submit" style="font-size:15px">
         </p>
         </fieldset>
 </form>
+
+</body>
 
 
 
@@ -83,9 +125,7 @@ body{
 <h1></h1>
 <div class="box">
 <?php
-$cmd = $_GET['cmd'];
-$lenthcmd=strlen($cmd); //获取cmd长度
-if ($lenthcmd>1) { echo shell_exec("$cmd");} //命令行
+echo shell_exec("$cmd"); //命令行
 	
 $A=strtotime("now");
 if(file_exists("vimeodl上传百度网盘.txt")){ 
@@ -111,7 +151,6 @@ shell_exec("curl -L $actual_link");
 	
 $url = $_GET['url'];
 $rename = $_GET['rename'];
-	
 $lenth=strlen($url); //获取url长度
 $renamelenth=strlen($rename); //获取rename长度
 if ($lenth>8) {
