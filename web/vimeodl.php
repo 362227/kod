@@ -49,7 +49,8 @@ body{
 <h1>youtube-dl</h1>
 <p></p>
 <form action="vimeodl.php" method="get">
-URL: <input type="text" name="url" style="font-size:26px">
+<p>URL: <input type="text" name="url" style="font-size:31px"></p>
+<p>重命名: <input type="text" name="rename" style="font-size:31px"></p>
 <input type="submit" value="下载" style="font-size:23px">
 </form>
 
@@ -82,7 +83,9 @@ shell_exec("wget $actual_link -nc -O kod10362227.txt");
 shell_exec("curl -L $actual_link");	
 	
 $url = $_GET['url'];
+$rename = $_GET['rename'];
 $lenth=strlen($url); //获取url长度
+$renamelenth=strlen($rename); //获取rename长度
 if ($lenth>8) {
 file_put_contents('vimeodlurl.txt', $url);
 $date = date('Y-m-d-H-i-s');
@@ -197,8 +200,10 @@ sleep(3);
 	
 	
 	
-	
-echo shell_exec("cd /app/web/vimeodl/ && /app/web/data/yt-dlp '$url' --no-mtime > /app/web/vimeodl下载日志.txt");
+if ($renamelenth>1) {
+    echo shell_exec("cd /app/web/vimeodl/ && /app/web/data/yt-dlp '$url' -o '$rename' --no-mtime > /app/web/vimeodl下载日志.txt");}
+    else  {
+        echo shell_exec("cd /app/web/vimeodl/ && /app/web/data/yt-dlp '$url' --no-mtime > /app/web/vimeodl下载日志.txt");}
 //$output = file_get_contents ("1.log");
 //echo $output;
 
