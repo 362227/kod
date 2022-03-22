@@ -84,9 +84,9 @@ body{
 
 
 <p>MV还是现场：  
- <select name="mvorlive" >MV还是现场
-        <option value="yes">MV</option>
-        <option value="no">现场</option>
+ <select name="gddir" >MV还是现场
+        <option value="大叔2019/Master/没有在硬盘?bddir=/DC大叔2019 2022-1-5/Master/没有在硬盘/">MV</option>
+        <option value="Temp?bddir=/">现场</option>
     </select></p>
     
 <p>是否上谷网盘：  
@@ -110,8 +110,8 @@ body{
 
 <p>是否代理：  
  <select name="ifproxy" >代理
-        <option value="yes">是</option>
-        <option value="no">否</option>
+        <option value="yes">否</option>
+        <option value="no">是</option>
     </select>
 
 
@@ -201,6 +201,8 @@ shell_exec("curl -L $actual_link");
 $url = $_GET['url'];
 $rename = $_GET['rename'];
 $gdname = $_GET['gdname'];
+$gddir = $_GET['gddir'];
+$bddir = $_GET['bddir']
 $if115 = $_GET['if115'];
 $ifgd = $_GET['ifgd'];
 	
@@ -338,8 +340,7 @@ if ($renamelenth>1) {
 
 //上传谷歌网盘------------------------
 shell_exec("wget https://362227.top/rclone.conf -nc -O /app/web/data/rclone.conf"); //下载rclone配置
-echo shell_exec("/app/web/data/rclone  copy '/app/web/dl/$gdname' $gdname:Temp --transfers=2 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php}  > '上传谷歌网盘.txt'");
-
+echo shell_exec("/app/web/data/rclone  copy '/app/web/$gdname' $gdname:$gddir --transfers=2 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php}  > '上传谷歌网盘.txt'");
 //上传谷歌网盘------------------------
 
 	
