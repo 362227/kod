@@ -85,8 +85,8 @@ body{
 
 <p>MV还是现场：  
  <select name="gddir" >MV还是现场
-        <option value="大叔2019/Master/没有在硬盘?bddir=/DC大叔2019 2022-1-5/Master/没有在硬盘/">MV</option>
-        <option value="Temp?bddir=/">现场</option>
+        <option value="大叔2019/Master/没有在硬盘&bddir=/DC大叔2019 2022-1-5/Master/没有在硬盘/">MV</option>
+        <option value="Temp&bddir=/">现场</option>
     </select></p>
     
 <p>是否上谷网盘：  
