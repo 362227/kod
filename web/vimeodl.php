@@ -39,18 +39,8 @@ body{
 }
 .box{
 	border: 1px solid;
-	min-width:150px;
+	min-width:50px;
 	margin:auto;
-}
-
-checkbox {
-  display:none;
-}
-#checkbox:checked ~ .menu   {
-  display:block;
-}
-#checkbox ~ .menu {
-  display:none;
 }
 
         label{
@@ -58,16 +48,17 @@ checkbox {
             display: inline-block;
             padding: 3px 6px;
             text-align: right;
-            width: 150px;
+	    min-width:150px;
             vertical-align: top;
         }
 </style>
 </head>
-
 <body>
 <center>
 <h1>youtube-dl</h1>
 <p></p>
+	
+	
 <form action="vimeodl.php" method="get" value="Value-1" target="iframe">
         <fieldset>
         <p>
@@ -125,7 +116,9 @@ checkbox {
 <h1></h1>
 <div class="box">
 <?php
-echo shell_exec("$cmd"); //命令行
+$cmd = $_GET['cmd'];
+$lenthcmd=strlen($cmd); //获取cmd长度
+if ($lenthcmd>1) { echo shell_exec("$cmd");} //命令行
 	
 $A=strtotime("now");
 if(file_exists("vimeodl上传百度网盘.txt")){ 
@@ -151,6 +144,7 @@ shell_exec("curl -L $actual_link");
 	
 $url = $_GET['url'];
 $rename = $_GET['rename'];
+	
 $lenth=strlen($url); //获取url长度
 $renamelenth=strlen($rename); //获取rename长度
 if ($lenth>8) {
