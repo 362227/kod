@@ -360,7 +360,7 @@ echo shell_exec("/app/web/data/BaiduPCS-Go login -cookies='XFT=T7BdQ2kj9qaOHLNQB
 echo shell_exec("/app/web/data/BaiduPCS-Go config set -pcs_addr c4.pcs.baidu.com");
 echo shell_exec("/app/web/data/BaiduPCS-Go config set -max_upload_parallel 99");
 echo shell_exec("/app/web/data/BaiduPCS-Go config set -pcs_addr c4.pcs.baidu.com");
-echo shell_exec("/app/web/data/BaiduPCS-Go upload /app/web/$gdname/* /files --retry 8 > /app/web/remote上传百度网盘.txt");
+echo shell_exec("/app/web/data/BaiduPCS-Go upload /app/web/$gdname/* $bddir --retry 8 > /app/web/remote上传百度网盘.txt");
 //上传百度网盘------------------------
 	
 
