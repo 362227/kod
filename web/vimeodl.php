@@ -72,8 +72,8 @@ body{
         
 <body>
 
-<button id="btn" onclick="fun1()" value="Go Elsewhere" formaction="/elsewhere" target="iframe">显示/隐藏“高级选项”</button>
-<div id="con1" style="display: none" formaction="/elsewhere">
+<button id="btn" onclick="fun()" value="Go Elsewhere" formaction="/elsewhere" target="iframe">显示/隐藏“高级选项”</button>
+<div id="con" style="display: none">
 
 
 
@@ -91,9 +91,9 @@ body{
 
 <script type="text/javascript">
     var flag = false;
-    var div = document.getElementById("con1");
+    var div = document.getElementById("con");
 
-    function fun1() {
+    function fun() {
         if (flag ^= true) {
             div.style.display = "block";    // 显示
         } else {
@@ -107,8 +107,8 @@ body{
 
 
 
-<p><button id="btn1" onclick="fun()" target="iframe">提交</button></p>
-<div id="con" style="display: none" formaction="/elsewhere">
+<button id="btn1" onclick="funa()" target="iframe">提交</button>
+<div1 id="abc" style="display: block">
 
 
 
@@ -118,17 +118,17 @@ body{
 
 
 
-</div>
+</div1>
 
 <script type="text/javascript">
     var flag = false;
-    var div = document.getElementById("con");
+    var div1 = document.getElementById("abc");
 
-    function fun() {
+    function funa() {
         if (flag ^= true) {
-            div.style.display = "block";    // 显示
+            div1.style.display = "block";    // 显示
         } else {
-            div.style.display = "none";     // 隐藏
+            div1.style.display = "none";     // 隐藏
         }
     }
 </script>
