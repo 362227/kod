@@ -219,8 +219,8 @@ $ifd = preg_replace('/是/',' ', $ifd);
 $ifgd = $_GET['ifgd'];
 $ifgd = preg_replace('/是/',' ', $ifgd); 
 	
-$mv = 'mv';
-if ($mvorlive === $mv) {$gddir='大叔2019/Master/没有在硬盘';
+$mvorlivelenth = strlen($mvorlive); // mv 2个字节 live 4 个字节
+if ($mvorlivelenth < 3) {$gddir='大叔2019/Master/没有在硬盘';  //小于3，就是MV
 	               $bddir='/DC大叔2019 2022-1-5/Master/没有在硬盘/';
                    $dir115='/DC大叔2019 2022-1-5/Master/没有在硬盘/';
 }
