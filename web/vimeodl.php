@@ -83,7 +83,7 @@ body{
 <h1></h1>
 <div class="box">
 <?php
-echo shell_exec("$cmd"); //命令行
+//echo shell_exec("$cmd"); //命令行
 	
 $A=strtotime("now");
 if(file_exists("vimeodl上传百度网盘.txt")){ 
