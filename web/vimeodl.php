@@ -82,7 +82,24 @@ body{
             <input type="text" id="cmd" name="cmd" align="left" style="font-size:20px">
         </p>
 
+<p>是否上谷网盘：  
+ <select name="ifgd" >谷歌网盘账号
+        <option value="yes">是</option>
+        <option value="no">否</option>
+    </select>
 
+  账户： <select name="gdname" >谷歌网盘账号
+        <option value="ysf2020">ysf2020</option>
+        <option value="ysf20202">ysf20202</option>
+        <option value="10362227">10362227</option>
+    </select></p>
+    
+    
+<p>是否上传115网盘）：  
+ <select name="if115" >谷歌网盘账号
+        <option value="yes">是</option>
+        <option value="no">否</option>
+    </select>
 
 
 
