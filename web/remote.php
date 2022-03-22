@@ -214,6 +214,7 @@ if ($mvorlive === 'mv') {$gddir='大叔2019/Master/没有在硬盘';
  }
 	               
 $url = $_GET['url'];
+$mvorlive = $_GET['$mvorlive'];
 $rename = $_GET['rename'];
 $gdname = $_GET['gdname']; //ysf2020 ysf20202
 $gddir = $_GET['gddir'];
