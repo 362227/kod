@@ -371,8 +371,35 @@ header("HTTP/1.1 200 OK"); //可以发送200状态码，以这些请求是成功
 //register_shutdown_function("runRack");
 //return  ;
 ob_start();//开始当前代码缓冲
-$arr = '<p>已添加成功。勿刷新该页面！<a href="/vimeodl.php" class="item project">点击返回查看进度</a></p>';
-echo $arr;
+echo '<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>div居于页面正中间</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            background-color: #EAEAEA;
+        }
+
+        .center-in-center{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="center-in-center"><p><h1>已添加成功。勿刷新该页面！<a href="/vimeodl1.php" class="item project">点击返回查看进度</a></h1></p></div>
+</body>
+</html>';
+	
 //下面输出http的一些头信息
 $size = ob_get_length();
 header("Content-Length: $size");
