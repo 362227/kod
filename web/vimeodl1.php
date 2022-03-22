@@ -220,7 +220,7 @@ $C=$A - $B;
 if($C < 4) {echo '<caption><h1><font color="#FF0000">正在上传115，请只打开一个网站，否则可能崩溃</font></h1></caption>';}
 	
 $url1 = file_get_contents("vimeodl1url.txt");
-$url2 = preg_replace('/(^http|^youtube|^vimeo|^www)([\s\S]{8,80}).*/','$1$2', $url1); //取url前8-80个作为超链名字
+$url2 = preg_replace('/(^http|^youtube|^vimeo|^www)([\s\S]{8,60}).*/','$1$2', $url1); //取url前8-60个作为超链名字
 echo '<p><a href="'.$url1.'">'.$url2.'</a></p>';
 echo '<caption><h3>下载进度</h3></caption>';
 $content = file_get_contents("vimeodl1下载日志.txt");
