@@ -107,7 +107,7 @@ body{
 
 
 
-<button id="btn1" onclick="funa()" target="iframe">提交</button>
+<p><button id="btn1" onclick="funa()" target="iframe">提交</button></p>
 <div1 id="abc" style="display: block">
 
 
