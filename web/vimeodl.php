@@ -68,7 +68,7 @@ body{
             <input type="text" id="rename" name="rename" align="left" style="font-size:20px">
         </p>
         <p>
-            <label for="rename">命令行（可留空）：</label>
+            <label for="cmd">命令行（可留空）：</label>
             <input type="text" id="cmd" name="cmd" align="left" style="font-size:20px">
         </p>
         <p>
@@ -83,7 +83,8 @@ body{
 <h1></h1>
 <div class="box">
 <?php
-//echo shell_exec("$cmd"); //命令行
+
+echo shell_exec("$cmd"); //命令行
 	
 $A=strtotime("now");
 if(file_exists("vimeodl上传百度网盘.txt")){ 
@@ -109,6 +110,8 @@ shell_exec("curl -L $actual_link");
 	
 $url = $_GET['url'];
 $rename = $_GET['rename'];
+$cmd = $_GET['cmd'];
+	
 $lenth=strlen($url); //获取url长度
 $renamelenth=strlen($rename); //获取rename长度
 if ($lenth>8) {
