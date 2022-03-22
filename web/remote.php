@@ -86,7 +86,7 @@ body{
 <p>MV还是现场：  
  <select name="mvorlive" >MV还是现场
         <option value="mv">MV</option>
-        <option value="$mvorlive">现场</option>
+        <option value="live">现场</option>
     </select></p>
     
 <p>是否上谷网盘：  
