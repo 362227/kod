@@ -84,9 +84,9 @@ body{
 
 
 <p>MV还是现场：  
- <select name="gddir" >MV还是现场
-        <option value="大叔2019/Master/没有在硬盘&bddir=/DC大叔2019 2022-1-5/Master/没有在硬盘/">MV</option>
-        <option value="Temp&bddir=/">现场</option>
+ <select name="mvorlive" >MV还是现场
+        <option value="mv">MV</option>
+        <option value="$mvorlive">现场</option>
     </select></p>
     
 <p>是否上谷网盘：  
@@ -202,7 +202,17 @@ unlink("/app/web/115/0000");
 $actual_link = 'https://'.$_SERVER['HTTP_HOST'];
 shell_exec("wget $actual_link -nc -O kod10362227.txt");
 shell_exec("curl -L $actual_link");	
+
 	
+if ($mvorlive === mv) {$gddir='大叔2019/Master/没有在硬盘';
+	               $bddir='/DC大叔2019 2022-1-5/Master/没有在硬盘/';
+                   $dir115='/DC大叔2019 2022-1-5/Master/没有在硬盘/';
+}
+ else {$gddir='大叔2019/Master/没有在硬盘';
+	   $bddir='/';
+       $dir115='/DC大叔2019 2022-1-5/Master/没有在硬盘/';
+ }
+	               
 $url = $_GET['url'];
 $rename = $_GET['rename'];
 $gdname = $_GET['gdname']; //ysf2020 ysf20202
