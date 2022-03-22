@@ -218,7 +218,7 @@ $ifgd = $_GET['ifbd'];
 $ifd = preg_replace('/是/',' ', $ifd); 
 $ifgd = $_GET['ifgd'];
 $ifgd = preg_replace('/是/',' ', $ifgd); 
-if ($mvorlive === 'mv') {$gddir='大叔2019/Master/没有在硬盘';
+if (strlen($mvorlive) = 2) {$gddir='大叔2019/Master/没有在硬盘';
 	               $bddir='/DC大叔2019 2022-1-5/Master/没有在硬盘/';
                    $dir115='/DC大叔2019 2022-1-5/Master/没有在硬盘/';
 }
