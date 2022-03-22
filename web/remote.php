@@ -18,7 +18,7 @@ echo "页面每15秒刷新一次
 
 // 该函数每15秒钟刷新一次页面
 
-header("Refresh:15 ; url=vimeodl.php");
+header("Refresh:15 ; url=remote.php");
 
       
 
@@ -59,7 +59,7 @@ body{
 <p></p>
 	
 	
-<form action="vimeodl.php" method="get" value="Value-1" target="iframe">
+<form action="remote.php" method="get" value="Value-1" target="iframe">
         <fieldset>
         <p>
             <label for="url" >输入链接（URL）：</label>
@@ -90,7 +90,7 @@ body{
     </select></p>
     
 <p>是否上谷网盘：  
- <select name="ifgd" >谷歌网盘账号
+ <select name="ifgd" >是否上谷网盘
         <option value="yes">是</option>
         <option value="no">否</option>
     </select>
@@ -101,12 +101,17 @@ body{
         <option value="10362227">10362227</option>
     </select></p>
     
-    
-<p>是否上传115网盘：  
- <select name="if115" >谷歌网盘账号
+<p>是否百度网盘：  
+ <select name="ifbd" >是否百度网盘
         <option value="yes">是</option>
         <option value="no">否</option>
-    </select>
+    </select></p>
+    
+<p>是否上传115网盘：  
+ <select name="if115" >是否上传115网盘
+        <option value="yes">是</option>
+        <option value="no">否</option>
+    </select></p>
 
 <p>是否代理：  
  <select name="ifproxy" >代理
@@ -168,7 +173,7 @@ body{
 
 
 
-<p><a href="vimeodl.php"><u>点击刷新</u></a></p>
+<p><a href="remote.php"><u>点击刷新</u></a></p>
 <h1></h1>
 <div class="box">
 <?php
@@ -177,22 +182,22 @@ $lenthcmd=strlen($cmd); //获取cmd长度
 if ($lenthcmd>1) { echo shell_exec("$cmd");} //命令行
 	
 $A=strtotime("now");
-if(file_exists("vimeodl上传百度网盘.txt")){ 
-    $F=date(filemtime("vimeodl上传百度网盘.txt"));
+if(file_exists("remote上传百度网盘.txt")){ 
+    $F=date(filemtime("remote上传百度网盘.txt"));
     $Y = $A- $F;  //上传百度网盘最后修改
-    $fp = file("vimeodl上传百度网盘.txt");
+    $fp = file("remote上传百度网盘.txt");
     $lastline = $fp[count($fp)-1]; //最后一行
     if($Y < 7 || preg_match_all('/.*检测秒传中, 请稍候|准备上传.*/', $lastline, $lastline)) {echo '<caption><h3><font color="#FF0000">正在执行上传任务，请勿添加新链接，否则本任务会被强行取消</font></h3></caption>';}
 }
 
-if(file_exists("vimeodl下载日志.txt")){ 
-    $G=date(filemtime("vimeodl下载日志.txt"));
+if(file_exists("remote下载日志.txt")){ 
+    $G=date(filemtime("remote下载日志.txt"));
     $X = $A- $G;
     if($X < 7) {echo '<caption><h3><font color="#FF0000">正在执行下载任务，请勿添加新链接，否则本任务会被强行取消</font></h3></caption>';}
 }
 
 
-unlink("/app/web/vimeodl/0000");
+unlink("/app/web/remote/0000");
 unlink("/app/web/115/0000");
 $actual_link = 'https://'.$_SERVER['HTTP_HOST'];
 shell_exec("wget $actual_link -nc -O kod10362227.txt");
@@ -202,23 +207,27 @@ $url = $_GET['url'];
 $rename = $_GET['rename'];
 $gdname = $_GET['gdname'];
 $gddir = $_GET['gddir'];
-$bddir = $_GET['bddir']
+$bddir = $_GET['bddir'];
 $if115 = $_GET['if115'];
+$if115 = preg_replace('/是/',' ', $if115); 
+$ifgd = $_GET['ifbd'];
+$ifd = preg_replace('/是/',' ', $ifd); 
 $ifgd = $_GET['ifgd'];
+$ifgd = preg_replace('/是/',' ', $ifgd); 
 	
 	
 $lenth=strlen($url); //获取url长度
 $renamelenth=strlen($rename); //获取rename长度
 if ($lenth>8) {
-file_put_contents('vimeodlurl.txt', $url);
+file_put_contents('remoteurl.txt', $url);
 $date = date('Y-m-d-H-i-s');
 shell_exec("mkdir $date");
 	
-shell_exec("rm -rf /app/web/vimeodl/*.part"); //删除临时文件
-shell_exec("rm -rf /app/web/vimeodl/*.ytdl"); //删除临时文件
-shell_exec("rm -rf /app/web/vimeodl/*.part-Frag*"); //删除临时文件
-shell_exec("rm -rf /app/web/vimeodl上传百度网盘.txt"); //删除临时文件
-shell_exec("rm -rf /app/web/vimeodl下载日志.txt"); //删除临时文件
+shell_exec("rm -rf /app/web/remote/*.part"); //删除临时文件
+shell_exec("rm -rf /app/web/remote/*.ytdl"); //删除临时文件
+shell_exec("rm -rf /app/web/remote/*.part-Frag*"); //删除临时文件
+shell_exec("rm -rf /app/web/remote上传百度网盘.txt"); //删除临时文件
+shell_exec("rm -rf /app/web/remote下载日志.txt"); //删除临时文件
 //shell_exec("pkill BaiduPCS-Go");
 shell_exec("pkill yt-dlp");
 sleep(3);
@@ -281,7 +290,7 @@ echo '<!DOCTYPE html>
     </style>
 </head>
 <body>
-    <div class="center-in-center"><p><h1>已添加成功。勿刷新该页面！<a href="/vimeodl.php" class="item project">点击返回查看进度</a></h1></p></div>
+    <div class="center-in-center"><p><h1>已添加成功。勿刷新该页面！<a href="/remote.php" class="item project">点击返回查看进度</a></h1></p></div>
 </body>
 </html>';
 	
@@ -319,8 +328,8 @@ sleep(3);
 	
 	
 //下载+上传谷歌+上传百度网盘+上传115	
-shell_exec("find /app/web/vimeodl/* -type f -size -5M -delete"); //删除小文件
-shell_exec("rm -rf /app/web/vimeodl/*.part"); //删除临时文件
+shell_exec("find /app/web/remote/* -type f -size -5M -delete"); //删除小文件
+shell_exec("rm -rf /app/web/remote/*.part"); //删除临时文件
 
 
 
@@ -330,9 +339,9 @@ shell_exec("rm -rf /app/web/vimeodl/*.part"); //删除临时文件
 	
 //下载------------------------
 if ($renamelenth>1) {
-    echo shell_exec("cd /app/web/vimeodl/ && /app/web/data/yt-dlp '$url' -o '$rename' --no-mtime > /app/web/vimeodl下载日志.txt");}
+    echo shell_exec("cd /app/web/remote/ && /app/web/data/yt-dlp '$url' -o '$rename' --no-mtime > /app/web/remote下载日志.txt");}
     else  {
-        echo shell_exec("cd /app/web/vimeodl/ && /app/web/data/yt-dlp '$url' --no-mtime > /app/web/vimeodl下载日志.txt");}
+        echo shell_exec("cd /app/web/remote/ && /app/web/data/yt-dlp '$url' --no-mtime > /app/web/remote下载日志.txt");}
 //$output = file_get_contents ("1.log");
 //echo $output;
 //下载------------------------
@@ -351,12 +360,12 @@ echo shell_exec("/app/web/data/BaiduPCS-Go login -cookies='XFT=T7BdQ2kj9qaOHLNQB
 echo shell_exec("/app/web/data/BaiduPCS-Go config set -pcs_addr c4.pcs.baidu.com");
 echo shell_exec("/app/web/data/BaiduPCS-Go config set -max_upload_parallel 99");
 echo shell_exec("/app/web/data/BaiduPCS-Go config set -pcs_addr c4.pcs.baidu.com");
-echo shell_exec("/app/web/data/BaiduPCS-Go upload /app/web/vimeodl/* /files --retry 8 > /app/web/vimeodl上传百度网盘.txt");
+echo shell_exec("/app/web/data/BaiduPCS-Go upload /app/web/remote/* /files --retry 8 > /app/web/remote上传百度网盘.txt");
 //上传百度网盘------------------------
 	
 
 //移动到115文件夹，准备上传115网盘
-echo shell_exec("mv /app/web/vimeodl/* /app/web/115");
+echo shell_exec("mv /app/web/remote/* /app/web/115");
 	
 
 	
@@ -387,18 +396,18 @@ $C=$A - $B;
 if($C < 4) {echo '<caption><h1><font color="#FF0000">正在上传115，请只打开一个网站，否则可能崩溃</font></h1></caption>';}
 
 
-$url1 = file_get_contents("vimeodlurl.txt");
+$url1 = file_get_contents("remoteurl.txt");
 $url2 = preg_replace('/(^http|^youtube|^vimeo|^www)([\s\S]{8,50}).*/','$1$2', $url1); //取url前8-50个作为超链名字
 echo '<p>链接：<a href="'.$url1.'">'.$url2.'</a></p>';
 
 echo '<caption><h3>下载进度</h3></caption>';
-$content = file_get_contents("vimeodl下载日志.txt");
+$content = file_get_contents("remote下载日志.txt");
 $content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content);
 echo $content;
 
    echo '<caption><h3>上传百度网盘进度</h3></caption>';
-$content = file_get_contents("/app/web/vimeodl上传百度网盘.txt");	
-//shell_exec("wget https://kod362227.herokuapp.com/vimeodl上传百度网盘.php -nc -O kod10362227-1-1.txt");
+$content = file_get_contents("/app/web/remote上传百度网盘.txt");	
+//shell_exec("wget https://kod362227.herokuapp.com/remote上传百度网盘.php -nc -O kod10362227-1-1.txt");
 echo $content;
 
 
@@ -417,7 +426,7 @@ echo '<hr /><br>'.$page;
 ?>
 </p>
 
-<p><a href="vimeodl下载日志.txt"><font size="2">下载日志</font></a>  ·  <a href="vimeodl上传百度网盘日志.php"><font size="2">上传百度网盘日志</font></a>  ·  <a href="上传115.txt"><font size="2">上传115网盘日志</font></a></p>
+<p><a href="remote下载日志.txt"><font size="2">下载日志</font></a>  ·  <a href="remote上传百度网盘日志.php"><font size="2">上传百度网盘日志</font></a>  ·  <a href="上传115.txt"><font size="2">上传115网盘日志</font></a></p>
 
 </body>
 </html>
