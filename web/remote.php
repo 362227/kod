@@ -204,7 +204,7 @@ shell_exec("wget $actual_link -nc -O kod10362227.txt");
 shell_exec("curl -L $actual_link");	
 
 	
-if ($mvorlive === mv) {$gddir='大叔2019/Master/没有在硬盘';
+if ($mvorlive === 'mv') {$gddir='大叔2019/Master/没有在硬盘';
 	               $bddir='/DC大叔2019 2022-1-5/Master/没有在硬盘/';
                    $dir115='/DC大叔2019 2022-1-5/Master/没有在硬盘/';
 }
