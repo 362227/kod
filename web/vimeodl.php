@@ -72,8 +72,8 @@ body{
         
 <body>
 
-<button id="btn" onclick="fun()" value="Go Elsewhere" formaction="/elsewhere" target="iframe">显示/隐藏“高级选项”</button>
-<div id="con" style="display: none" formaction="/elsewhere">
+<button id="btn" onclick="fun1()" value="Go Elsewhere" formaction="/elsewhere" target="iframe">显示/隐藏“高级选项”</button>
+<div id="con1" style="display: none" formaction="/elsewhere">
 
 
 
@@ -82,6 +82,37 @@ body{
             <input type="text" id="cmd" name="cmd" align="left" style="font-size:20px">
         </p>
 
+
+
+
+
+
+</div>
+
+<script type="text/javascript">
+    var flag = false;
+    var div = document.getElementById("con1");
+
+    function fun1() {
+        if (flag ^= true) {
+            div.style.display = "block";    // 显示
+        } else {
+            div.style.display = "none";     // 隐藏
+        }
+    }
+</script>
+<iframe name="iframe" style="display:none"></iframe> 
+        
+
+
+
+
+<p><button id="btn1" onclick="fun()" target="iframe">提交</button></p>
+<div id="con" style="display: none" formaction="/elsewhere">
+
+
+
+        <p>添加成功 </p>
 
 
 
@@ -102,9 +133,6 @@ body{
     }
 </script>
 <iframe name="iframe" style="display:none"></iframe> 
-        <p>
-        <input type="submit" style="font-size:15px">
-        </p>
         </fieldset>
 </form>
 
