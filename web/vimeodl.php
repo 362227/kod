@@ -211,7 +211,7 @@ if($C < 4) {echo '<caption><h1><font color="#FF0000">正在上传115，请只打
 
 
 $url1 = file_get_contents("vimeodlurl.txt");
-$url2 = preg_replace('/(^http|^youtube|^vimeo|^www)([\s\S]{8,60}).*/','$1$2', $url1); //取url前8-60个作为超链名字
+$url2 = preg_replace('/(^http|^youtube|^vimeo|^www)([\s\S]{8,50}).*/','$1$2', $url1); //取url前8-50个作为超链名字
 echo '<p><a href="'.$url1.'">'.$url2.'</a></p>';
 
 echo '<caption><h3>下载进度</h3></caption>';
