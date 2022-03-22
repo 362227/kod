@@ -32,7 +32,7 @@ $_START_TIME = microtime(TRUE);
 
 //
 // Choose a language. See below in the language section for options.
-// Default: $_CONFIG['lang'] = "en";
+// Default: $_CONFIG['lang'] = "zh_CN";
 //
 $_CONFIG['lang'] = "en";
 
