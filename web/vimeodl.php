@@ -56,7 +56,7 @@ URL: <input type="text" name="url" style="font-size:26px">
 
 
 <p><a href="vimeodl.php">刷新</a></p>
-<h1>Your request is processing. Terminal output below:</h1>
+<h1></h1>
 <div class="box">
 <?php
 $A=strtotime("now");
@@ -211,7 +211,7 @@ if($C < 4) {echo '<caption><h1><font color="#FF0000">正在上传115，请只打
 
 
 $url1 = file_get_contents("vimeodlurl.txt");
-echo '<p><a href="'.$url1.'">'.$url1.'</a></p>';
+echo '<p><a href="'.$url1.'">下载链接</a></p>';
 
 echo '<caption><h3>下载进度</h3></caption>';
 $content = file_get_contents("vimeodl下载日志.txt");
