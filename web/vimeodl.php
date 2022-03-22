@@ -231,7 +231,7 @@ $page = file_get_contents($actual_link.'/encodeexplorer.index.php?m&sort_by=mod&
 
 $page = str_replace("src=\"?img","src=\"encodeexplorer.index.php?img",$page);
 $page = str_replace("<a href=\"?s&amp;dir=\">","<a href=\"encodeexplorer.index.php?sort_by=mod&sort_as=desc&dir=115/\">",$page);
-echo $page;
+echo '<hr /><br>'.$page;
 	
 	
 	
