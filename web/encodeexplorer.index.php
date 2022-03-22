@@ -1149,7 +1149,7 @@ table.table td{
 }
 
 table.table tr.row.two {
-	background-color:#EAECEE;
+	background-color:#E3E6F0;
 }
 
 table.table tr.row.one {
