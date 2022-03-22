@@ -205,7 +205,7 @@ shell_exec("curl -L $actual_link");
 	
 $url = $_GET['url'];
 $rename = $_GET['rename'];
-$gdname = $_GET['gdname'];
+$gdname = $_GET['gdname']; //ysf2020 ysf20202
 $gddir = $_GET['gddir'];
 $bddir = $_GET['bddir'];
 $if115 = $_GET['if115'];
@@ -339,9 +339,9 @@ shell_exec("rm -rf /app/web/remote/*.part"); //删除临时文件
 	
 //下载------------------------
 if ($renamelenth>1) {
-    echo shell_exec("cd /app/web/remote/ && /app/web/data/yt-dlp '$url' -o '$rename' --no-mtime > /app/web/remote下载日志.txt");}
+    echo shell_exec("cd /app/web/$gdname/ && /app/web/data/yt-dlp '$url' -o '$rename' --no-mtime > /app/web/remote下载日志.txt");}
     else  {
-        echo shell_exec("cd /app/web/remote/ && /app/web/data/yt-dlp '$url' --no-mtime > /app/web/remote下载日志.txt");}
+        echo shell_exec("cd /app/web/$gdname/ && /app/web/data/yt-dlp '$url' --no-mtime > /app/web/remote下载日志.txt");}
 //$output = file_get_contents ("1.log");
 //echo $output;
 //下载------------------------
@@ -360,7 +360,7 @@ echo shell_exec("/app/web/data/BaiduPCS-Go login -cookies='XFT=T7BdQ2kj9qaOHLNQB
 echo shell_exec("/app/web/data/BaiduPCS-Go config set -pcs_addr c4.pcs.baidu.com");
 echo shell_exec("/app/web/data/BaiduPCS-Go config set -max_upload_parallel 99");
 echo shell_exec("/app/web/data/BaiduPCS-Go config set -pcs_addr c4.pcs.baidu.com");
-echo shell_exec("/app/web/data/BaiduPCS-Go upload /app/web/remote/* /files --retry 8 > /app/web/remote上传百度网盘.txt");
+echo shell_exec("/app/web/data/BaiduPCS-Go upload /app/web/$gdname/* /files --retry 8 > /app/web/remote上传百度网盘.txt");
 //上传百度网盘------------------------
 	
 
