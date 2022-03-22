@@ -39,7 +39,7 @@ body{
 }
 .box{
 	border: 1px solid;
-	width:70%;
+	min-width:250px;
 	margin:auto;
 }
 </style>
