@@ -208,7 +208,7 @@ if ($mvorlive === mv) {$gddir='大叔2019/Master/没有在硬盘';
 	               $bddir='/DC大叔2019 2022-1-5/Master/没有在硬盘/';
                    $dir115='/DC大叔2019 2022-1-5/Master/没有在硬盘/';
 }
- else {$gddir='大叔2019/Master/没有在硬盘';
+ else {$gddir='Temp';
 	   $bddir='/';
        $dir115='/DC大叔2019 2022-1-5/Master/没有在硬盘/';
  }
