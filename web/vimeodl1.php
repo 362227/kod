@@ -68,7 +68,7 @@ body{
             <input type="text" id="rename" name="rename" align="left" style="font-size:20px">
         </p>
         <p>
-            <input type="submit">
+            <input type="submit" style="font-size:15px">
         </p>
         </fieldset>
 </form>
