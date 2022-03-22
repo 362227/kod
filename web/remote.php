@@ -82,6 +82,13 @@ body{
             <input type="text" id="cmd" name="cmd" align="left" style="font-size:20px">
         </p>
 
+
+<p>MV还是现场：  
+ <select name="mvorlive" >MV还是现场
+        <option value="yes">MV</option>
+        <option value="no">现场</option>
+    </select></p>
+    
 <p>是否上谷网盘：  
  <select name="ifgd" >谷歌网盘账号
         <option value="yes">是</option>
@@ -95,13 +102,17 @@ body{
     </select></p>
     
     
-<p>是否上传115网盘）：  
+<p>是否上传115网盘：  
  <select name="if115" >谷歌网盘账号
         <option value="yes">是</option>
         <option value="no">否</option>
     </select>
 
-
+<p>是否代理：  
+ <select name="ifproxy" >代理
+        <option value="yes">是</option>
+        <option value="no">否</option>
+    </select>
 
 
 </div>
@@ -189,6 +200,10 @@ shell_exec("curl -L $actual_link");
 	
 $url = $_GET['url'];
 $rename = $_GET['rename'];
+$gdname = $_GET['gdname'];
+$if115 = $_GET['if115'];
+$ifgd = $_GET['ifgd'];
+	
 	
 $lenth=strlen($url); //获取url长度
 $renamelenth=strlen($rename); //获取rename长度
@@ -301,25 +316,47 @@ sleep(3);
 	
 	
 	
+//下载+上传谷歌+上传百度网盘+上传115	
+shell_exec("find /app/web/vimeodl/* -type f -size -5M -delete"); //删除小文件
+shell_exec("rm -rf /app/web/vimeodl/*.part"); //删除临时文件
+
+
+
+
+
 	
 	
-	
-	
-	
+//下载------------------------
 if ($renamelenth>1) {
     echo shell_exec("cd /app/web/vimeodl/ && /app/web/data/yt-dlp '$url' -o '$rename' --no-mtime > /app/web/vimeodl下载日志.txt");}
     else  {
         echo shell_exec("cd /app/web/vimeodl/ && /app/web/data/yt-dlp '$url' --no-mtime > /app/web/vimeodl下载日志.txt");}
 //$output = file_get_contents ("1.log");
 //echo $output;
+//下载------------------------
 
-echo "下载";
+
+//上传谷歌网盘------------------------
+shell_exec("wget https://362227.top/rclone.conf -nc -O /app/web/data/rclone.conf"); //下载rclone配置
+echo shell_exec("/app/web/data/rclone  copy '/app/web/dl/$gdname' $gdname:Temp --transfers=2 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php}  > '上传谷歌网盘.txt'");
+
+//上传谷歌网盘------------------------
+
+	
+//上传百度网盘------------------------
+//echo shell_exec("/app/web/data/BaiduPCS-Go config set -proxy=127.0.0.1:8100");
+echo shell_exec("/app/web/data/BaiduPCS-Go login -cookies='XFT=T7BdQ2kj9qaOHLNQBzLXecEDq0NSMR1/cFI9Pg7+cP4=; XFCS=A0BAA1D3C3AFF60D8A9501F61A5316EB2F44DC96D5D069E28D965E876B51558D; BAIDUID_BFESS=1FAD127BAC0642BD179AE9232E9D3EAC:FG=1; __yjs_duid=1_b83edfa36c48d34c5d422654ad9291ff1632462458498; BAIDUID=EB8C0978CD2A3182C0C963B26A4F83BC:FG=1; BDUSS=zBnQnprSmR3c0xvSDh1Wk5vT3pkMmpSN2tTTlc4R2g1dUJKS2pKUnhpSnVGM1poRVFBQUFBJCQAAAAAABAAAAEAAAD2Tdr6REO088rlMjAxOQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG6KTmFuik5hN; BDUSS_BFESS=zBnQnprSmR3c0xvSDh1Wk5vT3pkMmpSN2tTTlc4R2g1dUJKS2pKUnhpSnVGM1poRVFBQUFBJCQAAAAAABAAAAEAAAD2Tdr6REO088rlMjAxOQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG6KTmFuik5hN; pan_login_way=1; csrfToken=Q7ezNP5m-MPzubHlXKXZKmR0; STOKEN=a035eb4833e11aabcfaf438a90d977308679fbe717aa1381ff4a276541884cbe; ZD_ENTRY=empty; PANPSC=6330118974698879948:HSTAF2XekfrDfJxofQvIR8/yqoAddd3nU4bHmv7k1lQb6OtHeDgTZITtPba1v5pWKB+Q1NY39EqaV1QHy3lx2+uwJgkIjG1NcDLxProYXAAu/GN14ZZ7XobjAuQ0lbzSIpBwzouoN4Fjy4bwAz5jQiHq5mg/cPBDsGdcW9T0tiRm65hzsZIwfARwtfBixKqXMKjxtxPUcwo='
+");
+echo shell_exec("/app/web/data/BaiduPCS-Go config set -pcs_addr c4.pcs.baidu.com");
+echo shell_exec("/app/web/data/BaiduPCS-Go config set -max_upload_parallel 99");
+echo shell_exec("/app/web/data/BaiduPCS-Go config set -pcs_addr c4.pcs.baidu.com");
+echo shell_exec("/app/web/data/BaiduPCS-Go upload /app/web/vimeodl/* /files --retry 8 > /app/web/vimeodl上传百度网盘.txt");
+//上传百度网盘------------------------
 	
 
-//$content = file_get_contents("https://kod362227.herokuapp.com/vimeodl上传百度网盘.php");	
-//shell_exec("wget https://kod362227.herokuapp.com/vimeodl上传百度网盘.php -nc -O kod10362227-1-1.txt");
-//echo $content;
-echo shell_exec("php vimeodl上传百度网盘.php");
+//移动到115文件夹，准备上传115网盘
+echo shell_exec("mv /app/web/vimeodl/* /app/web/115");
+	
 
 	
 echo '这里的输出用户看不到，后台运行的';
