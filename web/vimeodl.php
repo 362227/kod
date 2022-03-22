@@ -75,7 +75,8 @@ if(file_exists("vimeodl下载日志.txt")){
 }
 
 
-unlink("/app/web/vimeodl/0000");
+unlink("/vimeodl/0000");
+unlink("/115/0000");
 $actual_link = 'https://'.$_SERVER['HTTP_HOST'];
 shell_exec("wget $actual_link -nc -O kod10362227.txt");
 shell_exec("curl -L $actual_link");	
