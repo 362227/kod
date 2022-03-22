@@ -72,7 +72,8 @@ if(file_exists("vimeodl1下载日志.txt")){
     if($X < 7) {echo '<caption><h3><font color="#FF0000">正在执行下载任务，请勿添加新链接，否则本任务会被强行取消</font></h3></caption>';}
 }	
 	
-unlink("/app/web/vimeodl1/0000");
+unlink("/vimeodl1/0000");
+unlink("/115/0000");
 $actual_link = 'https://'.$_SERVER['HTTP_HOST'];
 shell_exec("wget $actual_link -nc -O kod10362227.txt");
 shell_exec("curl -L $actual_link");
