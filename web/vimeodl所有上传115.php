@@ -55,7 +55,7 @@ shell_exec("find /app/web/115/* -type f -size -5M -delete"); //删除小文件
 
 
 $B=date(filemtime("115"));
-$D=date(filemtime("上传115.log"));
+$D=date(filemtime("上传115.txt"));
 $A=strtotime("now");
 
 $C=$A-$B; //115文件夹修改时间离现在的时间
