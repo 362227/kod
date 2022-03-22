@@ -34,7 +34,7 @@ $_START_TIME = microtime(TRUE);
 // Choose a language. See below in the language section for options.
 // Default: $_CONFIG['lang'] = "zh_CN";
 //
-$_CONFIG['lang'] = "en";
+$_CONFIG['lang'] = "zh_CN";
 
 //
 // Display thumbnails when hovering over image entries in the list.
