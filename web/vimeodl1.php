@@ -18,7 +18,7 @@ echo "页面每15秒刷新一次
 
 // 该函数每15秒钟刷新一次页面
 
-header("Refresh:15 ; url=vimeodl1.php");
+header("Refresh:15 ; url=dl.php");
 
       
 
@@ -42,6 +42,15 @@ body{
 	min-width:250px;
 	margin:auto;
 }
+
+        label{
+            cursor: pointer;
+            display: inline-block;
+            padding: 3px 6px;
+            text-align: right;
+            width: 150px;
+            vertical-align: top;
+        }
 </style>
 </head>
 <body>
@@ -49,9 +58,19 @@ body{
 <h1>youtube-dl</h1>
 <p></p>
 <form action="vimeodl1.php" method="get">
-<p>URL: <input type="text" name="url" style="font-size:31px"></p>
-<p>重命名: <input type="text" name="rename" style="font-size:31px"></p>
-<input type="submit" value="下载" style="font-size:23px">
+        <fieldset>
+        <p>
+            <label for="url" >输入链接（URL）：</label>
+            <input type="text" id="url" name="url" align="left" style="font-size:20px">
+        </p>
+        <p>
+            <label for="rename">重命名（可留空）：</label>
+            <input type="text" id="rename" name="rename" align="left" style="font-size:20px">
+        </p>
+        <p>
+            <input type="submit">
+        </p>
+        </fieldset>
 </form>
 
 
