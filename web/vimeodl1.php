@@ -220,7 +220,7 @@ $C=$A - $B;
 if($C < 4) {echo '<caption><h1><font color="#FF0000">正在上传115，请只打开一个网站，否则可能崩溃</font></h1></caption>';}
 	
 $url1 = file_get_contents("vimeodl1url.txt");
-echo '<p><a href="'.$url1.'">'.$url1.'</a></p>';
+echo '<p><a href="'.$url1.'">下载链接</a></p>';
 echo '<caption><h3>下载进度</h3></caption>';
 $content = file_get_contents("vimeodl1下载日志.txt");
 $content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content);
@@ -296,7 +296,7 @@ URL: <input type="text" name="url" style="font-size:25px">
 
 
 <p><a href="vimeodl.php">刷新</a></p>
-<h1>Your request is processing. Terminal output below:</h1>
+<h2></h2>
 <div class="box">
 <?php
 $A=strtotime("now");
