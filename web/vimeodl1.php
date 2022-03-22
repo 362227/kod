@@ -39,7 +39,7 @@ body{
 }
 .box{
 	border: 1px solid;
-	min-width:50px;
+	min-width:150px;
 	margin:auto;
 }
 
@@ -48,7 +48,7 @@ body{
             display: inline-block;
             padding: 3px 6px;
             text-align: right;
-            width: 50px;
+	    min-width:150px;
             vertical-align: top;
         }
 </style>
