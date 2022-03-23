@@ -381,9 +381,9 @@ echo shell_exec("/app/web/data/BaiduPCS-Go upload /app/web/$gdname/* '$bddir' --
 //上传115网盘------------------------
 echo shell_exec("mv /app/web/$gdname/* /app/web/remote115"); //移动到115文件夹，准备上传115网盘
 echo shell_exec("curl https://362227.top/fake115uploader.json > /app/web/data/fake115uploader.json");
-echo shell_exec("/app/web/data/fake115uploader -retry 3 -e -c $dir115 -u /app/web/remote115/* > '/app/web/remote上传115.txt'");
+echo shell_exec("/app/web/data/fake115uploader -retry 3 -e -c $dir115 -u /app/web/remote115/* > '/app/web/remote上传115网盘.txt'");
 sleep(3);
-echo shell_exec("/app/web/data/fake115uploader -retry 3 -e -c $dir115 -m /app/web/remote115/* >> '/app/web/remote上传115.txt'");
+echo shell_exec("/app/web/data/fake115uploader -retry 3 -e -c $dir115 -m /app/web/remote115/* >> '/app/web/remote上remote上传115网盘传115.txt'");
 //上传115度网盘------------------------
 
 	
@@ -407,7 +407,7 @@ file_put_contents("/usr/share/nginx/kodexplorer/data/User/admin/home/10362227/ru
 
 	
 }
-$B=date(filemtime("remote上传115.txt"));
+$B=date(filemtime("remote上传115网盘.txt"));
 $A=strtotime("now");
 $C=$A - $B;
 
@@ -435,7 +435,7 @@ echo $content;
 
 
 echo '<caption><h3>上传115网盘进度</h3></caption>';
-$content = file_get_contents("/app/web/remote上传115.txt");	
+$content = file_get_contents("/app/web/remote上传115网盘.txt");	
 $content = preg_replace('/.+?([\s\S]{5,80}$)/','$1', $content); //读取后面5-80个字符
 echo $content;
 	
