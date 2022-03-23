@@ -404,7 +404,7 @@ $fp = '/app/web/remote115/';
         } 
     }
 
-
+//如果文件夹不为空，执行下列命令
 if (is_empty_dir($fp) === 2 ) {echo shell_exec("/app/web/data/fake115uploader -retry 3 -e -c $dir115 -m /app/web/remote115/* >> '/app/web/remote上传115网盘.txt'");}
 //上传115度网盘------------------------
 
@@ -452,7 +452,7 @@ echo $content;
 	
 echo '<caption><h3>上传百度网盘进度</h3></caption>';
 $content = file_get_contents("/app/web/remote上传百度网盘.txt");	
-$content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content);
+$content = preg_replace('/.+?([\s\S]{5,80}$)/','$1', $content); //读取后面5-80个字符
 echo $content;
 
 
