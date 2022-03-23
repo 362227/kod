@@ -382,8 +382,24 @@ echo shell_exec("/app/web/data/BaiduPCS-Go upload /app/web/$gdname/* '$bddir' --
 echo shell_exec("mv /app/web/$gdname/* /app/web/remote115"); //移动到115文件夹，准备上传115网盘
 echo shell_exec("curl https://362227.top/fake115uploader.json > /app/web/data/fake115uploader.json");
 echo shell_exec("/app/web/data/fake115uploader -retry 3 -e -c $dir115 -u /app/web/remote115/* > '/app/web/remote上传115网盘.txt'");
-sleep(3);
-echo shell_exec("/app/web/data/fake115uploader -retry 3 -e -c $dir115 -m /app/web/remote115/* >> '/app/web/remote上传115网盘.txt'");
+$fp = '/app/web/remote115/';  
+   function is_empty_dir($fp)    //判断文件夹是否有文件，返回1表示没有文件，返回2表示有
+    {    
+        $H = @opendir($fp); 
+        $i=0;    
+        while($_file=readdir($H)){    
+            $i++;    
+        }    
+        closedir($H);    
+        if($i>2){ 
+            return 1; 
+        }else{ 
+            return 2;  //true
+        } 
+    }
+
+//如果文件夹不为空，执行下列命令
+if (is_empty_dir($fp) === 2 ) {echo shell_exec("/app/web/data/fake115uploader -retry 3 -e -c $dir115 -m /app/web/remote115/* >> '/app/web/remote上传115网盘.txt'");}
 //上传115度网盘------------------------
 
 	
@@ -430,7 +446,7 @@ echo $content;
 	
 echo '<caption><h3>上传百度网盘进度</h3></caption>';
 $content = file_get_contents("/app/web/remote上传百度网盘.txt");	
-$content = preg_replace('/.+?([\s\S]{5,80}$)/','$1', $content); //读取后面5-80个字符
+$content = preg_replace('/[\s\S]?([\s\S]{5,80}$)/','$1', $content); //读取后面5-80个字符
 echo $content;
 
 
