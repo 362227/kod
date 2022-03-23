@@ -447,7 +447,7 @@ echo $content;
 
 echo '<caption><h3>上传115网盘进度</h3></caption>';
 $content = file_get_contents("/app/web/remote上传115网盘.txt");	
-$content = preg_replace('/.+?([\s\S]{5,80}$)/','$1', $content); //读取后面5-80个字符
+$content = preg_replace('/.+?([\s\S]{5,80}$)/','$1', $content); //读取后面5-140个字符
 echo $content;
 	
 
