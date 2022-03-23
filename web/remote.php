@@ -214,7 +214,7 @@ $gdname = $_GET['gdname']; //ysf2020 ysf20202
 $if115 = $_GET['if115'];
 $if115 = preg_replace('/是/',' ', $if115); 
 $ifgd = $_GET['ifbd'];
-$ifd = preg_replace('/是/',' ', $ifd); 
+$ifbd = preg_replace('/是/',' ', $ifd); 
 $ifgd = $_GET['ifgd'];
 $ifgd = preg_replace('/是/',' ', $ifgd); 
 	
