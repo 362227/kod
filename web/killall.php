@@ -1,3 +1,4 @@
+<?php
 shell_exec("pkill aria2c"); 
 shell_exec("pkill BaiduPCS-Go"); 
 shell_exec("pkill fake115uploader"); 
