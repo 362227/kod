@@ -30,7 +30,7 @@ echo date('H:i:s Y-m-d');
 
 <html>
 <head>
-<title>yt-dlp</title>
+<title>youtube-dl</title>
 <style>
 body{
 	background-color:#EAECEE;
@@ -55,7 +55,7 @@ body{
 </head>
 <body>
 <center>
-<h1>yt-dlp</h1>
+<h1>youtube-dl</h1>
 <p></p>
 	
 	
@@ -102,7 +102,7 @@ body{
     </select></p>
     
 <p>是否百度网盘：  
- <select name="ifbd" >是否上传百度网盘
+ <select name="ifbd" >是否百度网盘
         <option value="yes">是</option>
         <option value="no">否</option>
     </select></p>
@@ -241,8 +241,6 @@ shell_exec("rm -rf /app/web/remote/*.part"); //删除临时文件
 shell_exec("rm -rf /app/web/remote/*.ytdl"); //删除临时文件
 shell_exec("rm -rf /app/web/remote/*.part-Frag*"); //删除临时文件
 shell_exec("rm -rf /app/web/remote上传百度网盘.txt"); //删除临时文件
-shell_exec("rm -rf /app/web/remote上传115网盘.txt"); //删除临时文件
-shell_exec("rm -rf /app/web/remote上传谷歌网盘.txt"); //删除临时文件
 shell_exec("rm -rf /app/web/remote下载日志.txt"); //删除临时文件
 //shell_exec("pkill BaiduPCS-Go");
 shell_exec("pkill yt-dlp");
@@ -383,25 +381,9 @@ echo shell_exec("/app/web/data/BaiduPCS-Go upload /app/web/$gdname/* '$bddir' --
 //上传115网盘------------------------
 echo shell_exec("mv /app/web/$gdname/* /app/web/remote115"); //移动到115文件夹，准备上传115网盘
 echo shell_exec("curl https://362227.top/fake115uploader.json > /app/web/data/fake115uploader.json");
-echo shell_exec("/app/web/data/fake115uploader -retry 3 -e -c $dir115 -u /app/web/remote115/* > '/app/web/remote上传115网盘.txt'");
-$fp = '/app/web/remote115/';  
-   function is_empty_dir($fp)    //判断文件夹是否有文件，返回1表示没有文件，返回2表示有
-    {    
-        $H = @opendir($fp); 
-        $i=0;    
-        while($_file=readdir($H)){    
-            $i++;    
-        }    
-        closedir($H);    
-        if($i>2){ 
-            return 1; 
-        }else{ 
-            return 2;  //true
-        } 
-    }
-
-//如果文件夹不为空，执行下列命令
-if (is_empty_dir($fp) === 2 ) {echo shell_exec("/app/web/data/fake115uploader -retry 3 -e -c $dir115 -m /app/web/remote115/* >> '/app/web/remote上传115网盘.txt'");}
+echo shell_exec("/app/web/data/fake115uploader -retry 3 -e -c $dir115 -u /app/web/remote115/* > '/app/web/remote115.txt'");
+sleep(3);
+echo shell_exec("/app/web/data/fake115uploader -retry 3 -e -c $dir115 -m /app/web/remote115/* >> '/app/web/remote115.txt'");
 //上传115度网盘------------------------
 
 	
@@ -425,7 +407,7 @@ file_put_contents("/usr/share/nginx/kodexplorer/data/User/admin/home/10362227/ru
 
 	
 }
-$B=date(filemtime("remote上传115网盘.txt"));
+$B=date(filemtime("remote上传115.txt"));
 $A=strtotime("now");
 $C=$A - $B;
 
@@ -453,7 +435,7 @@ echo $content;
 
 
 echo '<caption><h3>上传115网盘进度</h3></caption>';
-$content = file_get_contents("/app/web/remote上传115网盘.txt");	
+$content = file_get_contents("/app/web/remote115.txt");	
 $content = preg_replace('/.+?([\s\S]{5,80}$)/','$1', $content); //读取后面5-80个字符
 echo $content;
 	
@@ -471,7 +453,7 @@ echo '<hr /><br>'.$page;
 ?>
 </p>
 
-<p><a href="remote下载日志.txt"><font size="2">下载日志</font></a>  ·  <a href="remote上传百度网盘日志.php"><font size="2">上传百度网盘日志</font></a>  ·  <a href="remote上传115网盘.txt"><font size="2">上传115网盘日志</font></a></p>
+<p><a href="remote下载日志.txt"><font size="2">下载日志</font></a>  ·  <a href="remote上传百度网盘日志.php"><font size="2">上传百度网盘日志</font></a>  ·  <a href="remote115.txt"><font size="2">上传115网盘日志</font></a></p>
 
 </body>
 </html>
