@@ -127,8 +127,8 @@ body{
     </select></p>
 
 
-<button id="bt" value="killall" formaction="/killall.php" target="iframe">杀掉所有进程</button>
-<button id="bt000" value="delete" formaction="/delete.php" target="iframe">删掉所有中间文件</button>
+<button id="bt" value="killall" formaction="/killall.php" target="iframe" style="background-color: #F2462B;">杀掉所有进程</button>
+<button id="bt000" value="delete" formaction="/delete.php" target="iframe"style="background-color: #F2462B;">删掉所有中间文件</button>
 
 </div>
 
@@ -488,7 +488,7 @@ $actual_link = 'https://'.$_SERVER['HTTP_HOST'];
 $page = file_get_contents($actual_link.'/encodeexplorer.index.php?m&sort_by=mod&sort_as=desc&dir=remote115/');
 
 $page = str_replace("src=\"?img","src=\"encodeexplorer.index.php?img",$page);
-$page = str_replace("<a href=\"?s&amp;dir=remote115/\">","<a href=\"encodeexplorer.index.php?sort_by=mod&sort_as=desc&dir=remote115/\">",$page);
+$page = str_replace("<a href=\"?s&amp;dir=remote115/\" target=\"_blank\">","<a href=\"encodeexplorer.index.php?sort_by=mod&sort_as=desc&dir=remote115/\">",$page);
 echo '<hr /><br>'.$page;
 	
 	
@@ -497,7 +497,7 @@ echo '<hr /><br>'.$page;
 ?>
 </p>
 
-<p><a href="remote下载日志.txt"><font size="2">下载日志</font></a>  ·  <a href="remote上传百度网盘日志.php"><font size="2">上传百度网盘日志</font></a>  ·  <a href="remote上传115网盘.txt"><font size="2">上传115网盘日志</font></a></p>
+<p><a href="remote下载日志.txt" target="_blank"><font size="2">下载日志</font></a>  ·  <a href="remote上传百度网盘日志.php" target="_blank"><font size="2">上传百度网盘日志</font></a>  ·  <a href="remote上传115网盘.txt" target="_blank"><font size="2">上传115网盘日志</font>  ·  <a href="remote上传谷歌网盘.txt" target="_blank"><font size="2">上传谷歌网盘日志</font></a></p>
 
 </body>
 </html>
