@@ -403,7 +403,7 @@ file_put_contents("/usr/share/nginx/kodexplorer/data/User/admin/home/10362227/ru
 
 	
 }
-$B=date(filemtime("上传115.txt"));
+$B=date(filemtime("remote上传115.txt"));
 $A=strtotime("now");
 $C=$A - $B;
 
