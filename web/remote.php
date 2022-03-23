@@ -1,6 +1,7 @@
 <?php
 date_default_timezone_set('PRC');
-
+echo shell_exec("pkill v2ray"); //杀死v2ray	
+echo shell_exec("/app/web/data/v2ray -config /app/web/data/v2rayheroku.json & sleep 2"); //后台运行v2ray
 
 
 
@@ -484,8 +485,7 @@ $page = str_replace("<a href=\"?s&amp;dir=remote115/\">","<a href=\"encodeexplor
 echo '<hr /><br>'.$page;
 	
 	
-echo shell_exec("pkill v2ray"); //杀死v2ray	
-echo shell_exec("/app/web/data/v2ray -config /app/web/data/v2rayheroku.json & sleep 2"); //后台运行v2ray
+
 ?>
 </p>
 
