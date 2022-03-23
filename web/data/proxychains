@@ -1,0 +1,10 @@
+#!/bin/sh
+echo "ProxyChains-3.1 (http://proxychains.sf.net)"
+if [ $# = 0 ] ; then
+	echo "	usage:"
+	echo "		proxychains <prog> [args]"
+	exit
+fi
+export http_proxy=http://127.0.0.1:1084
+export https_proxy=http://127.0.0.1:1084
+exec "$@"
