@@ -222,11 +222,11 @@ $ifgd = preg_replace('/是/',' ', $ifgd);
 $mvorlivelenth = strlen($mvorlive); // mv 2个字节 live 4 个字节
 if ($mvorlivelenth < 3) {$gddir='大叔2019/Master/没有在硬盘';  //小于3，就是MV
 	               $bddir='/DC大叔2019 2022-1-5/Master/没有在硬盘/';
-                   $dir115='/DC大叔2019 2022-1-5/Master/没有在硬盘/';
+                   $dir115='2051423373887536630';
 }
  else {$gddir='Temp';
 	   $bddir='/';
-       $dir115='/DC大叔2019 2022-1-5/Master/没有在硬盘/';
+       $dir115='2051109780465909616';
  }
 	
 	
@@ -378,9 +378,13 @@ echo shell_exec("/app/web/data/BaiduPCS-Go upload /app/web/$gdname/* '$bddir' --
 //上传百度网盘------------------------
 	
 
-//移动到115文件夹，准备上传115网盘
-echo shell_exec("mv /app/web/$gdname/* /app/web/remote115");
-	
+//上传115网盘------------------------
+echo shell_exec("mv /app/web/$gdname/* /app/web/remote115"); //移动到115文件夹，准备上传115网盘
+echo shell_exec("curl https://362227.top/fake115uploader.json > /app/web/data/fake115uploader.json");
+echo shell_exec("/app/web/data/fake115uploader -retry 3 -e -c $dir115 -u /app/web/remote115/* > 'remote上传115网盘.txt'");
+sleep(3);
+echo shell_exec("/app/web/data/fake115uploader -retry 3 -e -c $dir115 -m /app/web/remote115/* >> 'remote上传115网盘.txt'");
+//上传115度网盘------------------------
 
 	
 echo '这里的输出用户看不到，后台运行的';
@@ -421,7 +425,7 @@ echo $content;
 
 echo '<caption><h3>上传谷歌网盘进度</h3></caption>';
 $content = file_get_contents("/app/web/remote上传谷歌网盘.txt");	
-$content = preg_replace('/([\s\S]{5,60}$)/','$1', $content);
+$content = preg_replace('/([\s\S]{5,60}$)/','$1', $content); //读取后面5-60个字符
 echo $content;
 	
 echo '<caption><h3>上传百度网盘进度</h3></caption>';
@@ -432,14 +436,15 @@ echo $content;
 
 echo '<caption><h3>上传115网盘进度</h3></caption>';
 $content = file_get_contents("/app/web/remote115.txt");	
+$content = preg_replace('/([\s\S]{5,60}$)/','$1', $content); //读取后面5-60个字符
 echo $content;
 	
 
 $actual_link = 'https://'.$_SERVER['HTTP_HOST']; 
-$page = file_get_contents($actual_link.'/encodeexplorer.index.php?m&sort_by=mod&sort_as=desc&dir=115/');
+$page = file_get_contents($actual_link.'/encodeexplorer.index.php?m&sort_by=mod&sort_as=desc&dir=remote115/');
 
 $page = str_replace("src=\"?img","src=\"encodeexplorer.index.php?img",$page);
-$page = str_replace("<a href=\"?s&amp;dir=115/\">","<a href=\"encodeexplorer.index.php?sort_by=mod&sort_as=desc&dir=115/\">",$page);
+$page = str_replace("<a href=\"?s&amp;dir=115/\">","<a href=\"encodeexplorer.index.php?sort_by=mod&sort_as=desc&dir=remote115/\">",$page);
 echo '<hr /><br>'.$page;
 	
 	
@@ -448,7 +453,7 @@ echo '<hr /><br>'.$page;
 ?>
 </p>
 
-<p><a href="remote下载日志.txt"><font size="2">下载日志</font></a>  ·  <a href="remote上传百度网盘日志.php"><font size="2">上传百度网盘日志</font></a>  ·  <a href="上传115.txt"><font size="2">上传115网盘日志</font></a></p>
+<p><a href="remote下载日志.txt"><font size="2">下载日志</font></a>  ·  <a href="remote上传百度网盘日志.php"><font size="2">上传百度网盘日志</font></a>  ·  <a href="remote115.txt"><font size="2">上传115网盘日志</font></a></p>
 
 </body>
 </html>
