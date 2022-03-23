@@ -91,7 +91,7 @@ body{
     
 <p>是否上谷网盘：  
  <select name="ifgd" >是否上谷网盘
-        <option value="yes">是</option>
+        <option value="nohup">是</option>
         <option value="curl">否</option>
     </select>
 
@@ -103,19 +103,19 @@ body{
     
 <p>是否百度网盘：  
  <select name="ifbd" >是否上传百度网盘
-        <option value="yes">是</option>
+        <option value="nohup">是</option>
         <option value="curl">否</option>
     </select></p>
     
 <p>是否上传115网盘：  
  <select name="if115" >是否上传115网盘
-        <option value="yes">是</option>
+        <option value="nohup">是</option>
         <option value="curl">否</option>
     </select></p>
 
 <p>是否代理：  
  <select name="ifproxy" >代理
-        <option value="yes">是</option>
+        <option value="nohup">是</option>
         <option value="curl">否</option>
     </select>
 
@@ -212,11 +212,11 @@ $mvorlive = $_GET['mvorlive'];
 $rename = $_GET['rename'];
 $gdname = $_GET['gdname']; //ysf2020 ysf20202
 $if115 = $_GET['if115'];
-$if115 = preg_replace('/yes/','nohup', $if115); 
-$ifgd = $_GET['ifbd'];
-$ifbd = preg_replace('/yes/','nohup', $ifd); 
+//$if115 = preg_replace('/yes/','nohup', $if115); 
+$ifbd = $_GET['ifbd'];
+//$ifbd = preg_replace('/yes/','nohup', $ifd); 
 $ifgd = $_GET['ifgd'];
-$ifgd = preg_replace('/yes/','nohup', $ifgd); 
+//$ifgd = preg_replace('/yes/','nohup', $ifgd); 
 	
 $mvorlivelenth = strlen($mvorlive); // mv 2个字节 live 4 个字节
 if ($mvorlivelenth < 3) {$gddir='大叔2019/Master/没有在硬盘';  //小于3，就是MV
