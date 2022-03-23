@@ -363,7 +363,7 @@ if ($renamelenth>1) {
 
 //上传谷歌网盘------------------------
 shell_exec("wget https://362227.top/rclone.conf -nc -O /app/web/data/rclone.conf"); //下载rclone配置
-echo shell_exec("/app/web/data/rclone  copy '/app/web/$gdname' $gdname:$gddir --transfers=2 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php}  > '上传谷歌网盘.txt'");
+echo shell_exec("/app/web/data/rclone  copy '/app/web/$gdname' $gdname:$gddir --transfers=2 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php}  > 'remote上传谷歌网盘.txt'");
 //上传谷歌网盘------------------------
 
 	
@@ -379,7 +379,7 @@ echo shell_exec("/app/web/data/BaiduPCS-Go upload /app/web/$gdname/* '$bddir' --
 	
 
 //移动到115文件夹，准备上传115网盘
-echo shell_exec("mv /app/web/remote/* /app/web/115");
+echo shell_exec("mv /app/web/$gdname/* /app/web/remote115");
 	
 
 	
@@ -419,13 +419,21 @@ $content = file_get_contents("remote下载日志.txt");
 $content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content);
 echo $content;
 
-   echo '<caption><h3>上传百度网盘进度</h3></caption>';
+echo '<caption><h3>上传谷歌网盘进度</h3></caption>';
+$content = file_get_contents("/app/web/remote上传谷歌网盘.txt");	
+$content = preg_replace('/([\s\S]{5,60}$)/','$1', $content);
+echo $content;
+	
+echo '<caption><h3>上传百度网盘进度</h3></caption>';
 $content = file_get_contents("/app/web/remote上传百度网盘.txt");	
 //shell_exec("wget https://kod362227.herokuapp.com/remote上传百度网盘.php -nc -O kod10362227-1-1.txt");
 echo $content;
 
 
-
+echo '<caption><h3>上传115网盘进度</h3></caption>';
+$content = file_get_contents("/app/web/remote115.txt");	
+echo $content;
+	
 
 $actual_link = 'https://'.$_SERVER['HTTP_HOST']; 
 $page = file_get_contents($actual_link.'/encodeexplorer.index.php?m&sort_by=mod&sort_as=desc&dir=115/');
