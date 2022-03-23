@@ -12,13 +12,13 @@ date_default_timezone_set('PRC');
 
 header("content-type:text/html;charset=utf-8");
 
-echo "页面每15秒刷新一次
+echo "页面每55秒刷新一次
 ";
      
 
-// 该函数每15秒钟刷新一次页面
+// 该函数每55秒钟刷新一次页面
 
-header("Refresh:15 ; url=remote.php");
+header("Refresh:55 ; url=remote.php");
 
       
 
@@ -181,31 +181,6 @@ $cmd = $_GET['cmd'];
 $lenthcmd=strlen($cmd); //获取cmd长度
 if ($lenthcmd>1) { echo shell_exec("$cmd");} //命令行
 
-
-$A=strtotime("now");
-if(file_exists("remote上传百度网盘.txt")){ 
-    $F=date(filemtime("remote上传百度网盘.txt"));
-    $Y = $A- $F;  //上传百度网盘最后修改
-    $fp = file("remote上传百度网盘.txt");
-    $lastline = $fp[count($fp)-1]; //最后一行
-    if($Y < 7 || preg_match_all('/.*检测秒传中, 请稍候|准备上传.*/', $lastline, $lastline)) {echo '<caption><h3><font color="#FF0000">正在执行上传任务，请勿添加新链接，否则本任务会被强行取消</font></h3></caption>';}
-}
-
-$A=strtotime("now");
-if(file_exists("remote上传谷歌度网盘.txt")){ 
-    $F=date(filemtime("remote上谷歌网盘.txt"));
-    $Y = $A- $F;  //上传谷歌网盘最后修改
-    if($Y < 7 ) {echo '<caption><h3><font color="#FF0000">正在执行上传任务，请勿添加新链接，否则本任务会被强行取消</font></h3></caption>';}
-}
-
-$A=strtotime("now");
-if(file_exists("remote上传115网盘.txt")){ 
-    $F=date(filemtime("remote上传115网盘.txt"));
-    $Y = $A- $F;  //上传百度115最后修改
-    $fp = file("remote上传115网盘.txt");
-    $lastline = $fp[count($fp)-1]; //最后一行
-    if($Y < 7 || preg_match_all('/.*秒传模式.*/', $lastline, $lastline)) {echo '<caption><h3><font color="#FF0000">正在执行上传任务，请勿添加新链接，否则本任务会被强行取消</font></h3></caption>';}
-}
 
 
 
