@@ -444,13 +444,13 @@ echo $content;
 	
 echo '<caption><h3>上传百度网盘进度</h3></caption>';
 $content = file_get_contents("/app/web/remote上传百度网盘.txt");	
-$content = preg_replace('/[\s\S]*([\s\S]{100}$)/','$1', $content); //读取后面100个字符
+$content = preg_replace('/[\s\S]*([\s\S]{180}$)/','$1', $content); //读取后面180个字符
 echo $content;
 
 
 echo '<caption><h3>上传115网盘进度</h3></caption>';
 $content = file_get_contents("/app/web/remote上传115网盘.txt");	
-$content = preg_replace('/.+?([\s\S]{5,120}$)/','$1', $content); //读取后面5-120个字符
+$content = preg_replace('/.+?([\s\S]{5,180}$)/','$1', $content); //读取后面5-180个字符
 echo $content;
 	
 
