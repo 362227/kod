@@ -127,6 +127,9 @@ body{
     </select></p>
 
 
+<button id="bt" value="killall" formaction="/killall.php" target="iframe">杀掉所有进程</button>
+<button id="bt000" value="delete" formaction="/delete.php" target="iframe">删掉所有中间文件</button>
+
 </div>
 
 <script type="text/javascript">
