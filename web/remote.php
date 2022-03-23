@@ -469,7 +469,7 @@ echo '<hr /><br>'.$page;
 ?>
 </p>
 
-<p><a href="remote下载日志.txt"><font size="2">下载日志</font></a>  ·  <a href="remote上传百度网盘日志.php"><font size="2">上传百度网盘日志</font></a>  ·  <a href="remote115.txt"><font size="2">上传115网盘日志</font></a></p>
+<p><a href="remote下载日志.txt"><font size="2">下载日志</font></a>  ·  <a href="remote上传百度网盘日志.php"><font size="2">上传百度网盘日志</font></a>  ·  <a href="remote上传115网盘.txt"><font size="2">上传115网盘日志</font></a></p>
 
 </body>
 </html>
