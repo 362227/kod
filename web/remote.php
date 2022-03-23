@@ -208,11 +208,9 @@ shell_exec("curl -L $actual_link");
 
 	               
 $url = $_GET['url'];
-$mvorlive = $_GET['$mvorlive'];
+$mvorlive = $_GET['mvorlive'];
 $rename = $_GET['rename'];
 $gdname = $_GET['gdname']; //ysf2020 ysf20202
-$gddir = $_GET['gddir'];
-$bddir = $_GET['bddir'];
 $if115 = $_GET['if115'];
 $if115 = preg_replace('/是/',' ', $if115); 
 $ifgd = $_GET['ifbd'];
