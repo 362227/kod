@@ -92,7 +92,7 @@ body{
 <p>是否上谷网盘：  
  <select name="ifgd" >是否上谷网盘
         <option value="yes">是</option>
-        <option value="no">否</option>
+        <option value="curl">否</option>
     </select>
 
   账户： <select name="gdname" >谷歌网盘账号
@@ -102,21 +102,21 @@ body{
     </select></p>
     
 <p>是否百度网盘：  
- <select name="ifbd" >是否百度网盘
+ <select name="ifbd" >是否上传百度网盘
         <option value="yes">是</option>
-        <option value="no">否</option>
+        <option value="curl">否</option>
     </select></p>
     
 <p>是否上传115网盘：  
  <select name="if115" >是否上传115网盘
         <option value="yes">是</option>
-        <option value="no">否</option>
+        <option value="curl">否</option>
     </select></p>
 
 <p>是否代理：  
  <select name="ifproxy" >代理
-        <option value="yes">否</option>
-        <option value="no">是</option>
+        <option value="yes">是</option>
+        <option value="curl">否</option>
     </select>
 
 
