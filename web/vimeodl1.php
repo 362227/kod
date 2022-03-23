@@ -39,7 +39,7 @@ body{
 }
 .box{
 	border: 1px solid;
-	min-width:150px;
+	min-width:50px;
 	margin:auto;
 }
 
@@ -57,7 +57,9 @@ body{
 <center>
 <h1>youtube-dl</h1>
 <p></p>
-<form action="vimeodl1.php" method="get">
+	
+	
+<form action="vimeodl1.php" method="get" value="Value-1" target="iframe">
         <fieldset>
         <p>
             <label for="url" >输入链接（URL）：</label>
@@ -67,15 +69,91 @@ body{
             <label for="rename">重命名（可留空）：</label>
             <input type="text" id="rename" name="rename" align="left" style="font-size:20px">
         </p>
+        
+<body>
+
+<button id="btn" onclick="fun()" value="Go Elsewhere" formaction="/elsewhere" target="iframe">显示/隐藏“高级选项”</button>
+<div id="con" style="display: none">
+
+
+
         <p>
             <label for="rename">命令行（可留空）：</label>
             <input type="text" id="cmd" name="cmd" align="left" style="font-size:20px">
         </p>
-        <p>
-            <input type="submit" style="font-size:15px">
-        </p>
+
+<p>是否上谷网盘：  
+ <select name="ifgd" >谷歌网盘账号
+        <option value="yes">是</option>
+        <option value="no">否</option>
+    </select>
+
+  账户： <select name="gdname" >谷歌网盘账号
+        <option value="ysf2020">ysf2020</option>
+        <option value="ysf20202">ysf20202</option>
+        <option value="10362227">10362227</option>
+    </select></p>
+    
+    
+<p>是否上传115网盘）：  
+ <select name="if115" >谷歌网盘账号
+        <option value="yes">是</option>
+        <option value="no">否</option>
+    </select>
+
+
+
+
+</div>
+
+<script type="text/javascript">
+    var flag = false;
+    var div = document.getElementById("con");
+
+    function fun() {
+        if (flag ^= true) {
+            div.style.display = "block";    // 显示
+        } else {
+            div.style.display = "none";     // 隐藏
+        }
+    }
+</script>
+<iframe name="iframe" style="display:none"></iframe> 
+        
+
+
+
+
+<p><button id="btn1" onclick="funa()" target="iframe">提交</button></p>
+<div1 id="abc" style="display: none">
+
+
+
+        <p>添加成功 </p>
+
+
+
+
+
+</div1>
+
+<script type="text/javascript">
+    var flag = false;
+    var div1 = document.getElementById("abc");
+
+    function funa() {
+        if (flag ^= true) {
+            div1.style.display = "block";    // 显示
+        } else {
+            div1.style.display = "none";     // 隐藏
+        }
+    }
+</script>
+<iframe name="iframe" style="display:none"></iframe> 
         </fieldset>
 </form>
+
+</body>
 
 
 
@@ -110,8 +188,19 @@ shell_exec("wget $actual_link -nc -O kod10362227.txt");
 shell_exec("curl -L $actual_link");	
 	
 $url = $_GET['url'];
-$rename = $_GET['rename'];
+$arr = array(
+    'https://362227.top/rss/vimeo10362227.php?id=',
+    'http://193.123.232.200/kodexplorer/rss/vimeo.php?id='
+   
+);
+$key = array_rand($arr, 1);
 
+		if (preg_match('/(^http\:\/\/vimeo\.com)|(^https\:\/\/vimeo\.com)/', $url, $url1)) {
+$url = $arr[$key].$url;
+}
+else {$url=$url;}
+	
+$rename = $_GET['rename'];
 	
 $lenth=strlen($url); //获取url长度
 $renamelenth=strlen($rename); //获取rename长度
