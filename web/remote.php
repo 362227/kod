@@ -292,7 +292,6 @@ echo '<!DOCTYPE html>
             padding: 0;
             background-color: #EAEAEA;
         }
-
         .center-in-center{
             position: absolute;
             top: 50%;
@@ -364,7 +363,6 @@ if ($renamelenth>1) {
 
 
 //上传谷歌网盘------------------------
-shell_exec("find /app/web/$gdname/* -type f -size -5M -delete"); //删除小文件
 shell_exec("wget https://362227.top/rclone.conf -nc -O /app/web/data/rclone.conf"); //下载rclone配置
 echo shell_exec("/app/web/data/rclone  copy '/app/web/$gdname' $gdname:$gddir --transfers=2 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php}  > 'remote上传谷歌网盘.txt'");
 //上传谷歌网盘------------------------
@@ -377,18 +375,33 @@ echo shell_exec("/app/web/data/BaiduPCS-Go login -cookies='XFT=T7BdQ2kj9qaOHLNQB
 echo shell_exec("/app/web/data/BaiduPCS-Go config set -pcs_addr c4.pcs.baidu.com");
 echo shell_exec("/app/web/data/BaiduPCS-Go config set -max_upload_parallel 99");
 echo shell_exec("/app/web/data/BaiduPCS-Go config set -pcs_addr c4.pcs.baidu.com");
-shell_exec("find /app/web/$gdname/* -type f -size -5M -delete"); //删除小文件
 echo shell_exec("/app/web/data/BaiduPCS-Go upload /app/web/$gdname/* '$bddir' --retry 8 > /app/web/remote上传百度网盘.txt");
 //上传百度网盘------------------------
 	
 
 //上传115网盘------------------------
-shell_exec("find /app/web/remote115/* -type f -size -5M -delete"); //删除小文件
 echo shell_exec("mv /app/web/$gdname/* /app/web/remote115"); //移动到115文件夹，准备上传115网盘
 echo shell_exec("curl https://362227.top/fake115uploader.json > /app/web/data/fake115uploader.json");
 echo shell_exec("/app/web/data/fake115uploader -retry 3 -e -c $dir115 -u /app/web/remote115/* > '/app/web/remote上传115网盘.txt'");
+	
+$fp = '/app/web/remote115/';  
+   function is_empty_dir($fp)    //判断文件夹是否有文件，返回1表示没有文件，返回2表示有
+    {    
+        $H = @opendir($fp); 
+        $i=0;    
+        while($_file=readdir($H)){    
+            $i++;    
+        }    
+        closedir($H);    
+        if($i>2){ 
+            return 1; 
+        }else{ 
+            return 2;  //true
+        } 
+    }
 
-echo shell_exec("/app/web/data/fake115uploader -retry 3 -e -c $dir115 -m /app/web/remote115/* >> '/app/web/remote上传115网盘.txt'");
+//如果文件夹不为空，执行下列命令
+if (is_empty_dir($fp) === 2 ) {echo shell_exec("/app/web/data/fake115uploader -retry 3 -e -c $dir115 -m /app/web/remote115/* >> '/app/web/remote上传115网盘.txt'");}
 //上传115度网盘------------------------
 
 	
