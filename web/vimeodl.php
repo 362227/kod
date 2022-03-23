@@ -21,8 +21,9 @@ echo "页面每15秒刷新一次
 header("Refresh:15 ; url=vimeodl.php");
 
       
-
-echo date('H:i:s Y-m-d');
+$randNum = "https://github.com/362227/kod/raw/master/web/15s.gif?id=".rand(10,1000000);
+echo '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$randNum.'"  width="67" height="34" style="background-color: #EAECEE;"></p>';
+//echo date('H:i:s Y-m-d');
 
     
 
