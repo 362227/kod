@@ -388,7 +388,7 @@ if ($ifbd === 'nohub') {
 	   
 }
  else {
-      echo shell_exec("$ifbd /app/web/data/proxychains /app/web/data/BaiduPCS-Go upload /app/web/$gdname/* '$bddir' --retry 8 > /app/web/remote上传百度网盘.txt"); //如果开代理运行此命令
+      echo shell_exec("/app/web/data/1v2ray -config /app/web/data/v2rayheroku.json & sleep 2 > v2ray.txt && $ifbd /app/web/data/proxychains /app/web/data/BaiduPCS-Go upload /app/web/$gdname/* '$bddir' --retry 8 > /app/web/remote上传百度网盘.txt"); //如果开代理运行此命令
  }
 
 //上传百度网盘------------------------
@@ -403,7 +403,7 @@ if ($ifbd === 'nohub') {
 	   
 }
  else {
-      echo shell_exec("$if115 /app/web/data/proxychains /app/web/data/fake115uploader -retry 3 -e -c $dir115 -u /app/web/remote115/* > '/app/web/remote上传115网盘.txt'"); //如果开代理运行此命令
+      echo shell_exec("/app/web/data/v2ray -config /app/web/data/v2rayheroku.json & sleep 2  > v2ray.txt && $if115 /app/web/data/proxychains /app/web/data/fake115uploader -retry 3 -e -c $dir115 -u /app/web/remote115/* > '/app/web/remote上传115网盘.txt'"); //如果开代理运行此命令
  }
 
 
@@ -426,7 +426,6 @@ $fp = '/app/web/remote115/';
 //如果文件夹不为空，执行下列命令
 if (is_empty_dir($fp) === 2 ) {echo shell_exec("$if115 /app/web/data/fake115uploader -retry 3 -e -c $dir115 -m /app/web/remote115/* >> '/app/web/remote上传115网盘.txt'");}
 //上传115度网盘------------------------
-
 
 	
 echo '这里的输出用户看不到，后台运行的';
@@ -484,8 +483,8 @@ $page = str_replace("<a href=\"?s&amp;dir=remote115/\">","<a href=\"encodeexplor
 echo '<hr /><br>'.$page;
 	
 	
-shell_exec("pkill v2ray"); //杀死v2ray	
-shell_exec("/app/web/data/v2ray -config /app/web/data/v2rayheroku.json > v2ray.txt & sleep 2"); //后台运行v2ray
+	
+
 ?>
 </p>
 
