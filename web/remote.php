@@ -381,9 +381,9 @@ echo shell_exec("/app/web/data/BaiduPCS-Go upload /app/web/$gdname/* '$bddir' --
 //上传115网盘------------------------
 echo shell_exec("mv /app/web/$gdname/* /app/web/remote115"); //移动到115文件夹，准备上传115网盘
 echo shell_exec("curl https://362227.top/fake115uploader.json > /app/web/data/fake115uploader.json");
-echo shell_exec("/app/web/data/fake115uploader -retry 3 -e -c $dir115 -u /app/web/remote115/* > 'remote上传115网盘.txt'");
+echo shell_exec("/app/web/data/fake115uploader -retry 3 -e -c $dir115 -u /app/web/remote115/* > 'remote上传115.txt'");
 sleep(3);
-echo shell_exec("/app/web/data/fake115uploader -retry 3 -e -c $dir115 -m /app/web/remote115/* >> 'remote上传115网盘.txt'");
+echo shell_exec("/app/web/data/fake115uploader -retry 3 -e -c $dir115 -m /app/web/remote115/* >> 'remote上传115.txt'");
 //上传115度网盘------------------------
 
 	
@@ -425,18 +425,18 @@ echo $content;
 
 echo '<caption><h3>上传谷歌网盘进度</h3></caption>';
 $content = file_get_contents("/app/web/remote上传谷歌网盘.txt");	
-$content = preg_replace('/([\s\S]{5,60}$)[\s\S]*/','$1', $content); //读取后面5-60个字符
+$content = preg_replace('/[\s\S]*([\s\S]{5,60}$)[\s\S]*/','$1', $content); //读取后面5-60个字符
 echo $content;
 	
 echo '<caption><h3>上传百度网盘进度</h3></caption>';
 $content = file_get_contents("/app/web/remote上传百度网盘.txt");	
-$content = preg_replace('/([\s\S]{5,60}$)[\s\S]*/','$1', $content); //读取后面5-60个字符
+$content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content);
 echo $content;
 
 
 echo '<caption><h3>上传115网盘进度</h3></caption>';
 $content = file_get_contents("/app/web/remote115.txt");	
-$content = preg_replace('/([\s\S]{5,60}$)[\s\S]*/','$1', $content); //读取后面5-60个字符
+$content = preg_replace('/[\s\S]*([\s\S]{5,60}$)[\s\S]*/','$1', $content); //读取后面5-60个字符
 echo $content;
 	
 
@@ -444,7 +444,7 @@ $actual_link = 'https://'.$_SERVER['HTTP_HOST'];
 $page = file_get_contents($actual_link.'/encodeexplorer.index.php?m&sort_by=mod&sort_as=desc&dir=remote115/');
 
 $page = str_replace("src=\"?img","src=\"encodeexplorer.index.php?img",$page);
-$page = str_replace("<a href=\"?s&amp;dir=115/\">","<a href=\"encodeexplorer.index.php?sort_by=mod&sort_as=desc&dir=remote115/\">",$page);
+$page = str_replace("<a href=\"?s&amp;dir=remote115/\">","<a href=\"encodeexplorer.index.php?sort_by=mod&sort_as=desc&dir=remote115/\">",$page);
 echo '<hr /><br>'.$page;
 	
 	
