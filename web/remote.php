@@ -398,7 +398,7 @@ if ($ifbd === 'nohub') {
 echo shell_exec("find /app/web/remote115/* -type f -size -5M -delete"); //删除小文件
 echo shell_exec("mv /app/web/$gdname/* /app/web/remote115"); //移动到115文件夹，准备上传115网盘
 echo shell_exec("curl https://362227.top/fake115uploader.json > /app/web/data/fake115uploader.json");
-if ($ifbd === 'nohub') { 
+if ($if115proxy === 'nohub') { 
     echo shell_exec("$if115 /app/web/data/fake115uploader -retry 3 -e -c $dir115 -u /app/web/remote115/* > '/app/web/remote上传115网盘.txt'");
 	   
 }
