@@ -436,7 +436,7 @@ echo $content;
 	
 echo '<caption><h3>上传百度网盘进度</h3></caption>';
 $content = file_get_contents("/app/web/remote上传百度网盘.txt");	
-$content = preg_replace('/[\s\S]*([\s\S]{5,80}$)/','$1', $content); //读取后面5-80个字符
+$content = preg_replace('/[\s\S]*([\s\S]{89}$)/','$1', $content); //读取后面89个字符
 echo $content;
 
 
