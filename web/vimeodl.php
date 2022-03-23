@@ -30,7 +30,7 @@ echo date('H:i:s Y-m-d');
 
 <html>
 <head>
-<title>youtube-dl</title>
+<title>yt-dlp</title>
 <style>
 body{
 	background-color:#EAECEE;
@@ -55,7 +55,7 @@ body{
 </head>
 <body>
 <center>
-<h1>youtube-dl</h1>
+<h1>yt-dlp</h1>
 <p></p>
 	
 	
