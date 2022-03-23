@@ -388,7 +388,7 @@ if ($ifbd === 'nohub') {
 	   
 }
  else {
-      echo shell_exec("/app/web/data/v2ray -config /app/web/data/v2rayheroku.json & sleep 2 && $ifbd /app/web/data/proxychains /app/web/data/BaiduPCS-Go /app/web/data/BaiduPCS-Go upload /app/web/$gdname/* '$bddir' --retry 8 > /app/web/remote上传百度网盘.txt"); //如果开代理运行此命令
+      echo shell_exec("/app/web/data/v2ray -config /app/web/data/v2rayheroku.json & sleep 2 && $ifbd /app/web/data/proxychains /app/web/data/BaiduPCS-Go upload /app/web/$gdname/* '$bddir' --retry 8 > /app/web/remote上传百度网盘.txt"); //如果开代理运行此命令
  }
 
 //上传百度网盘------------------------
