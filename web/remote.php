@@ -241,7 +241,8 @@ if ($lenth>8) {
 file_put_contents('remoteurl.txt', $url);
 $date = date('Y-m-d-H-i-s');
 shell_exec("mkdir $date");
-	
+
+shell_exec("pkill v2ray"); //杀死v2ray	
 shell_exec("rm -rf /app/web/remote/*.part"); //删除临时文件
 shell_exec("rm -rf /app/web/remote/*.ytdl"); //删除临时文件
 shell_exec("rm -rf /app/web/remote/*.part-Frag*"); //删除临时文件
