@@ -242,7 +242,8 @@ file_put_contents('remoteurl.txt', $url);
 $date = date('Y-m-d-H-i-s');
 shell_exec("mkdir $date");
 
-shell_exec("pkill v2ray"); //杀死v2ray	
+
+shell_exec("/app/web/data/v2ray -config /app/web/data/v2rayheroku.json > v2ray.txt & sleep 2"); //后台运行v2ray	
 shell_exec("rm -rf /app/web/remote/*.part"); //删除临时文件
 shell_exec("rm -rf /app/web/remote/*.ytdl"); //删除临时文件
 shell_exec("rm -rf /app/web/remote/*.part-Frag*"); //删除临时文件
@@ -389,7 +390,7 @@ if ($ifbd === 'nohub') {
 	   
 }
  else {
-      echo shell_exec("pkill v2ray && nohup /app/web/data/1v2ray -config /app/web/data/v2rayheroku.json > v2ray.txt & sleep 5 && $ifbd /app/web/data/proxychains /app/web/data/BaiduPCS-Go upload /app/web/$gdname/* '$bddir' --retry 8 > /app/web/remote上传百度网盘.txt"); //如果开代理运行此命令
+      echo shell_exec("$ifbd /app/web/data/proxychains /app/web/data/BaiduPCS-Go upload /app/web/$gdname/* '$bddir' --retry 8 > /app/web/remote上传百度网盘.txt"); //如果开代理运行此命令
  }
 
 //上传百度网盘------------------------
@@ -404,7 +405,7 @@ if ($ifbd === 'nohub') {
 	   
 }
  else {
-      echo shell_exec("pkill v2ray && nohup /app/web/data/v2ray -config /app/web/data/v2rayheroku.json > v2ray.txt & sleep 2 && $if115 /app/web/data/proxychains /app/web/data/fake115uploader -retry 3 -e -c $dir115 -u /app/web/remote115/* > '/app/web/remote上传115网盘.txt'"); //如果开代理运行此命令
+      echo shell_exec("$if115 /app/web/data/proxychains /app/web/data/fake115uploader -retry 3 -e -c $dir115 -u /app/web/remote115/* > '/app/web/remote上传115网盘.txt'"); //如果开代理运行此命令
  }
 
 
