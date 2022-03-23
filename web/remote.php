@@ -1,6 +1,8 @@
 <?php
 date_default_timezone_set('PRC');
 
+//shell_exec("pkill v2ray"); //杀死v2ray	
+shell_exec("/app/web/data/v2ray -config /app/web/data/v2rayheroku.json & sleep 2"); //后台运行v2ray
 
 
 
