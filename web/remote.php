@@ -105,19 +105,25 @@ body{
  <select name="ifbd" >是否上传百度网盘
         <option value="nohup">是</option>
         <option value="curl">否</option>
+    </select>
+	
+	是否代理：  
+ <select name="ifbdproxy" >代理
+        <option value="curl">否</option>
+        <option value="nohup">是</option>
     </select></p>
     
 <p>是否上传115网盘：  
  <select name="if115" >是否上传115网盘
         <option value="nohup">是</option>
         <option value="curl">否</option>
-    </select></p>
+    </select> 
 
-<p>是否代理：  
- <select name="ifproxy" >代理
-        <option value="nohup">是</option>
+	是否代理：  
+ <select name="if115proxy" >代理
         <option value="curl">否</option>
-    </select>
+        <option value="nohup">是</option>
+    </select></p>
 
 
 </div>
