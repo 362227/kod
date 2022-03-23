@@ -363,12 +363,14 @@ if ($renamelenth>1) {
 
 
 //上传谷歌网盘------------------------
+echo shell_exec("find /app/web/$gdname/* -type f -size -5M -delete"); //删除小文件
 shell_exec("wget https://362227.top/rclone.conf -nc -O /app/web/data/rclone.conf"); //下载rclone配置
 echo shell_exec("/app/web/data/rclone  copy '/app/web/$gdname' $gdname:$gddir --transfers=2 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php}  > 'remote上传谷歌网盘.txt'");
 //上传谷歌网盘------------------------
 
 	
 //上传百度网盘------------------------
+echo shell_exec("find /app/web/$gdname/* -type f -size -5M -delete"); //删除小文件
 //echo shell_exec("/app/web/data/BaiduPCS-Go config set -proxy=127.0.0.1:8100");
 echo shell_exec("/app/web/data/BaiduPCS-Go login -cookies='XFT=T7BdQ2kj9qaOHLNQBzLXecEDq0NSMR1/cFI9Pg7+cP4=; XFCS=A0BAA1D3C3AFF60D8A9501F61A5316EB2F44DC96D5D069E28D965E876B51558D; BAIDUID_BFESS=1FAD127BAC0642BD179AE9232E9D3EAC:FG=1; __yjs_duid=1_b83edfa36c48d34c5d422654ad9291ff1632462458498; BAIDUID=EB8C0978CD2A3182C0C963B26A4F83BC:FG=1; BDUSS=zBnQnprSmR3c0xvSDh1Wk5vT3pkMmpSN2tTTlc4R2g1dUJKS2pKUnhpSnVGM1poRVFBQUFBJCQAAAAAABAAAAEAAAD2Tdr6REO088rlMjAxOQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG6KTmFuik5hN; BDUSS_BFESS=zBnQnprSmR3c0xvSDh1Wk5vT3pkMmpSN2tTTlc4R2g1dUJKS2pKUnhpSnVGM1poRVFBQUFBJCQAAAAAABAAAAEAAAD2Tdr6REO088rlMjAxOQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG6KTmFuik5hN; pan_login_way=1; csrfToken=Q7ezNP5m-MPzubHlXKXZKmR0; STOKEN=a035eb4833e11aabcfaf438a90d977308679fbe717aa1381ff4a276541884cbe; ZD_ENTRY=empty; PANPSC=6330118974698879948:HSTAF2XekfrDfJxofQvIR8/yqoAddd3nU4bHmv7k1lQb6OtHeDgTZITtPba1v5pWKB+Q1NY39EqaV1QHy3lx2+uwJgkIjG1NcDLxProYXAAu/GN14ZZ7XobjAuQ0lbzSIpBwzouoN4Fjy4bwAz5jQiHq5mg/cPBDsGdcW9T0tiRm65hzsZIwfARwtfBixKqXMKjxtxPUcwo='
 ");
@@ -380,6 +382,7 @@ echo shell_exec("/app/web/data/BaiduPCS-Go upload /app/web/$gdname/* '$bddir' --
 	
 
 //上传115网盘------------------------
+echo shell_exec("find /app/web/$gdname/* -type f -size -5M -delete"); //删除小文件
 echo shell_exec("mv /app/web/$gdname/* /app/web/remote115"); //移动到115文件夹，准备上传115网盘
 echo shell_exec("curl https://362227.top/fake115uploader.json > /app/web/data/fake115uploader.json");
 echo shell_exec("/app/web/data/fake115uploader -retry 3 -e -c $dir115 -u /app/web/remote115/* > '/app/web/remote上传115网盘.txt'");
