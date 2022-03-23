@@ -13,17 +13,17 @@ date_default_timezone_set('PRC');
 
 header("content-type:text/html;charset=utf-8");
 
-echo "页面每55秒刷新一次
+echo "页面每60秒刷新一次
 ";
      
 
-// 该函数每55秒钟刷新一次页面
+// 该函数每60秒钟刷新一次页面
 
-header("Refresh:55 ; url=remote.php");
+header("Refresh:60 ; url=remote.php");
 
       
-
-echo date('H:i:s Y-m-d');
+$randNum = "https://github.com/362227/kod/raw/master/web/60s.gif?id=".rand(1,1000000);
+echo '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$randNum.'"  width="67" height="34" style="background-color: #EAECEE;"></p>';
 
     
 
