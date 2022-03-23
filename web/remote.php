@@ -425,12 +425,6 @@ file_put_contents("/usr/share/nginx/kodexplorer/data/User/admin/home/10362227/ru
 
 	
 }
-$B=date(filemtime("remote上传115网盘.txt"));
-$A=strtotime("now");
-$C=$A - $B;
-
-if($C < 4) {echo '<caption><h1><font color="#FF0000">正在上传115，请只打开一个网站，否则可能崩溃</font></h1></caption>';}
-
 
 $url1 = file_get_contents("remoteurl.txt");
 $url2 = preg_replace('/(^http|^youtube|^vimeo|^www)([\s\S]{8,50}).*/','$1$2', $url1); //取url前8-50个作为超链名字
