@@ -1,4 +1,269 @@
 <?php
+date_default_timezone_set('PRC');
+
+
+
+
+
+
+
+
+
+
+header("content-type:text/html;charset=utf-8");
+
+echo "页面每15秒刷新一次
+";
+     
+
+// 该函数每15秒钟刷新一次页面
+
+header("Refresh:15 ; url=remote.php");
+
+      
+
+echo date('H:i:s Y-m-d');
+
+    
+
+?>
+
+<html>
+<head>
+<title>youtube-dl</title>
+<style>
+body{
+	background-color:#EAECEE;
+	font-family:Arial;
+	color:black;
+}
+.box{
+	border: 1px solid;
+	min-width:50px;
+	margin:auto;
+}
+
+        label{
+            cursor: pointer;
+            display: inline-block;
+            padding: 3px 6px;
+            text-align: right;
+	    min-width:150px;
+            vertical-align: top;
+        }
+</style>
+</head>
+<body>
+<center>
+<h1>youtube-dl</h1>
+<p></p>
+	
+	
+<form action="remote.php" method="get" value="Value-1" target="iframe">
+        <fieldset>
+        <p>
+            <label for="url" >输入链接（URL）：</label>
+            <input type="text" id="url" name="url" align="left" style="font-size:20px">
+        </p>
+        <p>
+            <label for="rename">重命名（可留空）：</label>
+            <input type="text" id="rename" name="rename" align="left" style="font-size:20px">
+        </p>
+        
+<body>
+
+<button id="btn" onclick="fun()" value="Go Elsewhere" formaction="/elsewhere" target="iframe">显示/隐藏“高级选项”</button>
+<div id="con" style="display: none">
+
+
+
+        <p>
+            <label for="rename">命令行（可留空）：</label>
+            <input type="text" id="cmd" name="cmd" align="left" style="font-size:20px">
+        </p>
+
+
+<p>MV还是现场：  
+ <select name="mvorlive" >MV还是现场
+        <option value="mv">MV</option>
+        <option value="live">现场</option>
+    </select></p>
+    
+<p>是否上谷网盘：  
+ <select name="ifgd" >是否上谷网盘
+        <option value="yes">是</option>
+        <option value="no">否</option>
+    </select>
+
+  账户： <select name="gdname" >谷歌网盘账号
+        <option value="ysf2020">ysf2020</option>
+        <option value="ysf20202">ysf20202</option>
+        <option value="10362227">10362227</option>
+    </select></p>
+    
+<p>是否百度网盘：  
+ <select name="ifbd" >是否百度网盘
+        <option value="yes">是</option>
+        <option value="no">否</option>
+    </select></p>
+    
+<p>是否上传115网盘：  
+ <select name="if115" >是否上传115网盘
+        <option value="yes">是</option>
+        <option value="no">否</option>
+    </select></p>
+
+<p>是否代理：  
+ <select name="ifproxy" >代理
+        <option value="yes">否</option>
+        <option value="no">是</option>
+    </select>
+
+
+</div>
+
+<script type="text/javascript">
+    var flag = false;
+    var div = document.getElementById("con");
+
+    function fun() {
+        if (flag ^= true) {
+            div.style.display = "block";    // 显示
+        } else {
+            div.style.display = "none";     // 隐藏
+        }
+    }
+</script>
+<iframe name="iframe" style="display:none"></iframe> 
+        
+
+
+
+
+<p><button id="btn1" onclick="funa()" target="iframe">提交</button></p>
+<div1 id="abc" style="display: none">
+
+
+
+        <p>添加成功 </p>
+
+
+
+
+
+</div1>
+
+<script type="text/javascript">
+    var flag = false;
+    var div1 = document.getElementById("abc");
+
+    function funa() {
+        if (flag ^= true) {
+            div1.style.display = "block";    // 显示
+        } else {
+            div1.style.display = "none";     // 隐藏
+        }
+    }
+</script>
+<iframe name="iframe" style="display:none"></iframe> 
+        </fieldset>
+</form>
+
+</body>
+
+
+
+<p><a href="remote.php"><u>点击刷新</u></a></p>
+<h1></h1>
+<div class="box">
+<?php
+$cmd = $_GET['cmd'];
+$lenthcmd=strlen($cmd); //获取cmd长度
+if ($lenthcmd>1) { echo shell_exec("$cmd");} //命令行
+	
+$A=strtotime("now");
+if(file_exists("remote上传百度网盘.txt")){ 
+    $F=date(filemtime("remote上传百度网盘.txt"));
+    $Y = $A- $F;  //上传百度网盘最后修改
+    $fp = file("remote上传百度网盘.txt");
+    $lastline = $fp[count($fp)-1]; //最后一行
+    if($Y < 7 || preg_match_all('/.*检测秒传中, 请稍候|准备上传.*/', $lastline, $lastline)) {echo '<caption><h3><font color="#FF0000">正在执行上传任务，请勿添加新链接，否则本任务会被强行取消</font></h3></caption>';}
+}
+
+if(file_exists("remote下载日志.txt")){ 
+    $G=date(filemtime("remote下载日志.txt"));
+    $X = $A- $G;
+    if($X < 7) {echo '<caption><h3><font color="#FF0000">正在执行下载任务，请勿添加新链接，否则本任务会被强行取消</font></h3></caption>';}
+}
+
+
+unlink("/app/web/remote/0000");
+unlink("/app/web/115/0000");
+$actual_link = 'https://'.$_SERVER['HTTP_HOST'];
+shell_exec("wget $actual_link -nc -O kod10362227.txt");
+shell_exec("curl -L $actual_link");	
+
+	
+
+	               
+$url = $_GET['url'];
+$mvorlive = $_GET['$mvorlive'];
+$rename = $_GET['rename'];
+$gdname = $_GET['gdname']; //ysf2020 ysf20202
+$gddir = $_GET['gddir'];
+$bddir = $_GET['bddir'];
+$if115 = $_GET['if115'];
+$if115 = preg_replace('/是/',' ', $if115); 
+$ifgd = $_GET['ifbd'];
+$ifd = preg_replace('/是/',' ', $ifd); 
+$ifgd = $_GET['ifgd'];
+$ifgd = preg_replace('/是/',' ', $ifgd); 
+	
+$mvorlivelenth = strlen($mvorlive); // mv 2个字节 live 4 个字节
+if ($mvorlivelenth < 3) {$gddir='大叔2019/Master/没有在硬盘';  //小于3，就是MV
+	               $bddir='/DC大叔2019 2022-1-5/Master/没有在硬盘/';
+                   $dir115='2051423373887536630';
+}
+ else {$gddir='Temp';
+	   $bddir='/';
+       $dir115='2051109780465909616';
+ }
+	
+	
+$lenth=strlen($url); //获取url长度
+$renamelenth=strlen($rename); //获取rename长度
+if ($lenth>8) {
+file_put_contents('remoteurl.txt', $url);
+$date = date('Y-m-d-H-i-s');
+shell_exec("mkdir $date");
+	
+shell_exec("rm -rf /app/web/remote/*.part"); //删除临时文件
+shell_exec("rm -rf /app/web/remote/*.ytdl"); //删除临时文件
+shell_exec("rm -rf /app/web/remote/*.part-Frag*"); //删除临时文件
+shell_exec("rm -rf /app/web/remote上传百度网盘.txt"); //删除临时文件
+shell_exec("rm -rf /app/web/remote下载日志.txt"); //删除临时文件
+//shell_exec("pkill BaiduPCS-Go");
+shell_exec("pkill yt-dlp");
+sleep(3);
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+header("Content-type:text/html;charset=utf-8");
 ignore_user_abort(true); // 后台运行，不受前端断开连接影响
 set_time_limit(7600); // 脚本最多运行3个小时
 //后台运行的后面还要，set_time_limit(0); 除非在服务器上关闭这个程序，否则下面的代码将永远执行下去止到完成为止。
@@ -12,10 +277,37 @@ header("HTTP/1.1 200 OK"); //可以发送200状态码，以这些请求是成功
 //die(); 或 return ;也一样不执行下面的
 //runRack();自定义函数
 //register_shutdown_function("runRack");
-//return  ;
+//return  ;
 ob_start();//开始当前代码缓冲
-$arr = ["文件生成中"];
-echo json_encode($arr);
+echo '<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>div居于页面正中间</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            background-color: #EAEAEA;
+        }
+
+        .center-in-center{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="center-in-center"><p><h1>已添加成功。勿刷新该页面！<a href="/remote.php" class="item project">点击返回查看进度</a></h1></p></div>
+</body>
+</html>';
+	
 //下面输出http的一些头信息
 $size = ob_get_length();
 header("Content-Length: $size");
@@ -37,42 +329,64 @@ fastcgi_finish_request(); /* 响应完成, 关闭连接 */
  执行的时候前面的输出应该到达浏览器了
 */
 sleep(3);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+//下载+上传谷歌+上传百度网盘+上传115	
+shell_exec("find /app/web/remote/* -type f -size -5M -delete"); //删除小文件
+shell_exec("rm -rf /app/web/remote/*.part"); //删除临时文件
 
 
 
 
 
+	
+	
+//下载------------------------
+if ($renamelenth>1) {
+    echo shell_exec("cd /app/web/$gdname/ && /app/web/data/yt-dlp '$url' -o '$rename' --no-mtime > /app/web/remote下载日志.txt");}
+    else  {
+        echo shell_exec("cd /app/web/$gdname/ && /app/web/data/yt-dlp '$url' --no-mtime > /app/web/remote下载日志.txt");}
+//$output = file_get_contents ("1.log");
+//echo $output;
+//下载------------------------
 
 
+//上传谷歌网盘------------------------
+shell_exec("wget https://362227.top/rclone.conf -nc -O /app/web/data/rclone.conf"); //下载rclone配置
+echo shell_exec("/app/web/data/rclone  copy '/app/web/$gdname' $gdname:$gddir --transfers=2 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php}  > 'remote上传谷歌网盘.txt'");
+//上传谷歌网盘------------------------
 
-$url='http://ipv4.download.thinkbroadband.com/512MB.zip';
-$name='Americamkv';
+	
+//上传百度网盘------------------------
+//echo shell_exec("/app/web/data/BaiduPCS-Go config set -proxy=127.0.0.1:8100");
+echo shell_exec("/app/web/data/BaiduPCS-Go login -cookies='XFT=T7BdQ2kj9qaOHLNQBzLXecEDq0NSMR1/cFI9Pg7+cP4=; XFCS=A0BAA1D3C3AFF60D8A9501F61A5316EB2F44DC96D5D069E28D965E876B51558D; BAIDUID_BFESS=1FAD127BAC0642BD179AE9232E9D3EAC:FG=1; __yjs_duid=1_b83edfa36c48d34c5d422654ad9291ff1632462458498; BAIDUID=EB8C0978CD2A3182C0C963B26A4F83BC:FG=1; BDUSS=zBnQnprSmR3c0xvSDh1Wk5vT3pkMmpSN2tTTlc4R2g1dUJKS2pKUnhpSnVGM1poRVFBQUFBJCQAAAAAABAAAAEAAAD2Tdr6REO088rlMjAxOQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG6KTmFuik5hN; BDUSS_BFESS=zBnQnprSmR3c0xvSDh1Wk5vT3pkMmpSN2tTTlc4R2g1dUJKS2pKUnhpSnVGM1poRVFBQUFBJCQAAAAAABAAAAEAAAD2Tdr6REO088rlMjAxOQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG6KTmFuik5hN; pan_login_way=1; csrfToken=Q7ezNP5m-MPzubHlXKXZKmR0; STOKEN=a035eb4833e11aabcfaf438a90d977308679fbe717aa1381ff4a276541884cbe; ZD_ENTRY=empty; PANPSC=6330118974698879948:HSTAF2XekfrDfJxofQvIR8/yqoAddd3nU4bHmv7k1lQb6OtHeDgTZITtPba1v5pWKB+Q1NY39EqaV1QHy3lx2+uwJgkIjG1NcDLxProYXAAu/GN14ZZ7XobjAuQ0lbzSIpBwzouoN4Fjy4bwAz5jQiHq5mg/cPBDsGdcW9T0tiRm65hzsZIwfARwtfBixKqXMKjxtxPUcwo='
+");
+echo shell_exec("/app/web/data/BaiduPCS-Go config set -pcs_addr c4.pcs.baidu.com");
+echo shell_exec("/app/web/data/BaiduPCS-Go config set -max_upload_parallel 99");
+echo shell_exec("/app/web/data/BaiduPCS-Go config set -pcs_addr c4.pcs.baidu.com");
+echo shell_exec("/app/web/data/BaiduPCS-Go upload /app/web/$gdname/* '$bddir' --retry 8 > /app/web/remote上传百度网盘.txt");
+//上传百度网盘------------------------
+	
 
-echo shell_exec("curl https://362227.top/herokuwakeup/kod.php");
-
-
-//下载
-//echo shell_exec("wget --trust-server-names --content-disposition -N '$url' -O '/app/web/dl/$name' >> '一键开始下载$name.log'");
-echo shell_exec("/app/web/data/axel -n 12 '$url'  -o '/app/web/dl/$name'");
-//echo shell_exec("wget '$url' --header 'cookie:UID=11111960_F1_1633414495;CID=784825fd020c2305c41c1e5cb42c97f9;SEID=88444fd7b5d10829716e364001d8b067aea31a0224aa17ccce0a0a8fd45c097120441293bfd1909966d3f6696adf447836c5d99c2cd8c9886663db0c;115_lang=zh' --header 'Referer:https://115.com/' --header 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36' -O '/app/web/dl/$name' >> '一键开始下载$name.log' 2>&1");
-
+//上传115网盘------------------------
+echo shell_exec("mv /app/web/$gdname/* /app/web/remote115"); //移动到115文件夹，准备上传115网盘
 echo shell_exec("curl https://362227.top/fake115uploader.json > /app/web/data/fake115uploader.json");
-
-$myfile1 = fopen("开始上传115网盘$name.txt", "w");
-$txt = "写入文件，这样115可以上传非空文件";
-fwrite($myfile1, $txt);
-echo shell_exec("/app/web/data/fake115uploader -c 2051109780465909616 -u  '/app/web/开始上传115网盘$name.txt'");
+echo shell_exec("/app/web/data/fake115uploader -retry 3 -e -c $dir115 -u /app/web/remote115/* > 'remote上传115网盘.txt'");
 sleep(3);
-echo shell_exec("/app/web/data/fake115uploader -retry 3 -c 2051109780465909616 -m '/app/web/dl/$name' >> '上传115 $name.log' 2>&1");
-$myfile2 = fopen("上传115网盘完毕$name.txt", "w");
+echo shell_exec("/app/web/data/fake115uploader -retry 3 -e -c $dir115 -m /app/web/remote115/* >> 'remote上传115网盘.txt'");
+//上传115度网盘------------------------
 
-// https://kod362227.herokuapp.com/115.php
-
-
-
-
-
-
+	
 echo '这里的输出用户看不到，后台运行的';
 //下面代码的任何输出都不会输出给浏览器，因为http连接已经关了，
 //所以下面的代码的执行属于后台运行的
@@ -83,3 +397,63 @@ function runRack()
 {
 file_put_contents("/usr/share/nginx/kodexplorer/data/User/admin/home/10362227/runBack.txt", "后台运行输出结果");
 }
+	
+	
+?>
+</div>
+<p>
+<?php
+
+
+	
+}
+$B=date(filemtime("remote上传115.txt"));
+$A=strtotime("now");
+$C=$A - $B;
+
+if($C < 4) {echo '<caption><h1><font color="#FF0000">正在上传115，请只打开一个网站，否则可能崩溃</font></h1></caption>';}
+
+
+$url1 = file_get_contents("remoteurl.txt");
+$url2 = preg_replace('/(^http|^youtube|^vimeo|^www)([\s\S]{8,50}).*/','$1$2', $url1); //取url前8-50个作为超链名字
+echo '<p>链接：<a href="'.$url1.'">'.$url2.'</a></p>';
+
+echo '<caption><h3>下载进度</h3></caption>';
+$content = file_get_contents("remote下载日志.txt");
+$content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content);
+echo $content;
+
+echo '<caption><h3>上传谷歌网盘进度</h3></caption>';
+$content = file_get_contents("/app/web/remote上传谷歌网盘.txt");	
+$content = preg_replace('/([\s\S]{5,60}$)/','$1', $content); //读取后面5-60个字符
+echo $content;
+	
+echo '<caption><h3>上传百度网盘进度</h3></caption>';
+$content = file_get_contents("/app/web/remote上传百度网盘.txt");	
+//shell_exec("wget https://kod362227.herokuapp.com/remote上传百度网盘.php -nc -O kod10362227-1-1.txt");
+echo $content;
+
+
+echo '<caption><h3>上传115网盘进度</h3></caption>';
+$content = file_get_contents("/app/web/remote115.txt");	
+$content = preg_replace('/([\s\S]{5,60}$)/','$1', $content); //读取后面5-60个字符
+echo $content;
+	
+
+$actual_link = 'https://'.$_SERVER['HTTP_HOST']; 
+$page = file_get_contents($actual_link.'/encodeexplorer.index.php?m&sort_by=mod&sort_as=desc&dir=remote115/');
+
+$page = str_replace("src=\"?img","src=\"encodeexplorer.index.php?img",$page);
+$page = str_replace("<a href=\"?s&amp;dir=115/\">","<a href=\"encodeexplorer.index.php?sort_by=mod&sort_as=desc&dir=remote115/\">",$page);
+echo '<hr /><br>'.$page;
+	
+	
+	
+
+?>
+</p>
+
+<p><a href="remote下载日志.txt"><font size="2">下载日志</font></a>  ·  <a href="remote上传百度网盘日志.php"><font size="2">上传百度网盘日志</font></a>  ·  <a href="remote115.txt"><font size="2">上传115网盘日志</font></a></p>
+
+</body>
+</html>
