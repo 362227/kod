@@ -212,11 +212,11 @@ $mvorlive = $_GET['mvorlive'];
 $rename = $_GET['rename'];
 $gdname = $_GET['gdname']; //ysf2020 ysf20202
 $if115 = $_GET['if115'];
-$if115 = preg_replace('/是/','nohup', $if115); 
+$if115 = preg_replace('/yes/','nohup', $if115); 
 $ifgd = $_GET['ifbd'];
-$ifbd = preg_replace('/是/','nohup', $ifd); 
+$ifbd = preg_replace('/yes/','nohup', $ifd); 
 $ifgd = $_GET['ifgd'];
-$ifgd = preg_replace('/是/','nohup', $ifgd); 
+$ifgd = preg_replace('/yes/','nohup', $ifgd); 
 	
 $mvorlivelenth = strlen($mvorlive); // mv 2个字节 live 4 个字节
 if ($mvorlivelenth < 3) {$gddir='大叔2019/Master/没有在硬盘';  //小于3，就是MV
