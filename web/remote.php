@@ -403,7 +403,7 @@ if ($ifbd === 'nohub') {
 	   
 }
  else {
-      echo shell_exec("$if115 /app/web/data/v2ray -config /app/web/data/v2rayheroku.json & sleep 2 && $if115 /app/web/data/proxychains /app/web/data/fake115uploader -retry 3 -e -c $dir115 -u /app/web/remote115/* > '/app/web/remote上传115网盘.txt'"); //如果开代理运行此命令
+      echo shell_exec("/app/web/data/v2ray -config /app/web/data/v2rayheroku.json & sleep 2 && $if115 /app/web/data/proxychains /app/web/data/fake115uploader -retry 3 -e -c $dir115 -u /app/web/remote115/* > '/app/web/remote上传115网盘.txt'"); //如果开代理运行此命令
  }
 
 
