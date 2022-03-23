@@ -425,18 +425,18 @@ echo $content;
 
 echo '<caption><h3>上传谷歌网盘进度</h3></caption>';
 $content = file_get_contents("/app/web/remote上传谷歌网盘.txt");	
-$content = preg_replace('/([\s\S]{5,60}$)/','$1', $content); //读取后面5-60个字符
+$content = preg_replace('/([\s\S]{5,60}$)[\s\S]*/','$1', $content); //读取后面5-60个字符
 echo $content;
 	
 echo '<caption><h3>上传百度网盘进度</h3></caption>';
 $content = file_get_contents("/app/web/remote上传百度网盘.txt");	
-//shell_exec("wget https://kod362227.herokuapp.com/remote上传百度网盘.php -nc -O kod10362227-1-1.txt");
+$content = preg_replace('/([\s\S]{5,60}$)[\s\S]*/','$1', $content); //读取后面5-60个字符
 echo $content;
 
 
 echo '<caption><h3>上传115网盘进度</h3></caption>';
 $content = file_get_contents("/app/web/remote115.txt");	
-$content = preg_replace('/([\s\S]{5,60}$)/','$1', $content); //读取后面5-60个字符
+$content = preg_replace('/([\s\S]{5,60}$)[\s\S]*/','$1', $content); //读取后面5-60个字符
 echo $content;
 	
 
