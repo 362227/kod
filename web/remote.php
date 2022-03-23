@@ -180,7 +180,8 @@ body{
 $cmd = $_GET['cmd'];
 $lenthcmd=strlen($cmd); //获取cmd长度
 if ($lenthcmd>1) { echo shell_exec("$cmd");} //命令行
-	
+
+
 $A=strtotime("now");
 if(file_exists("remote上传百度网盘.txt")){ 
     $F=date(filemtime("remote上传百度网盘.txt"));
@@ -189,6 +190,24 @@ if(file_exists("remote上传百度网盘.txt")){
     $lastline = $fp[count($fp)-1]; //最后一行
     if($Y < 7 || preg_match_all('/.*检测秒传中, 请稍候|准备上传.*/', $lastline, $lastline)) {echo '<caption><h3><font color="#FF0000">正在执行上传任务，请勿添加新链接，否则本任务会被强行取消</font></h3></caption>';}
 }
+
+$A=strtotime("now");
+if(file_exists("remote上传谷歌度网盘.txt")){ 
+    $F=date(filemtime("remote上谷歌网盘.txt"));
+    $Y = $A- $F;  //上传谷歌网盘最后修改
+    if($Y < 7 ) {echo '<caption><h3><font color="#FF0000">正在执行上传任务，请勿添加新链接，否则本任务会被强行取消</font></h3></caption>';}
+}
+
+$A=strtotime("now");
+if(file_exists("remote上传115网盘.txt")){ 
+    $F=date(filemtime("remote上传115网盘.txt"));
+    $Y = $A- $F;  //上传百度网盘最后修改
+    $fp = file("remote上传百度网盘.txt");
+    $lastline = $fp[count($fp)-1]; //最后一行
+    if($Y < 7 || preg_match_all('/.*秒传模式.*/', $lastline, $lastline)) {echo '<caption><h3><font color="#FF0000">正在执行上传任务，请勿添加新链接，否则本任务会被强行取消</font></h3></caption>';}
+}
+
+
 
 if(file_exists("remote下载日志.txt")){ 
     $G=date(filemtime("remote下载日志.txt"));
@@ -442,7 +461,7 @@ echo $content;
 	
 echo '<caption><h3>上传百度网盘进度</h3></caption>';
 $content = file_get_contents("/app/web/remote上传百度网盘.txt");	
-$content = preg_replace('/[\s\S]?([\s\S]{5,80}$)/','$1', $content); //读取后面5-80个字符
+$content = preg_replace('/[\s\S]*([\s\S]{5,80}$)/','$1', $content); //读取后面5-80个字符
 echo $content;
 
 
