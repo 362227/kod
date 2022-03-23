@@ -1,8 +1,7 @@
 <?php
 date_default_timezone_set('PRC');
 
-//shell_exec("pkill v2ray"); //杀死v2ray	
-shell_exec("nohup /app/web/data/v2ray -config /app/web/data/v2rayheroku.json > v2ray.txt& sleep 2"); //后台运行v2ray
+
 
 
 
@@ -245,7 +244,8 @@ $date = date('Y-m-d-H-i-s');
 shell_exec("mkdir $date");
 
 
-shell_exec("/app/web/data/v2ray -config /app/web/data/v2rayheroku.json > v2ray.txt & sleep 2"); //后台运行v2ray	
+shell_exec("pkill v2ray"); //杀死v2ray	
+shell_exec("nohup /app/web/data/v2ray -config /app/web/data/v2rayheroku.json > v2ray.txt& sleep 2"); //后台运行v2ray	
 shell_exec("rm -rf /app/web/remote/*.part"); //删除临时文件
 shell_exec("rm -rf /app/web/remote/*.ytdl"); //删除临时文件
 shell_exec("rm -rf /app/web/remote/*.part-Frag*"); //删除临时文件
