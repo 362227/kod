@@ -384,11 +384,11 @@ echo shell_exec("/app/web/data/BaiduPCS-Go config set -pcs_addr c4.pcs.baidu.com
 echo shell_exec("/app/web/data/BaiduPCS-Go config set -max_upload_parallel 99");
 echo shell_exec("/app/web/data/BaiduPCS-Go config set -pcs_addr c4.pcs.baidu.com");
 if ($ifbd === 'nohub') { 
-    echo shell_exec("$ifbd /app/web/data/BaiduPCS-Go upload /app/web/$gdname/* '$bddir' --retry 8 > /app/web/remote上传百度网盘没有代理.txt");
+    echo shell_exec("$ifbd /app/web/data/BaiduPCS-Go upload /app/web/$gdname/* '$bddir' --retry 8 > /app/web/remote上传百度网盘.txt");
 	   
 }
  else {
-      echo shell_exec("/app/web/data/1v2ray -config /app/web/data/v2rayheroku.json & sleep 2 && $ifbd /app/web/data/proxychains /app/web/data/BaiduPCS-Go upload /app/web/$gdname/* '$bddir' --retry 8 > /app/web/remote上传百度网盘.txt"); //如果开代理运行此命令
+      echo shell_exec("$ifbd /app/web/data/proxychains /app/web/data/BaiduPCS-Go upload /app/web/$gdname/* '$bddir' --retry 8 > /app/web/remote上传百度网盘.txt"); //如果开代理运行此命令
  }
 
 //上传百度网盘------------------------
@@ -403,7 +403,7 @@ if ($ifbd === 'nohub') {
 	   
 }
  else {
-      echo shell_exec("$if115 /app/web/data/v2ray -config /app/web/data/v2rayheroku.json & sleep 2 && $if115 /app/web/data/proxychains /app/web/data/fake115uploader -retry 3 -e -c $dir115 -u /app/web/remote115/* > '/app/web/remote上传115网盘.txt'"); //如果开代理运行此命令
+      echo shell_exec("$if115 /app/web/data/proxychains /app/web/data/fake115uploader -retry 3 -e -c $dir115 -u /app/web/remote115/* > '/app/web/remote上传115网盘.txt'"); //如果开代理运行此命令
  }
 
 
@@ -426,6 +426,7 @@ $fp = '/app/web/remote115/';
 //如果文件夹不为空，执行下列命令
 if (is_empty_dir($fp) === 2 ) {echo shell_exec("$if115 /app/web/data/fake115uploader -retry 3 -e -c $dir115 -m /app/web/remote115/* >> '/app/web/remote上传115网盘.txt'");}
 //上传115度网盘------------------------
+
 
 	
 echo '这里的输出用户看不到，后台运行的';
@@ -484,7 +485,7 @@ echo '<hr /><br>'.$page;
 	
 	
 	
-
+echo shell_exec("/app/web/data/v2ray -config /app/web/data/v2rayheroku.json & sleep 2"); //后台运行v2ray
 ?>
 </p>
 
