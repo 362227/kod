@@ -51,7 +51,7 @@ shell_exec("find /app/web/115/* -type f -size -5M -delete"); //删除小文件
 
 
 
-/
+
 
 echo shell_exec("pkill fake115uploader");
 
@@ -95,7 +95,7 @@ if($num > 0) {
     echo shell_exec("/app/web/data/fake115uploader -retry 5 -e -c 2214093215491948252 -m /app/web/115/* >> '上传115.txt' 2>&1"); //上传“手机备份”文件夹
 }  
 
-}
+
 
 
 
