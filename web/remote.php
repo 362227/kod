@@ -22,7 +22,7 @@ echo "页面每60秒刷新一次
 header("Refresh:60 ; url=remote.php");
 
       
-$randNum = "https://github.com/362227/kod/raw/master/web/60s.gif?id=".rand(1,1000000);
+$randNum = "/60s.gif?id=".rand(1,1000000);
 echo '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$randNum.'"  width="67" height="34" style="background-color: #EAECEE;"></p>';
 
     
