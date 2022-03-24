@@ -23,7 +23,7 @@ header("Refresh:60 ; url=remote.php");
 
       
 $randNum = "/60s.gif?id=".rand(1,1000000);
-echo '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$randNum.'"  width="44" height="21" style="background-color: #EAECEE;"></p>';
+echo '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$randNum.'"  width="38" height="21" style="background-color: #EAECEE;"></p>';
 
     
 
