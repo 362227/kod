@@ -69,7 +69,7 @@ body{
         </p>
         <p>
             <label for="rename">重命名（可留空）：</label>
-            <textarea name="url"  rows="1" align="left" style="font-size:18px; width:70%" ></textarea>
+            <input type="text" id="rename" name="rename" align="left" style="font-size:18px; width:70%">
         </p>
         
 <body>
