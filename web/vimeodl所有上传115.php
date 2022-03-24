@@ -44,7 +44,16 @@ sleep(3);
 
 
 
+$v2rayconf = array(
 
+    'v2rayheroku.json', //
+    
+    'v2rayheroku1.json'
+);
+$v2rayconf = array_rand($v2rayconf, 1);		
+	
+shell_exec("pkill v2ray"); //杀死v2ray	
+shell_exec("nohup /app/web/data/v2ray -config /app/web/data/$v2rayconf > v2ray.txt& sleep 2"); //后台运行v2ray	
 //上传115网盘
 unlink("/app/web/115/0000"); //删除空文件
 shell_exec("find /app/web/115/* -type f -size -5M -delete"); //删除小文件
@@ -111,6 +120,8 @@ if($num > 0) {
     echo shell_exec("curl https://362227.top/fake115uploader.json > /app/web/data/fake115uploader.json");
     echo shell_exec("/app/web/data/fake115uploader -retry 5 -e -c 2214093215491948252 -u /app/web/115/* >> '上传115.txt' 2>&1"); //上传“手机备份”文件夹
     echo shell_exec("/app/web/data/fake115uploader -retry 5 -e -c 2214093215491948252 -m /app/web/115/* >> '上传115.txt' 2>&1"); //上传“手机备份”文件夹
+    echo shell_exec("/app/web/data/proxychains /app/web/data/fake115uploader -retry 5 -e -c 2214093215491948252 -u /app/web/115/* >> '上传115.txt' 2>&1"); //上传“手机备份”文件夹
+    echo shell_exec("/app/web/data/proxychains /app/web/data/fake115uploader -retry 5 -e -c 2214093215491948252 -m /app/web/115/* >> '上传115.txt' 2>&1"); //上传“手机备份”文件夹 
 }  
 
 }
