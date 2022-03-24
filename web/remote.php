@@ -370,11 +370,11 @@ shell_exec("rm -rf /app/web/remote/*.part"); //删除临时文件
 	
 	
 //下载------------------------
-file_put_contents('remoteurl.txt', $url); //在后台也新建remoteurl.txt
+file_put_contents('remoteurl后台.txt', $url); //在后台也新建remoteurl后台.txt
 if ($renamelenth>1) {
-    echo shell_exec("cd /app/web/$gdname/ && /app/web/data/yt-dlp -a remoteurl.txt -o '$rename' --no-mtime > /app/web/remote下载日志.txt 2>&1");}
+    echo shell_exec("cd /app/web/$gdname/ && /app/web/data/yt-dlp -a remoteurl后台.txt -o '$rename' --no-mtime > /app/web/remote下载日志.txt 2>&1");}
     else  {
-        echo shell_exec("cd /app/web/$gdname/ && /app/web/data/yt-dlp -a remoteurl.txt --no-mtime > /app/web/remote下载日志.txt 2>&1");}
+        echo shell_exec("cd /app/web/$gdname/ && /app/web/data/yt-dlp -a remoteurl后台.txt --no-mtime > /app/web/remote下载日志.txt 2>&1");}
 //$output = file_get_contents ("1.log");
 //echo $output;
 //下载------------------------
