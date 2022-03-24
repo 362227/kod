@@ -47,6 +47,7 @@ body{
         label{
             cursor: pointer;
             display: inline-block;
+            vertical-align:middle;
             padding: 3px 6px;
             text-align: right;
 	    min-width:50px;
@@ -302,7 +303,7 @@ body{
         <fieldset>
         <p>
             <label for="url" >输入链接（URL）：</label>
-            <textarea name="url"  rows="1" align="left" style="font-size:18px; width:70%" ></textarea>
+            <textarea name="url"  rows="2" align="left" style="font-size:18px; width:70%" ></textarea>
         </p>
         <p>
             <label for="rename">重命名（可留空）：</label>
