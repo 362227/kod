@@ -476,8 +476,8 @@ $content = file_get_contents("/app/web/remote上传谷歌网盘.txt");
 $content = preg_replace('/[\s\S]*([\s\S]{180}$)/','$1', $content); //读取后面180个字符
 echo $content;
 	
-echo '<a href="remote上传百度网盘.txt" target="_blank"><u><h3>上传百度网盘进度</h3></u></a>';
-$content = file_get_contents("/app/web/remote上传百度网盘进度.php");	
+echo '<a href="remote上传百度网盘进度.php" target="_blank"><u><h3>上传百度网盘进度</h3></u></a>';
+$content = file_get_contents("/app/web/remote上传百度网盘.txt");	
 $content = preg_replace('/[\s\S]*([\s\S]{180}$)/','$1', $content); //读取后面180个字符
 echo $content;
 
