@@ -64,11 +64,11 @@ body{
         <fieldset>
         <p>
             <label for="url" >输入链接（URL）：</label>
-            <input type="text" id="url" name="url" align="left" style="font-size:20px">
+            <textarea name="url" cols="29" rows="1" align="left" style="font-size:20px"></textarea>
         </p>
         <p>
             <label for="rename">重命名（可留空）：</label>
-            <input type="text" id="rename" name="rename" align="left" style="font-size:20px">
+            <textarea name="rename" cols="29" rows="1" align="left" style="font-size:20px"></textarea>
         </p>
         
 <body>
@@ -369,7 +369,7 @@ shell_exec("rm -rf /app/web/remote/*.part"); //删除临时文件
 	
 //下载------------------------
 if ($renamelenth>1) {
-    echo shell_exec("cd /app/web/$gdname/ && /app/web/data/yt-dlp '$url' -o '$rename' --no-mtime > /app/web/remote下载日志.txt");}
+    echo shell_exec("cd /app/web/$gdname/ && /app/web/data/yt-dlp -i remoteurl.txt -o '$rename' --no-mtime > /app/web/remote下载日志.txt");}
     else  {
         echo shell_exec("cd /app/web/$gdname/ && /app/web/data/yt-dlp '$url' --no-mtime > /app/web/remote下载日志.txt");}
 //$output = file_get_contents ("1.log");
