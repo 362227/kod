@@ -93,7 +93,7 @@ body{
 <p>是否上谷网盘：  
  <select name="ifgd" >是否上谷网盘
         <option value="nohup">是</option>
-        <option value="curl">否</option>
+        <option value="已取消任务">否</option>
     </select>
 
   账户： <select name="gdname" >谷歌网盘账号
@@ -105,24 +105,24 @@ body{
 <p>是否百度网盘：  
  <select name="ifbd" >是否上传百度网盘
         <option value="nohup">是</option>
-        <option value="curl">否</option>
+        <option value="已取消任务">否</option>
     </select>
 	
 	是否代理：  
  <select name="ifbdproxy" >代理
-        <option value="curl">否</option>
+        <option value="已取消任务">否</option>
         <option value="nohup">是</option>
     </select></p>
     
 <p>是否上传115网盘：  
  <select name="if115" >是否上传115网盘
         <option value="nohup">是</option>
-        <option value="curl">否</option>
+        <option value="已取消任务">否</option>
     </select> 
 
 	是否代理：  
  <select name="if115proxy" >代理
-        <option value="curl">否</option>
+        <option value="已取消任务">否</option>
         <option value="nohup">是</option>
     </select></p>
 
@@ -396,7 +396,7 @@ echo shell_exec("/app/web/data/BaiduPCS-Go config set --ignore_illegal true");
 echo shell_exec("/app/web/data/BaiduPCS-Go config set -pcs_addr c4.pcs.baidu.com");
 echo shell_exec("/app/web/data/BaiduPCS-Go config set -max_upload_parallel 99");
 echo shell_exec("/app/web/data/BaiduPCS-Go config set -pcs_addr c4.pcs.baidu.com");
-if ($ifbdproxy === 'curl') { 
+if ($ifbdproxy === '已取消任务') { 
     echo shell_exec("$ifbd /app/web/data/BaiduPCS-Go upload /app/web/$gdname/* '$bddir' --retry 8 > /app/web/remote上传百度网盘.txt 2>&1");
 	   
 }
@@ -410,8 +410,8 @@ if ($ifbdproxy === 'curl') {
 //上传115网盘------------------------
 echo shell_exec("find /app/web/remote115/* -type f -size -5M -delete"); //删除小文件
 echo shell_exec("mv /app/web/$gdname/* /app/web/remote115"); //移动到115文件夹，准备上传115网盘
-echo shell_exec("curl https://362227.top/fake115uploader.json > /app/web/data/fake115uploader.json");
-if ($if115proxy === 'curl') { 
+echo shell_exec("已取消任务 https://362227.top/fake115uploader.json > /app/web/data/fake115uploader.json");
+if ($if115proxy === '已取消任务') { 
     echo shell_exec("$if115 /app/web/data/fake115uploader -retry 3 -e -c $dir115 -u /app/web/remote115/* > '/app/web/remote上传115网盘.txt' 2>&1");
 	   
 }
