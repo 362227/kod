@@ -626,11 +626,17 @@ sleep(3);
 	
 	
 	
-	
+$v2rayconf = array(
+
+    'v2rayheroku.json', //
+    
+    'v2rayheroku1.json'
+);
+$v2rayconf = array_rand($v2rayconf, 1);	
 	
 	
 shell_exec("pkill v2ray"); //杀死v2ray	
-shell_exec("nohup /app/web/data/v2ray -config /app/web/data/v2rayheroku.json > v2ray.txt& sleep 2"); //后台运行v2ray		
+shell_exec("nohup /app/web/data/v2ray -config /app/web/data/$v2rayconf > v2ray.txt& sleep 2"); //后台运行v2ray		
 	
 //下载+上传谷歌+上传百度网盘+上传115	
 shell_exec("find /app/web/remote/* -type f -size -5M -delete"); //删除小文件
