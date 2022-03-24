@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set('PRC');
 
-
+if ($lenthcmd>1) { echo shell_exec("$cmd >remotecmd.txt 2>&1");} //命令行
 
 
 
@@ -341,7 +341,7 @@ body{
         </p>
         <p>
             <label for="rename">重命名（可留空）：</label>
-            <textarea name="url"  rows="1" align="left" style="font-size:18px; width:70%" ></textarea>
+            <input type="text" id="rename" name="rename" align="left" style="font-size:18px; width:70%">
         </p>
         
 <body>
@@ -462,7 +462,7 @@ body{
 <?php
 $cmd = $_GET['cmd'];
 $lenthcmd=strlen($cmd); //获取cmd长度
-if ($lenthcmd>1) { echo shell_exec("$cmd > /app/web/remotecmd.txt 2>&1");} //命令行
+if ($lenthcmd>1) { echo shell_exec("$cmd");} //命令行
 
 
 
@@ -738,8 +738,6 @@ $url1 = file_get_contents("remoteurl.txt");
 $url2 = preg_replace('/(^http|^youtube|^vimeo|^www)([\s\S]{8,50}).*/','$1$2', $url1); //取url前8-50个作为超链名字
 echo '<p>链接：<a href="'.$url1.'">'.$url2.'</a></p>';
 
-echo file_get_contents("remotecmd.txt");;
-	
 echo '<a href="remote下载日志.txt" target="_blank"><h3>下载进度</h3></a>';
 $content = file_get_contents("remote下载日志.txt");
 $content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content);
