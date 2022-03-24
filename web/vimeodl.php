@@ -308,9 +308,9 @@ sleep(3);
 	
 	
 if ($renamelenth>1) {
-    echo shell_exec("cd /app/web/vimeodl/ && /app/web/data/yt-dlp -i vimeodlurl.txt -o '$rename' --no-mtime > /app/web/vimeodl下载日志.txt");}
+    echo shell_exec("cd /app/web/vimeodl/ && /app/web/data/yt-dlp -a /app/web/vimeodlurl.txt -o '$rename' --no-mtime > /app/web/vimeodl下载日志.txt");}
     else  {
-        echo shell_exec("cd /app/web/vimeodl/ && /app/web/data/yt-dlp -i vimeodlurl.txt --no-mtime > /app/web/vimeodl下载日志.txt");}
+        echo shell_exec("cd /app/web/vimeodl/ && /app/web/data/yt-dlp -a /app/web/vimeodlurl.txt --no-mtime > /app/web/vimeodl下载日志.txt");}
 //$output = file_get_contents ("1.log");
 //echo $output;
 
