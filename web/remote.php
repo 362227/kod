@@ -251,8 +251,7 @@ $date = date('Y-m-d-H-i-s');
 shell_exec("mkdir $date");
 
 
-shell_exec("pkill v2ray"); //杀死v2ray	
-shell_exec("nohup /app/web/data/v2ray -config /app/web/data/v2rayheroku.json > v2ray.txt& sleep 2"); //后台运行v2ray	
+
 shell_exec("rm -rf /app/web/remote/*.part"); //删除临时文件
 shell_exec("rm -rf /app/web/remote/*.ytdl"); //删除临时文件
 shell_exec("rm -rf /app/web/remote/*.part-Frag*"); //删除临时文件
@@ -357,7 +356,8 @@ sleep(3);
 	
 	
 	
-	
+shell_exec("pkill v2ray"); //杀死v2ray	
+shell_exec("nohup /app/web/data/v2ray -config /app/web/data/v2rayheroku.json > v2ray.txt& sleep 2"); //后台运行v2ray		
 	
 //下载+上传谷歌+上传百度网盘+上传115	
 shell_exec("find /app/web/remote/* -type f -size -5M -delete"); //删除小文件
