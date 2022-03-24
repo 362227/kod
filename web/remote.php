@@ -371,7 +371,7 @@ shell_exec("rm -rf /app/web/remote/*.part"); //删除临时文件
 if ($renamelenth>1) {
     echo shell_exec("cd /app/web/$gdname/ && /app/web/data/yt-dlp -i remoteurl.txt -o '$rename' --no-mtime > /app/web/remote下载日志.txt");}
     else  {
-        echo shell_exec("cd /app/web/$gdname/ && /app/web/data/yt-dlp '$url' --no-mtime > /app/web/remote下载日志.txt");}
+        echo shell_exec("cd /app/web/$gdname/ && /app/web/data/yt-dlp -i remoteurl.txt --no-mtime > /app/web/remote下载日志.txt");}
 //$output = file_get_contents ("1.log");
 //echo $output;
 //下载------------------------
