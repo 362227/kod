@@ -49,7 +49,7 @@ body{
             display: inline-block;
             padding: 3px 6px;
             text-align: right;
-	    min-width:150px;
+	    min-width:50px;
             vertical-align: top;
         }
         
