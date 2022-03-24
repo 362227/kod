@@ -40,7 +40,7 @@ body{
 }
 .box{
 	border: 1px solid;
-	min-width:50px;
+	min-width:10px;
 	margin:auto;
 }
 
@@ -302,11 +302,11 @@ body{
         <fieldset>
         <p>
             <label for="url" >输入链接（URL）：</label>
-            <textarea name="url"  rows="1" align="left" style="font-size:18px; min-width:470px" ></textarea>
+            <textarea name="url"  rows="1" align="left" style="font-size:18px; width:70%" ></textarea>
         </p>
         <p>
             <label for="rename">重命名（可留空）：</label>
-            <textarea name="url"  rows="1" align="left" style="font-size:18px; min-width:470px" ></textarea>
+            <textarea name="url"  rows="1" align="left" style="font-size:18px; width:70%" ></textarea>
         </p>
         
 <body>
