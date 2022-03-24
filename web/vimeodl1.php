@@ -72,8 +72,7 @@ body{
             <input type="text" id="rename" name="rename" align="left" style="font-size:18px; width:70%">
         </p>
         
-        <p><button id="bt000" value="delete" formaction="/vimeodl强制所有上传115.php" target="iframe"style="background-color: #F2462B;">强制上传115</button></p>
-<body>
+       
 
 <button id="btn" onclick="fun()" value="Go Elsewhere" formaction="/elsewhere" target="iframe">显示/隐藏“高级选项”</button>
 <div id="con" style="display: none">
@@ -104,7 +103,8 @@ body{
         <option value="no">否</option>
     </select>
 
-
+ <p><button id="bt000" value="delete" formaction="/vimeodl强制所有上传115.php" target="iframe"style="background-color: #F2462B;">强制上传115</button></p>
+<body>
 
 
 </div>
