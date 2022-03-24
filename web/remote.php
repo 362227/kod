@@ -79,7 +79,7 @@ body{
 
 
         <p>
-            <label for="rename">命令行（可留空）：</label>
+            <label for="cmd">命令行（可留空）：</label>
             <input type="text" id="cmd" name="cmd" align="left" style="font-size:20px">
         </p>
 
