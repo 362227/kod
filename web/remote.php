@@ -421,7 +421,7 @@ if ($if115proxy === '已取消任务') {
 
 
 $fp = '/app/web/remote115/';  
-   function is_empty_dir($fp)    //判断文件夹是否有文件，返回1表示没有文件，返回2表示有
+   function is_empty_dir($fp)    //判断文件夹是否有文件，返回1表示有文件，返回2表示没有
     {    
         $H = @opendir($fp); 
         $i=0;    
@@ -437,7 +437,7 @@ $fp = '/app/web/remote115/';
     }
 
 //如果文件夹不为空，执行下列命令
-if (is_empty_dir($fp) === 2 ) {echo shell_exec("$if115 /app/web/data/fake115uploader -retry 3 -e -c $dir115 -m /app/web/remote115/* >> '/app/web/remote上传115网盘.txt' 2>&1");}
+if (is_empty_dir($fp) === 1 ) {echo shell_exec("$if115 /app/web/data/fake115uploader -retry 3 -e -c $dir115 -m /app/web/remote115/* >> '/app/web/remote上传115网盘.txt' 2>&1");}
 //上传115度网盘------------------------
 
 	
