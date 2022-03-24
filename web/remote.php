@@ -466,23 +466,23 @@ $url1 = file_get_contents("remoteurl.txt");
 $url2 = preg_replace('/(^http|^youtube|^vimeo|^www)([\s\S]{8,50}).*/','$1$2', $url1); //取url前8-50个作为超链名字
 echo '<p>链接：<a href="'.$url1.'">'.$url2.'</a></p>';
 
-echo '<a href="remote下载日志.txt" target="_blank"><caption><h3>下载进度</h3></caption></a>';
+echo '<a href="remote下载日志.txt" target="_blank"><u><h3>下载进度</h3></u></a>';
 $content = file_get_contents("remote下载日志.txt");
 $content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content);
 echo $content;
 
-echo '<caption><h3>上传谷歌网盘进度</h3></caption>';
+echo '<a href="remote上传谷歌网盘.txt" target="_blank"><u><h3>上传谷歌网盘进度</h3></u></a>';
 $content = file_get_contents("/app/web/remote上传谷歌网盘.txt");	
 $content = preg_replace('/[\s\S]*([\s\S]{180}$)/','$1', $content); //读取后面180个字符
 echo $content;
 	
-echo '<caption><h3>上传百度网盘进度</h3></caption>';
+echo '<a href="remote上传百度网盘.txt" target="_blank"><u><h3>上传谷歌网盘进度</h3></u></a>';
 $content = file_get_contents("/app/web/remote上传百度网盘.txt");	
 $content = preg_replace('/[\s\S]*([\s\S]{180}$)/','$1', $content); //读取后面180个字符
 echo $content;
 
 
-echo '<caption><h3>上传115网盘进度</h3></caption>';
+echo '<a href="remote上传115网盘.txt" target="_blank"><u><h3>上传115网盘进度</h3></u></a>';
 $content = file_get_contents("/app/web/remote上传115网盘.txt");	
 $content = preg_replace('/[\s\S]*([\s\S]{280}$)/','$1', $content); //读取后面280个字符
 echo $content;
