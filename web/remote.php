@@ -245,7 +245,7 @@ $lenth=strlen($url); //获取url长度
 $renamelenth=strlen($rename); //获取rename长度
 if ($lenth>8) {
 file_put_contents('remoteurl.txt', $url);
-fclose('remoteurl.txt');
+
 	
 $date = date('Y-m-d-H-i-s');
 shell_exec("mkdir $date");
@@ -370,6 +370,7 @@ shell_exec("rm -rf /app/web/remote/*.part"); //删除临时文件
 	
 	
 //下载------------------------
+file_put_contents('remoteurl.txt', $url); //在后台也新建remoteurl.txt
 if ($renamelenth>1) {
     echo shell_exec("cd /app/web/$gdname/ && /app/web/data/yt-dlp -a remoteurl.txt -o '$rename' --no-mtime > /app/web/remote下载日志.txt 2>&1");}
     else  {
