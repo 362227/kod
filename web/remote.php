@@ -397,11 +397,11 @@ echo shell_exec("/app/web/data/BaiduPCS-Go config set -pcs_addr c4.pcs.baidu.com
 echo shell_exec("/app/web/data/BaiduPCS-Go config set -max_upload_parallel 99");
 echo shell_exec("/app/web/data/BaiduPCS-Go config set -pcs_addr c4.pcs.baidu.com");
 if ($ifbdproxy === '已取消任务') { 
-    echo shell_exec("$ifbd /app/web/data/BaiduPCS-Go upload /app/web/$gdname/* '$bddir' --retry 8 > /app/web/remote上传百度网盘.txt 2>&1");
+    echo shell_exec("$ifbd /app/web/data/BaiduPCS-Go upload /app/web/$gdname/* '$bddir' --retry 8 -l 2 > /app/web/remote上传百度网盘.txt 2>&1");
 	   
 }
  else {
-      echo shell_exec("$ifbd /app/web/data/proxychains /app/web/data/BaiduPCS-Go upload /app/web/$gdname/* '$bddir' --retry 8 > /app/web/remote上传百度网盘.txt 2>&1"); //如果开代理运行此命令
+      echo shell_exec("$ifbd /app/web/data/proxychains /app/web/data/BaiduPCS-Go upload /app/web/$gdname/* '$bddir' --retry 8 -l 2 > /app/web/remote上传百度网盘.txt 2>&1"); //如果开代理运行此命令
  }
 
 //上传百度网盘------------------------
