@@ -662,7 +662,7 @@ if ($renamelenth>1) {
 //上传谷歌网盘------------------------
 echo shell_exec("find /app/web/$gdname/* -type f -size -5M -delete"); //删除小文件
 shell_exec("wget https://362227.top/rclone.conf -nc -O /app/web/data/rclone.conf"); //下载rclone配置
-echo shell_exec("$ifgd /app/web/data/rclone  copy '/app/web/$gdname' $gdname:$gddir --transfers=2 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php}  > 'remote上传谷歌网盘.txt' 2>&1");
+echo shell_exec("$ifgd /app/web/data/rclone  copy '/app/web/$gdname' $gdname:$gddir --transfers=2 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php}  --log-file 'remote上传谷歌网盘.txt' ");
 //上传谷歌网盘------------------------
 
 	
