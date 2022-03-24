@@ -53,16 +53,22 @@ shell_exec("find /app/web/115/* -type f -size -5M -delete"); //删除小文件
 
 //大于10000s就执行
 
+$M=(filemtime("vimeodl上传百度网盘.txt"));
+$N=(filemtime("vimeodl1上传百度网盘.txt"));
 
 $B=date(filemtime("115"));
 $D=date(filemtime("上传115.txt"));
 $A=strtotime("now");
 
+
+$G=$A-$M; //vimeodl上传百度网盘.txt修改时间离现在的时间
+$F=$A-$N; //vimeodl1上传百度网盘.TXT修改时间离现在的时间
+
 $C=$A-$B; //115文件夹修改时间离现在的时间
 $E=$A-$D; //115上传最后时间离现在的时间
 
-//正式上传 如果115文件夹修改时间离现在的时间大于1小时，且115上传最后时间离现在的时间大于1200秒
-if($C > 3600 &&  $E > 600) {
+//正式上传 如果115文件夹修改时间离现在的时间大于1小时，且115上传最后时间离现在的时间大于1200秒, 且115上传最后时间，vimeodl上传百度网盘.txt和vimeodl1上传百度网盘.TXT最后时间离现在的时间均大于600秒
+if($C > 3600 &&  $E > 600 &&  $F > 600 && $G > 600) {
 
 
 echo shell_exec("pkill fake115uploader");
