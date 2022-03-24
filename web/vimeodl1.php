@@ -393,7 +393,7 @@ echo '<hr /><br>'.$page;
 ?>
 </p>
 
-<p><a href="vimeodl1下载日志.txt"><font size="2">下载日志</font></a>  ·  <a href="vimeodl1上传百度网盘日志.php"><font size="2">上传百度网盘日志</font></a>  ·  <a href="上传115.txt"><font size="2">上传115网盘日志</font></a></p>
+<p><a href="vimeodl1下载日志.txt"><font size="2">下载日志</font></a>  ·  <a href="vimeodl1上传百度网盘日志.php"><font size="2">上传百度网盘日志</font></a>  ·  <a href="上传115.php"><font size="2">上传115网盘日志</font></a></p>
 
 </body>
 </html>
