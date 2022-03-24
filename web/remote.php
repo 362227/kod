@@ -23,7 +23,7 @@ header("Refresh:60 ; url=remote.php");
 
       
 $randNum = "/60s.gif?id=".rand(1,1000000);
-echo '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$randNum.'"  width="50" height="24" style="background-color: #EAECEE;"></p>';
+echo '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$randNum.'"  width="44" height="21" style="background-color: #EAECEE;"></p>';
 
     
 
@@ -475,7 +475,7 @@ $content = file_get_contents("/app/web/remote上传谷歌网盘.txt");
 $content = preg_replace('/[\s\S]*([\s\S]{180}$)/','$1', $content); //读取后面180个字符
 echo $content;
 	
-echo '<a href="remote上传百度网盘进度.php" target="_blank"><u><h3>上传百度网盘进度</h3></u></a>';
+echo '<a href="remote上传百度网盘日志.php" target="_blank"><u><h3>上传百度网盘进度</h3></u></a>';
 $content = file_get_contents("/app/web/remote上传百度网盘.txt");	
 $content = preg_replace('/[\s\S]*([\s\S]{180}$)/','$1', $content); //读取后面180个字符
 echo $content;
