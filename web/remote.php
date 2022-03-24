@@ -399,7 +399,7 @@ body{
         <option value="nohup">是</option>
     </select></p>
 
-
+<p><button id="bt" class="small red button" formaction="/remote.php&" target="iframe" >测试</button></p>
 <button id="bt" value="killall" formaction="/killall.php" target="iframe" style="background-color: #F2462B;">杀掉所有进程</button>
 <button id="bt000" value="delete" formaction="/delete.php" target="iframe"style="background-color: #F2462B;">删掉所有中间文件</button>
 
