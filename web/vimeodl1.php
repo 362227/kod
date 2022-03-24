@@ -25,7 +25,7 @@ $randNum = "/15s.gif?id=".rand(100,1000000);
 echo '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$randNum.'"  width="67" height="34" style="background-color: #EAECEE;"></p>';
 //echo date('H:i:s Y-m-d');
 
-<p><button id="bt000" value="delete" formaction="/vimeodl强制所有上传115.php" target="iframe"style="background-color: #F2462B;">强制上传115</button></p>
+
 
 ?>
 
@@ -72,6 +72,7 @@ body{
             <input type="text" id="rename" name="rename" align="left" style="font-size:18px; width:70%">
         </p>
         
+        <p><button id="bt000" value="delete" formaction="/vimeodl强制所有上传115.php" target="iframe"style="background-color: #F2462B;">强制上传115</button></p>
 <body>
 
 <button id="btn" onclick="fun()" value="Go Elsewhere" formaction="/elsewhere" target="iframe">显示/隐藏“高级选项”</button>
