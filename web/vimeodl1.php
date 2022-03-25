@@ -295,7 +295,6 @@ $url = str_replace(array('http://vimeo.com','https://vimeo.com'), array('https:/
 
 
 
-else {$url=$url;}
 file_put_contents('vimeodl1url.txt', $url);
 $date = date('Y-m-d-H-i-s');
 shell_exec("mkdir $date");
