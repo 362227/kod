@@ -99,7 +99,7 @@ $.ajax({
        }
     })
 }
-getLog1();
+getLog2();
 
 </script>  
 	
