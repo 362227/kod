@@ -81,6 +81,27 @@ getLog1();
 </script>  	
 
 	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script type="text/javascript">
+    
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
+
+$( document ).ready(function() {
+console.log( "ready!" );
+});
+function getLog1() {
+$.ajax({
+    url: 'vimeo的115文件管理.php',
+    dataType: 'html',
+    success: function(html) {
+        $("#file").html(html);
+        setTimeout(getLog1, 11000); // refresh every 11 second
+       }
+    })
+}
+getLog1();
+
+</script>  
 	
 	
 	
@@ -427,10 +448,10 @@ echo '<div id="bd"></div>';
 $actual_link = 'https://'.$_SERVER['HTTP_HOST']; 
 $page = file_get_contents($actual_link.'/encodeexplorer.index.php?m&sort_by=mod&sort_as=desc&dir=115/');
 
-$page = str_replace("src=\"?img","src=\"encodeexplorer.index.php?img",$page);
-$page = str_replace("<a href=\"?s&amp;dir=115/\">","<a href=\"encodeexplorer.index.php?sort_by=mod&sort_as=desc&dir=115/\">",$page);
-echo '<hr /><br>'.$page;
-	
+//$page = str_replace("src=\"?img","src=\"encodeexplorer.index.php?img",$page);
+//$page = str_replace("<a href=\"?s&amp;dir=115/\">","<a href=\"encodeexplorer.index.php?sort_by=mod&sort_as=desc&dir=115/\">",$page);
+//echo '<hr /><br>'.$page;
+echo '<div id="file"></div>';	
 	
 	
 
