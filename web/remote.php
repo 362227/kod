@@ -535,7 +535,7 @@ shell_exec("rm -rf /app/web/remote上传谷歌网盘.txt"); //删除临时文件
 shell_exec("rm -rf /app/web/remote下载日志.txt"); //删除临时文件
 //shell_exec("pkill BaiduPCS-Go");
 shell_exec("pkill yt-dlp");
-sleep(3);
+
 
 	
 	
