@@ -517,6 +517,7 @@ if ($mvorlivelenth < 3) {$gddir='大叔2019/Master/没有在硬盘';  //小于3�
 $lenth=strlen($url); //获取url长度
 $renamelenth=strlen($rename); //获取rename长度
 if ($lenth>8) {
+$url = str_replace(array(' ','\n'), array('#','#'), $url);
 file_put_contents('remoteurl.txt', $url);
 
 	
