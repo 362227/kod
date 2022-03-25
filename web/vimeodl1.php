@@ -261,10 +261,10 @@ $lenthcmd=strlen($cmd); //获取cmd长度
 if ($lenthcmd>1) { echo shell_exec("$cmd > /app/web/vimeodl1cmd.txt 2>&1");} //命令行
 	
 $A=strtotime("now");
-if(file_exists("vimeodl1上传百度网盘.txt")){ 
-    $F=date(filemtime("vimeodl1上传百度网盘.txt"));
+if(file_exists("vimeodl1上传百度网盘日志.txt")){ 
+    $F=date(filemtime("vimeodl1上传百度网盘日志.txt"));
     $Y = $A- $F;  //上传百度网盘最后修改
-    $fp = file("vimeodl1上传百度网盘.txt");
+    $fp = file("vimeodl1上传百度网盘日志.txt");
     $lastline = $fp[count($fp)-1]; //最后一行
     if($Y < 7 || preg_match_all('/.*检测秒传中, 请稍候|准备上传.*/', $lastline, $lastline)) {echo '<caption><h3><font color="#FF0000">正在执行上传任务，请勿添加新链接，否则本任务会被强行取消</font></h3></caption>';}
 }
@@ -302,7 +302,7 @@ shell_exec("mkdir $date");
 shell_exec("rm -rf /app/web/vimeodl1/*.part"); //删除临时文件
 shell_exec("rm -rf /app/web/vimeodl1/*.ytdl"); //删除临时文件
 shell_exec("rm -rf /app/web/vimeodl1/*.part-Frag*"); //删除临时文件
-shell_exec("rm -rf /app/web/vimeodl1上传百度网盘.txt"); //删除临时文件
+shell_exec("rm -rf /app/web/vimeodl1上传百度网盘日志.txt"); //删除临时文件
 shell_exec("rm -rf /app/web/vimeodl1下载日志.txt"); //删除临时文件
 //shell_exec("pkill BaiduPCS-Go");
 shell_exec("pkill youtube-dl");
