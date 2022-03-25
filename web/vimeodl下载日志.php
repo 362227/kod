@@ -7,7 +7,7 @@ echo $file_arr [ $i ]. "<br>" ;
 }
 /*
 foreach($file_arr as $value){
-echo $value."<br />";
+echo $value."<br>";
 }*/
 }
 ?>
