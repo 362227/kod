@@ -191,17 +191,17 @@ shell_exec("wget $actual_link -nc -O kod10362227.txt");
 shell_exec("curl -L $actual_link");	
 	
 $url = $_GET['url'];
-$arr = array(
-    'https://362227.top/rss/vimeo10362227.php?id=',
-    'http://193.123.232.200/kodexplorer/rss/vimeo.php?id='
+//$arr = array(
+//    'https://362227.top/rss/vimeo10362227.php?id=',
+//    'http://193.123.232.200/kodexplorer/rss/vimeo.php?id='
    
-);
-$key = array_rand($arr, 1);
+//);
+//$key = array_rand($arr, 1);
 
-		if (preg_match('/(http\:\/\/vimeo\.com)|(https\:\/\/vimeo\.com)/', $url, $url1)) {
-$url = $arr[$key].$url;
-}
-else {$url=$url;}
+//		if (preg_match('/(http\:\/\/vimeo\.com)|(https\:\/\/vimeo\.com)/', $url, $url1)) {
+//$url = $arr[$key].$url;
+//}
+//else {$url=$url;}
 	
 $rename = $_GET['rename'];
 	
