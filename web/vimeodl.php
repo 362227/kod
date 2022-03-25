@@ -87,9 +87,9 @@ getLog1();
 src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
 
 $( document ).ready(function() {
-console.log( "ready!" );
+console.log2( "ready!" );
 });
-function getLog1() {
+function getLog2() {
 $.ajax({
     url: 'vimeo的115文件管理.php',
     dataType: 'html',
