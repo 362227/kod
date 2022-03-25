@@ -290,16 +290,11 @@ $renamelenth=strlen($rename); //获取rename长度
 if ($lenth>8) {
 $url = str_replace(array(' ','\n'), array('#','#'), $url);
 
-$arr = array(
-    'https://362227.top/rss/vimeo10362227.php?id=',
-    'http://193.123.232.200/kodexplorer/rss/vimeo.php?id='
-   
-);
-$key = array_rand($arr, 1);
 
- if (preg_match('/(http\:\/\/vimeo\.com)|(https\:\/\/vimeo\.com)/', $url, $url1)) {
-$url = $arr[$key].$url;
-}
+$url = str_replace(array('http://vimeo.com','https://vimeo.com'), array('https://362227.top/rss/vimeo10362227.php?id=http://vimeo.com','https://362227.top/rss/vimeo10362227.php?id=http://vimeo.com'), $url);
+
+
+
 else {$url=$url;}
 file_put_contents('vimeodl1url.txt', $url);
 $date = date('Y-m-d-H-i-s');
