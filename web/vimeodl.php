@@ -22,7 +22,7 @@ header("content-type:text/html;charset=utf-8");
 
       
 $randNum = "/15s.gif?id=".rand(10,1000000);
-echo '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$randNum.'"  width="67" height="34" style="background-color: #EAECEE;"></p>';
+//echo '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$randNum.'"  width="67" height="34" style="background-color: #EAECEE;"></p>';
 //echo date('H:i:s Y-m-d');
 
     
@@ -218,7 +218,8 @@ body{
 
 
 
-<p><button id="btn1" onclick="funa()" target="iframe">提交</button></p>
+<p hidden><button id="btn1" onclick="funa()" target="iframe">提交</button></p>
+<p><button id="btn1" onclick="location.reload()"  target="iframe">提交</button></p>
 <div1 id="abc" style="display: none">
 
 
