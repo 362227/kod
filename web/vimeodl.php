@@ -754,7 +754,20 @@ body.mobile #upload {
 	margin-bottom:15px;
 }
 
-</style>';
+</style>
+
+
+
+
+<body class="mobile">
+<div id="frame">
+<div id="top">
+	
+</div>
+
+
+
+';
 
 //$actual_link = 'https://'.$_SERVER['HTTP_HOST']; 
 //$page = file_get_contents($actual_link.'/encodeexplorer.index.php?m&sort_by=mod&sort_as=desc&dir=115/');
