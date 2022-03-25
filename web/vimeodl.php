@@ -32,6 +32,32 @@ echo '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$randNum.'"  widt
 <html>
 <head>
 <title>yt-dlp</title>
+
+	
+	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script type="text/javascript">
+    
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
+
+$( document ).ready(function() {
+console.log( "ready!" );
+});
+function getLog() {
+$.ajax({
+    url: 'vimeodl上传百度网盘日志.php',
+    dataType: 'text',
+    success: function(text) {
+        $("#bd").text(text);
+        setTimeout(getLog, 5000); // refresh every 5 second
+       }
+    })
+}
+getLog();
+
+</script>  	
+	
+	
 <style>
 body{
 	background-color:#EAECEE;
@@ -362,10 +388,11 @@ $content = file_get_contents("vimeodl下载日志.txt");
 $content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content);
 echo $content;
 
-   echo '<caption><h3>上传百度网盘进度</h3></caption>';
-$content = file_get_contents("/app/web/vimeodl上传百度网盘日志.txt");	
+echo '<caption><h3>上传百度网盘进度</h3></caption>';
+//$content = file_get_contents("/app/web/vimeodl上传百度网盘日志.txt");	
 //shell_exec("wget https://kod362227.herokuapp.com/vimeodl上传百度网盘.php -nc -O kod10362227-1-1.txt");
-echo $content;
+//echo $content;
+echo '<div id="bd"></div>';
 
 
 
