@@ -37,6 +37,28 @@ echo '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$randNum.'"  widt
 	
 	
 	
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script type="text/javascript">
+    
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
+
+$( document ).ready(function() {
+console.log( "ready!" );
+});
+function getLog() {
+$.ajax({
+    url: 'remote上传百度网盘日志.php',
+    dataType: 'html',
+    success: function(html) {
+        $("#bd").html(html);
+        setTimeout(getLog, 5000); // refresh every 5 second
+       }
+    })
+}
+getLog();
+
+</script>  	
+	
 	
 	
  <script type="text/javascript">
