@@ -363,7 +363,7 @@ body{
         <option value="live">现场</option>
     </select></p>
     
-<p>是否上传谷歌网盘：  
+<p>上传谷歌网盘：  
  <select name="ifgd" >上传谷歌网盘
         <option value="nohup">是</option>
         <option value="已取消任务">否</option>
