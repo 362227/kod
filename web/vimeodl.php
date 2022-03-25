@@ -288,6 +288,7 @@ $rename = $_GET['rename'];
 $lenth=strlen($url); //获取url长度
 $renamelenth=strlen($rename); //获取rename长度
 if ($lenth>8) {
+$url = str_replace(array(' ','\n'), array('#####','#####'), $url);
 file_put_contents('vimeodlurl.txt', $url);
 $date = date('Y-m-d-H-i-s');
 shell_exec("mkdir $date");
