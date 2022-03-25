@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set('PRC');
 
-if ($lenthcmd>1) { echo shell_exec("$cmd >remotecmd.txt 2>&1");} //命令行
+
 
 
 
