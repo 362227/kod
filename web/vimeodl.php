@@ -12,13 +12,13 @@ date_default_timezone_set('PRC');
 
 header("content-type:text/html;charset=utf-8");
 
-echo "页面每15秒刷新一次
-";
+//echo "页面每15秒刷新一次
+//";
      
 
 // 该函数每15秒钟刷新一次页面
 
-header("Refresh:15 ; url=vimeodl.php");
+//header("Refresh:15 ; url=vimeodl.php");
 
       
 $randNum = "/15s.gif?id=".rand(10,1000000);
@@ -56,6 +56,32 @@ $.ajax({
 getLog();
 
 </script>  	
+	
+	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script type="text/javascript">
+    
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
+
+$( document ).ready(function() {
+console.log( "ready!" );
+});
+function getLog() {
+$.ajax({
+    url: 'vimeodl下载日志.php',
+    dataType: 'text',
+    success: function(text) {
+        $("#dl").text(text);
+        setTimeout(getLog, 5000); // refresh every 5 second
+       }
+    })
+}
+getLog();
+
+</script>  	
+
+	
+	
 	
 	
 <style>
@@ -384,9 +410,10 @@ $url2 = preg_replace('/(^http|^youtube|^vimeo|^www)([\s\S]{8,50}).*/','$1$2', $u
 echo '<p>链接：<a href="'.$url1.'">'.$url1.'</a></p>';
 
 echo '<caption><h3>下载进度</h3></caption>';
-$content = file_get_contents("vimeodl下载日志.txt");
-$content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content);
-echo $content;
+//$content = file_get_contents("vimeodl下载日志.txt");
+//$content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content);
+//echo $content;
+echo '<div id="dl"></div>';
 
 echo '<caption><h3>上传百度网盘进度</h3></caption>';
 //$content = file_get_contents("/app/web/vimeodl上传百度网盘日志.txt");	
