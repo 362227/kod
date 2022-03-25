@@ -742,7 +742,7 @@ file_put_contents("/usr/share/nginx/kodexplorer/data/User/admin/home/10362227/ru
 
 $url1 = file_get_contents("remoteurl.txt");
 $url2 = preg_replace('/(^http|^youtube|^vimeo|^www)([\s\S]{8,50}).*/','$1$2', $url1); //取url前8-50个作为超链名字
-echo '<p>链接：<a href="'.$url1.'">'.$url2.'</a></p>';
+echo '<p>链接：<a href="'.$url1.'">'.$url1.'</a></p>';
 
 echo '<a href="remote下载日志.txt" target="_blank"><h3>下载进度</h3></a>';
 $content = file_get_contents("remote下载日志.txt");
