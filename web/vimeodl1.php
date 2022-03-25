@@ -234,7 +234,7 @@ body{
 
 <p hidden><button id="btn1" onclick="funa()" target="iframe">提交</button></p>
 <p hidden><button id="btn1" onclick="location.reload()"  target="iframe">提交</button></p>
-<p><button onclick="window.location.href='2.php'">提交</button></p>
+<p><button onclick="window.location.href='vimeodl1.php'">提交</button></p>
 <div1 id="abc" style="display: none">
 
 
