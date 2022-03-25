@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set('PRC');
 
-if ($lenthcmd>1) { echo shell_exec("$cmd >remotecmd.txt 2>&1");} //命令行
+
 
 
 
@@ -363,8 +363,8 @@ body{
         <option value="live">现场</option>
     </select></p>
     
-<p>是否上传谷歌网盘：  
- <select name="ifgd" >是否上传谷歌网盘
+<p>上传谷歌网盘：  
+ <select name="ifgd" >上传谷歌网盘
         <option value="nohup">是</option>
         <option value="已取消任务">否</option>
     </select>
@@ -375,7 +375,7 @@ body{
         <option value="10362227">10362227</option>
     </select></p>
     
-<p>是否上传百度网盘：  
+<p>上传百度网盘：  
  <select name="ifbd" >是否上传百度网盘
         <option value="nohup">是</option>
         <option value="已取消任务">否</option>
@@ -387,7 +387,7 @@ body{
         <option value="nohup">是</option>
     </select></p>
     
-<p>是否上传115网盘：  
+<p>上传115网盘：  
  <select name="if115" >是否上传115网盘
         <option value="nohup">是</option>
         <option value="已取消任务">否</option>
@@ -399,7 +399,7 @@ body{
         <option value="nohup">是</option>
     </select></p>
 
-<p><button id="bt" class="small red button" formaction="/remote.php&" target="iframe" >测试</button></p>
+<p><button id="bt" class="small red button" formaction="/remote无url长度要求.php&" target="iframe" >强制提交</button></p>
 <button id="bt" value="killall" formaction="/killall.php" target="iframe" style="background-color: #F2462B;">杀掉所有进程</button>
 <button id="bt000" value="delete" formaction="/delete.php" target="iframe"style="background-color: #F2462B;">删掉所有中间文件</button>
 
@@ -462,7 +462,7 @@ body{
 <?php
 $cmd = $_GET['cmd'];
 $lenthcmd=strlen($cmd); //获取cmd长度
-if ($lenthcmd>1) { echo shell_exec("$cmd");} //命令行
+if ($lenthcmd>1) { echo shell_exec("$cmd > /app/web/remotecmd.txt 2>&1");} //命令行
 
 
 
@@ -516,7 +516,7 @@ if ($mvorlivelenth < 3) {$gddir='大叔2019/Master/没有在硬盘';  //小于3�
 	
 $lenth=strlen($url); //获取url长度
 $renamelenth=strlen($rename); //获取rename长度
-if ($lenth<999999) {
+if ($lenth<99999999) {
 file_put_contents('remoteurl.txt', $url);
 
 	
@@ -740,13 +740,19 @@ file_put_contents("/usr/share/nginx/kodexplorer/data/User/admin/home/10362227/ru
 	
 }
 
+
+
+$content = file_get_contents("remotecmd.txt");
+echo $content;
+	
+	
 $url1 = file_get_contents("remoteurl.txt");
 $url2 = preg_replace('/(^http|^youtube|^vimeo|^www)([\s\S]{8,50}).*/','$1$2', $url1); //取url前8-50个作为超链名字
-echo '<p>链接：<a href="'.$url1.'">'.$url2.'</a></p>';
+echo '<p>链接：<a href="'.$url1.'">'.$url1.'</a></p>';
 
 echo '<a href="remote下载日志.txt" target="_blank"><h3>下载进度</h3></a>';
 $content = file_get_contents("remote下载日志.txt");
-$content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content);
+$content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content); //不包含文件名
 echo $content;
 
 echo '<a href="remote上传谷歌网盘.txt" target="_blank"><h3>上传谷歌网盘进度</h3></a>';
