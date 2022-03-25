@@ -322,9 +322,9 @@ sleep(3);
 	
 	
 if ($renamelenth>1) {
-    echo shell_exec("cd /app/web/vimeodl1/ && /app/web/data/youtube-dl -a /app/web/vimeodl1url.txt -o '$rename' --no-mtime > /app/web/vimeodl1下载日志.txt");}
+    echo shell_exec("cd /app/web/vimeodl1/ && /app/web/data/youtube-dl -f source -a /app/web/vimeodl1url.txt -o '$rename' --no-mtime > /app/web/vimeodl1下载日志.txt");}
     else  {
-        echo shell_exec("cd /app/web/vimeodl1/ && /app/web/data/youtube-dl -a /app/web/vimeodl1url.txt --no-mtime > /app/web/vimeodl1下载日志.txt");}
+        echo shell_exec("cd /app/web/vimeodl1/ && /app/web/data/youtube-dl -f source -a /app/web/vimeodl1url.txt --no-mtime > /app/web/vimeodl1下载日志.txt");}
 //$output = file_get_contents ("1.log");
 //echo $output;
 
