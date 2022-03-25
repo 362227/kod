@@ -95,7 +95,7 @@ $.ajax({
     dataType: 'html',
     success: function(html) {
         $("#file").html(html);
-        setTimeout(getLog1, 11000); // refresh every 11 second
+        setTimeout(getLog2, 11000); // refresh every 11 second
        }
     })
 }
