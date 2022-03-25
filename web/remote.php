@@ -32,6 +32,63 @@ echo '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$randNum.'"  widt
 <html>
 <head>
 <title>youtube-dl</title>
+	
+	
+	
+	
+	
+	
+	
+ <script type="text/javascript">
+    
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
+
+
+var windowWidth = $(window).width();
+
+if (location.href.indexOf('reload')==-1)
+{
+   location.href=location.href+'?reload';
+}
+
+</script>  		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 <style>
 body{
 	background-color:#EAECEE;
@@ -423,7 +480,8 @@ body{
 
 
 
-<p><button id="btn1" class="button" onclick="funa()" target="iframe">提交</button></p>
+<p hidden><button id="btn1" class="button" onclick="funa()" target="iframe">提交</button></p>
+<p><button id="btn1" class="button"  onclick="window.location.href='remote.php'">Click me</button></p>
 <div1 id="abc" style="display: none">
 
 
