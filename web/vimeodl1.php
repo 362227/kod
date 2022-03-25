@@ -289,7 +289,7 @@ $lenth=strlen($url); //获取url长度
 $renamelenth=strlen($rename); //获取rename长度
 if ($lenth>8) {
 $url = str_replace(array(' ','\n'), array('#','#'), $url);
-$url = $_GET['url'];
+
 $arr = array(
     'https://362227.top/rss/vimeo10362227.php?id=',
     'http://193.123.232.200/kodexplorer/rss/vimeo.php?id='
