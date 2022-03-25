@@ -46,9 +46,9 @@ console.log( "ready!" );
 function getLog() {
 $.ajax({
     url: 'vimeodl上传百度网盘日志.php',
-    dataType: 'text',
-    success: function(text) {
-        $("#bd").text(text);
+    dataType: 'html',
+    success: function(html) {
+        $("#bd").html(html);
         setTimeout(getLog, 5000); // refresh every 5 second
        }
     })
@@ -69,9 +69,9 @@ console.log( "ready!" );
 function getLog1() {
 $.ajax({
     url: 'vimeodl下载日志.php',
-    dataType: 'text',
-    success: function(text) {
-        $("#dl").text(text);
+    dataType: 'html',
+    success: function(html) {
+        $("#dl").html(html);
         setTimeout(getLog1, 5000); // refresh every 5 second
        }
     })
