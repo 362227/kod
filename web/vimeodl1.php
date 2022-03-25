@@ -12,26 +12,118 @@ date_default_timezone_set('PRC');
 
 header("content-type:text/html;charset=utf-8");
 
-echo "页面每15秒刷新一次
-";
+//echo "页面每15秒刷新一次
+//";
      
 
 // 该函数每15秒钟刷新一次页面
 
-header("Refresh:15 ; url=vimeodl1.php");
+//header("Refresh:15 ; url=vimeodl1.php");
 
       
-$randNum = "/15s.gif?id=".rand(100,1000000);
+$randNum = "/15s.gif?id=".rand(10,1000000);
 echo '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$randNum.'"  width="67" height="34" style="background-color: #EAECEE;"></p>';
 //echo date('H:i:s Y-m-d');
 
-
+    
 
 ?>
 
 <html>
 <head>
-<title>youtube-dl</title>
+<title>yt-dlp</title>
+
+	
+	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script type="text/javascript">
+    
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
+
+$( document ).ready(function() {
+console.log( "ready!" );
+});
+function getLog() {
+$.ajax({
+    url: 'vimeodl1上传百度网盘日志.php',
+    dataType: 'html',
+    success: function(html) {
+        $("#bd").html(html);
+        setTimeout(getLog, 5000); // refresh every 5 second
+       }
+    })
+}
+getLog();
+
+</script>  	
+	
+	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script type="text/javascript">
+    
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
+
+$( document ).ready(function() {
+console.log( "ready!" );
+});
+function getLog1() {
+$.ajax({
+    url: 'vimeodl1下载日志.php',
+    dataType: 'html',
+    success: function(html) {
+        $("#dl").html(html);
+        setTimeout(getLog1, 5000); // refresh every 5 second
+       }
+    })
+}
+getLog1();
+
+</script>  	
+
+	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script type="text/javascript">
+    
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
+
+$( document ).ready(function() {
+console.log2( "ready!" );
+});
+function getLog2() {
+$.ajax({
+    url: 'vimeo的115文件管理.php',
+    dataType: 'html',
+    success: function(html) {
+        $("#file").html(html);
+        setTimeout(getLog2, 11000); // refresh every 11 second
+       }
+    })
+}
+getLog2();
+
+</script>  
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 <style>
 body{
 	background-color:#EAECEE;
@@ -47,8 +139,8 @@ body{
         label{
             cursor: pointer;
             display: inline-block;
-            vertical-align:middle;
             padding: 3px 6px;
+            vertical-align:middle;
             text-align: right;
 	    min-width:150px;
             vertical-align: top;
@@ -57,7 +149,7 @@ body{
 </head>
 <body>
 <center>
-<h1>youtube-dl</h1>
+<h1>yt-dlp</h1>
 <p></p>
 	
 	
@@ -72,7 +164,7 @@ body{
             <input type="text" id="rename" name="rename" align="left" style="font-size:18px; width:70%">
         </p>
         
-       
+<body>
 
 <button id="btn" onclick="fun()" value="Go Elsewhere" formaction="/elsewhere" target="iframe">显示/隐藏“高级选项”</button>
 <div id="con" style="display: none">
@@ -103,10 +195,8 @@ body{
         <option value="no">否</option>
     </select>
 
-<p><button id="bt000" value="delete" formaction="/vimeodl强制所有上传115.php" target="iframe"style="background-color: #F2462B;">强制上传115</button>
+<p><button id="bt000" value="delete" formaction="/vimeodl1强制所有上传115.php" target="iframe"style="background-color: #F2462B;">强制上传115</button>
 <button id="bt" value="killall" formaction="/killall.php" target="iframe" style="background-color: #F2462B;">杀掉所有进程</button></p>
-<body>
-
 
 </div>
 
@@ -192,18 +282,6 @@ shell_exec("wget $actual_link -nc -O kod10362227.txt");
 shell_exec("curl -L $actual_link");	
 	
 $url = $_GET['url'];
-//$arr = array(
-//    'https://362227.top/rss/vimeo10362227.php?id=',
-//    'http://193.123.232.200/kodexplorer/rss/vimeo.php?id='
-   
-//);
-//$key = array_rand($arr, 1);
-
-//		if (preg_match('/(http\:\/\/vimeo\.com)|(https\:\/\/vimeo\.com)/', $url, $url1)) {
-//$url = $arr[$key].$url;
-//}
-//else {$url=$url;}
-	
 $rename = $_GET['rename'];
 	
 $lenth=strlen($url); //获取url长度
@@ -219,7 +297,7 @@ shell_exec("rm -rf /app/web/vimeodl1/*.part-Frag*"); //删除临时文件
 shell_exec("rm -rf /app/web/vimeodl1上传百度网盘.txt"); //删除临时文件
 shell_exec("rm -rf /app/web/vimeodl1下载日志.txt"); //删除临时文件
 //shell_exec("pkill BaiduPCS-Go");
-shell_exec("pkill youtube-dl");
+shell_exec("pkill yt-dlp");
 sleep(3);
 
 	
@@ -323,16 +401,15 @@ sleep(3);
 	
 	
 if ($renamelenth>1) {
-    echo shell_exec("cd /app/web/vimeodl1/ && /app/web/data/youtube-dl -f source -a /app/web/vimeodl1url.txt -o '$rename' --no-mtime > /app/web/vimeodl1下载日志.txt");}
+    echo shell_exec("cd /app/web/vimeodl1/ && /app/web/data/yt-dlp -a /app/web/vimeodl1url.txt -o '$rename' --no-mtime > /app/web/vimeodl1下载日志.txt");}
     else  {
-        echo shell_exec("cd /app/web/vimeodl1/ && /app/web/data/youtube-dl -f source -a /app/web/vimeodl1url.txt --no-mtime > /app/web/vimeodl1下载日志.txt");}
+        echo shell_exec("cd /app/web/vimeodl1/ && /app/web/data/yt-dlp -a /app/web/vimeodl1url.txt --no-mtime > /app/web/vimeodl1下载日志.txt");}
 //$output = file_get_contents ("1.log");
 //echo $output;
 
 echo "下载";
-
-
 	
+
 //$content = file_get_contents("https://kod362227.herokuapp.com/vimeodl1上传百度网盘.php");	
 //shell_exec("wget https://kod362227.herokuapp.com/vimeodl1上传百度网盘.php -nc -O kod10362227-1-1.txt");
 //echo $content;
@@ -354,6 +431,17 @@ file_put_contents("/usr/share/nginx/kodexplorer/data/User/admin/home/10362227/ru
 ?>
 </div>
 <p>
+	
+	
+
+	
+
+	
+	
+	
+	
+	
+	
 <?php
 
 
@@ -373,32 +461,329 @@ $url2 = preg_replace('/(^http|^youtube|^vimeo|^www)([\s\S]{8,50}).*/','$1$2', $u
 echo '<p>链接：<a href="'.$url1.'">'.$url1.'</a></p>';
 
 echo '<caption><h3>下载进度</h3></caption>';
-$content = file_get_contents("vimeodl1下载日志.txt");
-$content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content);
-echo $content;
+//$content = file_get_contents("vimeodl1下载日志.txt");
+//$content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content);
+//echo $content;
+echo '<div id="dl"></div>';
 
-   echo '<caption><h3>上传百度网盘进度</h3></caption>';
-$content = file_get_contents("/app/web/vimeodl1上传百度网盘日志.txt");		
+echo '<caption><h3>上传百度网盘进度</h3></caption>';
+//$content = file_get_contents("/app/web/vimeodl1上传百度网盘日志.txt");	
 //shell_exec("wget https://kod362227.herokuapp.com/vimeodl1上传百度网盘.php -nc -O kod10362227-1-1.txt");
-echo $content;
+//echo $content;
+echo '<div id="bd"></div>';
 
 
 
 
-$actual_link = 'https://'.$_SERVER['HTTP_HOST']; 
-$page = file_get_contents($actual_link.'/encodeexplorer.index.php?m&sort_by=mod&sort_as=desc&dir=115/');
 
-$page = str_replace("src=\"?img","src=\"encodeexplorer.index.php?img",$page);
-$page = str_replace("<a href=\"?s&amp;dir=115/\">","<a href=\"encodeexplorer.index.php?sort_by=mod&sort_as=desc&dir=115/\">",$page);
-echo '<hr /><br>'.$page;
+echo '<style type="text/css">
+
+/* General styles */
+
+BODY {
+	background-color:#EAECEE;
+	font-family:Verdana;
+	font-size:small;
+}
+
+A {
+	color: #000000;
+	text-decoration: none;
+}
+
+A:hover {
+	text-decoration: underline;
+}
+
+#top {
+	width:100%;
+	padding-bottom: 20px;
+}
+
+#top a span, #top a:hover, #top a span:hover{
+	color:#68a9d2;
+	font-weight:bold;
+	text-align:center;
+	font-size:large;
+}
+
+#top a {
+	display:block;
+	padding:20px 0 0 0;
+}
+
+#top span {
+	display:block;
+}
+
+div.subtitle{
+	width:80%;
+	margin: 0 auto;
+	color:#68a9d2;
+	text-align:center;
+}
+
+#frame {
+	border: 1px solid #CDD2D6;
+	text-align:left;
+	position: relative;
+	margin: 0 auto;
+	max-width:auto;
+	overflow:hidden;
+}
+
+#error {
+	max-width:450px;
+	background-color:#EAECEE;
+	color:#EAECEE;
+	padding:7pt;
+	position: relative;
+	margin: 10pt auto;
+	text-align:center;
+	border: 1px dotted #CDD2D6;
+}
+
+input {
+	border: 1px solid #CDD2D6;
+}
+
+.bar{
+	width:100%;
+	clear:both;
+	height:1px;
+}
+
+/* File list */
+
+table.table {
+	width:100%;
+	border-collapse: collapse;
+	table-layout: fixed;
+	word-wrap: break-word;
+}
+
+table.table td{
+	padding:3px;
+}
+
+table.table tr.row.two {
+	background-color:#E3E6F0;
+}
+
+table.table tr.row.one {
+	background-color:#f8f9fa;
+}
+
+table.table tr.row td.icon {
+	width:25px;
+	padding-top:3px;
+	padding-bottom:1px;
+}
+
+table.table td.del {
+	width:25px;
+}
+
+table.table tr.row td.size {
+	width: 100px;
+	text-align: right;
+}
+
+table.table tr.row td.changed {
+	width: 150px;
+	text-align: center;
+}
+
+table.table tr.header img {
+	vertical-align:bottom;
+}
+
+table img{
+	border:0;
+}
+
+/* Info area */
+
+#info {
+	color:#000000;
+	font-family:Verdana;
+	max-width:680px;
+	position: relative;
+	margin: 0 auto;
+	text-align:center;
+}
+
+/* Thumbnail area */
+
+#thumb {
+	position:absolute;
+	border: 1px solid #CDD2D6;
+	background:#f8f9fa;
+	display:none;
+	padding:3px;
+}
+
+#thumb img {
+	display:block;
+}
+
+/* Login bar (at the bottom of the page) */
+#login_bar {
+	margin: 0 auto;
+	margin-top:2px;
+	max-width:680px;
+}
+
+#login_bar input.submit{
+	float:right;
+}
+
+/* Upload area */
+
+#upload {
+	margin: 0 auto;
+	margin-top:2px;
+	max-width:680px;
+}
+
+#upload #password_container {
+	margin-right:20px;
+}
+
+#upload #newdir_container, #upload #password_container {
+	float:left;
+}
+
+#upload #upload_container{
+	float:right;
+}
+
+#upload input.upload_dirname, #upload input.upload_password{
+	width:140px;
+}
+
+#upload input.upload_file{
+	font-size:small;
+}
+
+/* Breadcrumbs */
+
+div.breadcrumbs {
+	display:block;
+	padding:1px 3px;
+	color:#cccccc;
+	font-size:x-small;
+}
+
+div.breadcrumbs a{
+	display:inline-block;
+	color:#cccccc;
+	padding:2px 0;
+	font-size:small;
+}
+
+/* Login area */
+
+#login {
+	max-width:280px;
+	text-align:right;
+	margin:15px auto 50px auto;
+}
+
+#login div {
+	display:block;
+	width:100%;
+	margin-top:5px;
+}
+
+#login label{
+	width: 120px;
+	text-align: right;
+}
+
+/* Mobile interface */
+
+body.mobile #frame, body.mobile #info, body.mobile #upload {
+	max-width:none;
+}
+
+body.mobile {
+	font-size:medium;
+}
+
+body.mobile a.item {
+	display:block;
+	padding:10px 0;
+}
+
+body.mobile a.item span.size {
+	float:right;
+	margin-left:10px;
+}
+
+body.mobile table.table {
+	margin-bottom:30px;
+}
+
+body.mobile table.table tr td {
+	border-top: 1px solid #CDD2D6;
+}
+
+body.mobile table.table tr.last td {
+	border-bottom: 1px solid #CDD2D6;
+}
+
+body.mobile #top {
+	padding-bottom:3px;
+}
+
+body.mobile #top a {
+	padding-top:3px;
+}
+
+body.mobile #upload #password_container, body.mobile #upload #upload_container, body.mobile #upload #newdir_container {
+	float:none;
+	margin-top:5px;
+}
+
+body.mobile #upload input.upload_dirname, body.mobile #upload input.upload_password{
+	width:240px;
+}
+
+body.mobile #upload {
+	margin-bottom:15px;
+}
+
+</style>
+
+
+
+
+<body class="mobile">
+<div id="frame">
+<div id="top">
 	
+</div>
+
+
+
+';
+
+//$actual_link = 'https://'.$_SERVER['HTTP_HOST']; 
+//$page = file_get_contents($actual_link.'/encodeexplorer.index.php?m&sort_by=mod&sort_as=desc&dir=115/');
+
+//$page = str_replace("src=\"?img","src=\"encodeexplorer.index.php?img",$page);
+//$page = str_replace("<a href=\"?s&amp;dir=115/\">","<a href=\"encodeexplorer.index.php?sort_by=mod&sort_as=desc&dir=115/\">",$page);
+//echo '<p hidden>'.$page.'</p>';
+	
+echo '<div id="file"></div>';	
 	
 	
 
 ?>
 </p>
 
-<p><a href="vimeodl1下载日志.txt"><font size="2">下载日志</font></a>  ·  <a href="vimeodl1上传百度网盘日志.php"><font size="2">上传百度网盘日志</font></a>  ·  <a href="上传115.php"><font size="2">上传115网盘日志</font></a></p>
+<p align="center"><a href="vimeodl1下载日志.txt"><font size="2">下载日志</font></a>  ·  <a href="vimeodl1上传百度网盘日志.php"><font size="2">上传百度网盘日志</font></a>  ·  <a href="上传115.php"><font size="2">上传115网盘日志</font></a></p>
 
 </body>
 </html>
