@@ -306,7 +306,7 @@ shell_exec("rm -rf /app/web/vimeodl1上传百度网盘日志.txt"); //删除临�
 shell_exec("rm -rf /app/web/vimeodl1下载日志.txt"); //删除临时文件
 //shell_exec("pkill BaiduPCS-Go");
 shell_exec("pkill youtube-dl");
-sleep(3);
+
 
 	
 	
