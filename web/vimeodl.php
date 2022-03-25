@@ -256,6 +256,7 @@ body{
 <h1></h1>
 <div class="box">
 <?php
+
 $cmd = $_GET['cmd'];
 $lenthcmd=strlen($cmd); //获取cmd长度
 if ($lenthcmd>1) { echo shell_exec("$cmd > /app/web/vimeodlcmd.txt 2>&1");} //命令行
@@ -283,6 +284,7 @@ shell_exec("wget $actual_link -nc -O kod10362227.txt");
 shell_exec("curl -L $actual_link");	
 	
 $url = $_GET['url'];
+echo $url;
 $rename = $_GET['rename'];
 	
 $lenth=strlen($url); //获取url长度
