@@ -167,7 +167,7 @@ body{
 <?php
 $cmd = $_GET['cmd'];
 $lenthcmd=strlen($cmd); //获取cmd长度
-if ($lenthcmd>1) { echo shell_exec("$cmd");} //命令行
+if ($lenthcmd>1) { echo shell_exec("$cmd > /app/web/vimeodl1cmd.txt 2>&1");} //命令行
 	
 $A=strtotime("now");
 if(file_exists("vimeodl1上传百度网盘.txt")){ 
@@ -330,8 +330,9 @@ if ($renamelenth>1) {
 //echo $output;
 
 echo "下载";
-	
 
+
+	
 //$content = file_get_contents("https://kod362227.herokuapp.com/vimeodl1上传百度网盘.php");	
 //shell_exec("wget https://kod362227.herokuapp.com/vimeodl1上传百度网盘.php -nc -O kod10362227-1-1.txt");
 //echo $content;
@@ -364,7 +365,9 @@ $C=$A - $B;
 
 if($C < 4) {echo '<caption><h1><font color="#FF0000">正在上传115，请只打开一个网站，否则可能崩溃</font></h1></caption>';}
 
-
+$content = file_get_contents("vimeodl1cmd.txt");
+echo $content;
+	
 $url1 = file_get_contents("vimeodl1url.txt");
 $url2 = preg_replace('/(^http|^youtube|^vimeo|^www)([\s\S]{8,50}).*/','$1$2', $url1); //取url前8-50个作为超链名字
 echo '<p>链接：<a href="'.$url1.'">'.$url1.'</a></p>';
