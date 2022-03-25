@@ -462,7 +462,7 @@ body{
 <?php
 $cmd = $_GET['cmd'];
 $lenthcmd=strlen($cmd); //获取cmd长度
-if ($lenthcmd>1) { echo shell_exec("$cmd >remotecmd.txt 2>&1");} //命令行
+if ($lenthcmd>1) { echo shell_exec("$cmd > /app/web/remotecmd.txt 2>&1");} //命令行
 
 
 
@@ -740,6 +740,12 @@ file_put_contents("/usr/share/nginx/kodexplorer/data/User/admin/home/10362227/ru
 	
 }
 
+
+
+$content = file_get_contents("remotecmd.txt");
+echo $content;
+	
+	
 $url1 = file_get_contents("remoteurl.txt");
 $url2 = preg_replace('/(^http|^youtube|^vimeo|^www)([\s\S]{8,50}).*/','$1$2', $url1); //取url前8-50个作为超链名字
 echo '<p>链接：<a href="'.$url1.'">'.$url1.'</a></p>';
@@ -747,7 +753,6 @@ echo '<p>链接：<a href="'.$url1.'">'.$url1.'</a></p>';
 echo '<a href="remote下载日志.txt" target="_blank"><h3>下载进度</h3></a>';
 $content = file_get_contents("remote下载日志.txt");
 $content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content); //不包含文件名
-
 echo $content;
 
 echo '<a href="remote上传谷歌网盘.txt" target="_blank"><h3>上传谷歌网盘进度</h3></a>';
