@@ -300,9 +300,32 @@ shell_exec("rm -rf /app/web/vimeodl上传百度网盘日志.txt"); //删除临�
 shell_exec("rm -rf /app/web/vimeodl下载日志.txt"); //删除临时文件
 //shell_exec("pkill BaiduPCS-Go");
 shell_exec("pkill yt-dlp");
-sleep(3);
+sleep(1);
 
+$B=date(filemtime("上传115.txt"));
+$A=strtotime("now");
+$C=$A - $B;
+
+if($C < 4) {echo '<caption><h1><font color="#FF0000">正在上传115，请只打开一个网站，否则可能崩溃</font></h1></caption>';}
+
+$content = file_get_contents("vimeodlcmd.txt");
+echo $content;
 	
+$url1 = file_get_contents("vimeodlurl.txt");
+$url2 = preg_replace('/(^http|^youtube|^vimeo|^www)([\s\S]{8,50}).*/','$1$2', $url1); //取url前8-50个作为超链名字
+echo '<p>链接：<a href="'.$url1.'">'.$url1.'</a></p>';
+
+echo '<caption><h3>下载进度</h3></caption>';
+//$content = file_get_contents("vimeodl下载日志.txt");
+//$content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content);
+//echo $content;
+echo '<div id="dl"></div>';
+
+echo '<caption><h3>上传百度网盘进度</h3></caption>';
+//$content = file_get_contents("/app/web/vimeodl上传百度网盘日志.txt");	
+//shell_exec("wget https://kod362227.herokuapp.com/vimeodl上传百度网盘.php -nc -O kod10362227-1-1.txt");
+//echo $content;
+echo '<div id="bd"></div>';	
 	
 	
 	
@@ -449,30 +472,7 @@ file_put_contents("/usr/share/nginx/kodexplorer/data/User/admin/home/10362227/ru
 
 	
 }
-$B=date(filemtime("上传115.txt"));
-$A=strtotime("now");
-$C=$A - $B;
 
-if($C < 4) {echo '<caption><h1><font color="#FF0000">正在上传115，请只打开一个网站，否则可能崩溃</font></h1></caption>';}
-
-$content = file_get_contents("vimeodlcmd.txt");
-echo $content;
-	
-$url1 = file_get_contents("vimeodlurl.txt");
-$url2 = preg_replace('/(^http|^youtube|^vimeo|^www)([\s\S]{8,50}).*/','$1$2', $url1); //取url前8-50个作为超链名字
-echo '<p>链接：<a href="'.$url1.'">'.$url1.'</a></p>';
-
-echo '<caption><h3>下载进度</h3></caption>';
-//$content = file_get_contents("vimeodl下载日志.txt");
-//$content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content);
-//echo $content;
-echo '<div id="dl"></div>';
-
-echo '<caption><h3>上传百度网盘进度</h3></caption>';
-//$content = file_get_contents("/app/web/vimeodl上传百度网盘日志.txt");	
-//shell_exec("wget https://kod362227.herokuapp.com/vimeodl上传百度网盘.php -nc -O kod10362227-1-1.txt");
-//echo $content;
-echo '<div id="bd"></div>';
 
 
 
