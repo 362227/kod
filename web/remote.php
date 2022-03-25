@@ -746,8 +746,8 @@ echo '<p>链接：<a href="'.$url1.'">'.$url1.'</a></p>';
 
 echo '<a href="remote下载日志.txt" target="_blank"><h3>下载进度</h3></a>';
 $content = file_get_contents("remote下载日志.txt");
-//$content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content); //不包含文件名
-$content = preg_replace('/[\s\S]?(\[download\] Destination.*)[\s\S]?(\[download\].*)/','$1$2', $content); //包含文件名
+$content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content); //不包含文件名
+
 echo $content;
 
 echo '<a href="remote上传谷歌网盘.txt" target="_blank"><h3>上传谷歌网盘进度</h3></a>';
