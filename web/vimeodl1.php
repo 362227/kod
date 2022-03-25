@@ -218,7 +218,8 @@ body{
 
 
 
-<p><button id="btn1" onclick="funa()" target="iframe">提交</button></p>
+<p hidden><button id="btn1" onclick="funa()" target="iframe">提交</button></p>
+<p><button id="btn1" onclick="location.reload()"  target="iframe">提交</button></p>
 <div1 id="abc" style="display: none">
 
 
