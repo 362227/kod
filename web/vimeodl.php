@@ -66,17 +66,17 @@ src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
 $( document ).ready(function() {
 console.log( "ready!" );
 });
-function getLog() {
+function getLog1() {
 $.ajax({
     url: 'vimeodl下载日志.php',
     dataType: 'text',
     success: function(text) {
         $("#dl").text(text);
-        setTimeout(getLog, 5000); // refresh every 5 second
+        setTimeout(getLog1, 5000); // refresh every 5 second
        }
     })
 }
-getLog();
+getLog1();
 
 </script>  	
 
