@@ -364,7 +364,7 @@ body{
     </select></p>
     
 <p>是否上传谷歌网盘：  
- <select name="ifgd" >是否上传谷歌网盘
+ <select name="ifgd" >上传谷歌网盘
         <option value="nohup">是</option>
         <option value="已取消任务">否</option>
     </select>
@@ -375,7 +375,7 @@ body{
         <option value="10362227">10362227</option>
     </select></p>
     
-<p>是否上传百度网盘：  
+<p>上传百度网盘：  
  <select name="ifbd" >是否上传百度网盘
         <option value="nohup">是</option>
         <option value="已取消任务">否</option>
@@ -387,7 +387,7 @@ body{
         <option value="nohup">是</option>
     </select></p>
     
-<p>是否上传115网盘：  
+<p>上传115网盘：  
  <select name="if115" >是否上传115网盘
         <option value="nohup">是</option>
         <option value="已取消任务">否</option>
