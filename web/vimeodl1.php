@@ -21,8 +21,8 @@ header("content-type:text/html;charset=utf-8");
 //header("Refresh:15 ; url=vimeodl1.php");
 
       
-$randNum = "/15s.gif?id=".rand(10,1000000);
-echo '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$randNum.'"  width="67" height="34" style="background-color: #EAECEE;"></p>';
+//$randNum = "/15s.gif?id=".rand(10,1000000);
+//echo '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$randNum.'"  width="67" height="34" style="background-color: #EAECEE;"></p>';
 //echo date('H:i:s Y-m-d');
 
     
