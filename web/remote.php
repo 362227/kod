@@ -13,8 +13,8 @@ date_default_timezone_set('PRC');
 
 header("content-type:text/html;charset=utf-8");
 
-echo "页面每60秒刷新一次
-";
+//echo "页面每60秒刷新一次
+//";
      
 
 // 该函数每60秒钟刷新一次页面
@@ -22,8 +22,8 @@ echo "页面每60秒刷新一次
 header("Refresh:60 ; url=remote.php");
 
       
-$randNum = "/60s.gif?id=".rand(1,1000000);
-echo '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$randNum.'"  width="38" height="21" style="background-color: #EAECEE;"></p>';
+//$randNum = "/60s.gif?id=".rand(1,1000000);
+//echo '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$randNum.'"  width="38" height="21" style="background-color: #EAECEE;"></p>';
 
     
 
