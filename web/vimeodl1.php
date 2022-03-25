@@ -105,6 +105,20 @@ getLog2();
 	
 	
 	
+<script type="text/javascript">
+    
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
+
+
+var windowWidth = $(window).width();
+
+if (location.href.indexOf('reload')==-1)
+{
+   location.href=location.href+'?reload';
+}
+
+</script>  		
+	
 	
 	
 
@@ -219,7 +233,8 @@ body{
 
 
 <p hidden><button id="btn1" onclick="funa()" target="iframe">提交</button></p>
-<p><button id="btn1" onclick="location.reload()"  target="iframe">提交</button></p>
+<p hidden><button id="btn1" onclick="location.reload()"  target="iframe">提交</button></p>
+<p><button onclick="window.location.href='2.php'">提交</button></p>
 <div1 id="abc" style="display: none">
 
 
