@@ -44,14 +44,16 @@ sleep(3);
 
 
 
-$v2rayconf = array(
+$v2rayconfs = array(
 
     'v2rayheroku.json', //
     
     'v2rayheroku1.json'
 );
-$v2rayconf = array_rand($v2rayconf, 1);		
+$v2rayconf = array_rand($v2rayconfs, 1);		
+$v2rayconf = $v2rayconfs[$v2rayconf];
 	
+
 shell_exec("pkill v2ray"); //杀死v2ray	
 shell_exec("nohup /app/web/data/v2ray -config /app/web/data/$v2rayconf > v2ray.txt& sleep 2"); //后台运行v2ray	
 //上传115网盘
