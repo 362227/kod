@@ -557,6 +557,14 @@ $url = str_replace(array('http://vimeo.com','https://vimeo.com'), array('https:/
 
 
 file_put_contents('vimeodl1url.txt', $url);
+	
+	
+$string = file_get_contents('vimeodl1url.txt');
+ 
+$links =  preg_replace('/(.*)/', '<a href="$1">$1</a><br>', $url);
+file_put_contents('vimeodl1htmlurl.txt', $links);
+	
+	
 $date = date('Y-m-d-H-i-s');
 shell_exec("mkdir $date");
 	
@@ -724,9 +732,8 @@ if($C < 4) {echo '<caption><h1><font color="#FF0000">正在上传115，请只打
 $content = file_get_contents("vimeodl1cmd.txt");
 echo $content;
 	
-$url1 = file_get_contents("vimeodl1url.txt");
-$url2 = preg_replace('/(^http|^youtube|^vimeo|^www)([\s\S]{8,50}).*/','$1$2', $url1); //取url前8-50个作为超链名字
-echo '<p>链接：<a href="vimeodl1url.txt" target="_blank">'.$url1.'</a></p>';
+if(file_exists("vimeodl1htmlurl.txt")) {$line = count(file('vimeodl1htmlurl.txt'));} //获取行数
+echo '链接('.$line.')：'.file_get_contents("vimeodl1htmlurl.txt");
 
 //echo '<caption><h3>下载进度</h3></caption>';
 //$content = file_get_contents("vimeodl1下载日志.txt");
