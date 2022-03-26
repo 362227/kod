@@ -19,7 +19,7 @@ header("content-type:text/html;charset=utf-8");
 
 // 该函数每60秒钟刷新一次页面
 
-header("Refresh:60 ; url=remote.php");
+header("Refresh:1000 ; url=remote.php");
 
       
 //$randNum = "/60s.gif?id=".rand(1,1000000);
