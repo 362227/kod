@@ -720,7 +720,7 @@ file_put_contents('remoteurl.txt', $url);
 $string = file_get_contents('remoteurl.txt');
  
 $links =  preg_replace('@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.%-=#]*(\?\S+)?)?)?)@', '<a href="$1">$1</a><br>', $url);
-file_put_contents('remotehtmlurl.txt', $url);
+file_put_contents('remotehtmlurl.txt', $links);
 
 	
 $date = date('Y-m-d-H-i-s');
