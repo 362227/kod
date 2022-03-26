@@ -60,6 +60,39 @@ getLog();
 </script>  	
 	
 	
+
+	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script type="text/javascript">
+    
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
+
+$( document ).ready(function() {
+console.log( "ready!" );
+});
+function getLog1() {
+$.ajax({
+    url: 'remote下载日志.php',
+    dataType: 'html',
+    success: function(html) {
+        $("#dl").html(html);
+        setTimeout(getLog1, 5000); // refresh every 5 second
+       }
+    })
+}
+getLog1();
+
+</script>  		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
  <script type="text/javascript">
     
@@ -496,14 +529,14 @@ body{
         }
     }
 </script>
-<iframe name="iframe" style="display:none"></iframe> 
+
         
 
 
 
 
 <p hidden><button id="btn1" class="button" onclick="funa()" target="iframe">提交</button></p>
-<p><button id="btn1" class="button"  onclick="window.location.href='remote.php'">Click me</button></p>
+<p><button id="btn1" class="button"  onclick="window.location.href='remote.php'">提交</button></p>
 <div1 id="abc" style="display: none">
 
 
@@ -832,20 +865,21 @@ $url2 = preg_replace('/(^http|^youtube|^vimeo|^www)([\s\S]{8,50}).*/','$1$2', $u
 echo '<p>链接：<a href="remoteurl.txt" target="_blank">'.$url1.'</a></p>';
 
 echo '<a href="remote下载日志.txt" target="_blank"><h3>下载进度</h3></a>';
-$content = file_get_contents("remote下载日志.txt");
-$content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content); //不包含文件名
-echo $content;
-
+//$content = file_get_contents("remote下载日志.txt");
+//$content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content); //不包含文件名
+//echo $content;
+echo '<div id="dl"></div>';
+	
 echo '<a href="remote上传谷歌网盘.txt" target="_blank"><h3>上传谷歌网盘进度</h3></a>';
 $content = file_get_contents("/app/web/remote上传谷歌网盘.txt");	
 $content = preg_replace('/[\s\S]*([\s\S]{180}$)/','$1', $content); //读取后面180个字符
 echo $content;
 	
 echo '<a href="remote上传百度网盘日志.php" target="_blank"><h3>上传百度网盘进度</h3></a>';
-$content = file_get_contents("/app/web/remote上传百度网盘.txt");	
-$content = preg_replace('/[\s\S]*([\s\S]{180}$)/','$1', $content); //读取后面180个字符
-echo $content;
-
+//$content = file_get_contents("/app/web/remote上传百度网盘.txt");	
+//$content = preg_replace('/[\s\S]*([\s\S]{180}$)/','$1', $content); //读取后面180个字符
+//echo $content;
+echo '<div id="bd"></div>';
 
 echo '<a href="remote上传115网盘.php" target="_blank"><h3>上传115网盘进度</h3></a>';
 $content = file_get_contents("/app/web/remote上传115网盘.txt");	
