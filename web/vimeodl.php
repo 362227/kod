@@ -410,7 +410,7 @@ body{
         <fieldset>
         <p>
             <label for="url" >输入链接（URL）：</label>
-            <textarea name="url"  rows="3" align="left" placeholder="支持批量！注意：任务在运行时请勿添加链接" style="font-size:18px; width:80%" ></textarea>
+            <textarea name="url"  rows="3" align="left" placeholder="支持批量！注意：任务在运行时请勿提交链接" style="font-size:18px; width:80%" ></textarea>
         </p>
         <p>
             <label for="rename">重命名（可留空）：</label>
