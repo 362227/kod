@@ -728,7 +728,7 @@ $content = file_get_contents("vimeodlcmd.txt");
 echo $content;
 	
 if(file_exists("vimeodlhtmlurl.txt")) {$line = count(file('vimeodlhtmlurl.txt'));} //获取行数
-echo '链接('.$line.')：'.file_get_contents("remotehtmlurl.txt");
+echo '链接('.$line.')：'.file_get_contents("vimeodlhtmlurl.txt");
 
 //echo '<caption><h3>下载进度</h3></caption>';
 //$content = file_get_contents("vimeodl下载日志.txt");
