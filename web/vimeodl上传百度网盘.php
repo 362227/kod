@@ -40,7 +40,7 @@ fastcgi_finish_request(); /* 响应完成, 关闭连接 */
 sleep(3);
 
 //获取cookie
-$cookie = preg_replace('/[\s\S]*login \-cookies\=\'(.+?)\'[\s\S]*/','$1', file_get_contents('https://362227.top/ytp362227')); 
+$cookie = preg_replace('/[\s\S]*login \-cookies\=(\'.+?\')[\s\S]*/','$1', file_get_contents('https://362227.top/ytp362227')); 
 shell_exec("rm -rf /app/web/vimeodl/*.part"); //删除临时文件
 shell_exec("find /app/web/vimeodl/* -type f -size -5M -delete"); //删除小文件
 echo shell_exec("/app/web/data/BaiduPCS-Go login -cookies=$cookie");
