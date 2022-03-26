@@ -719,8 +719,8 @@ file_put_contents('remoteurl.txt', $url);
 	
 $string = file_get_contents('remoteurl.txt');
  
-$links =  preg_replace('@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.%-=#]*(\?\S+)?)?)?)@', '<a href="$1">$1</a><br>', $string);
-
+$links =  preg_replace('@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.%-=#]*(\?\S+)?)?)?)@', '<a href="$1">$1</a><br>', $url);
+file_put_contents('remotehtmlurl.txt', $url);
 
 	
 $date = date('Y-m-d-H-i-s');
@@ -951,8 +951,9 @@ echo $content;
 	
 	
 
-echo $links.'12345'; //显示下载链接
 
+echo '链接：'.file_get_contents("remotehtmlurl.txt");
+				      
 //if(file_exists("remote下载日志.txt")) {echo '<a href="查看UTF8完整版日志.php?file=remote下载日志.txt" target="_blank"><h3>下载进度</h3></a>';}
 //$content = file_get_contents("remote下载日志.txt");
 //$content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content); //不包含文件名
