@@ -1206,8 +1206,10 @@ body.mobile #upload {
 //$page = str_replace("src=\"?img","src=\"encodeexplorer.index.php?img",$page);
 //$page = str_replace("<a href=\"?s&amp;dir=remote115/\">","<a href=\"encodeexplorer.index.php?sort_by=mod&sort_as=desc&dir=remote115/\">",$page);
 //echo '<p hidden>'.$page.'</p>';
-echo '<div id="file"></div>';	
 	
+echo '<body class="mobile">';
+echo '<div id="file"></div>';	
+echo '</body>';
 
 ?>
 </p>
