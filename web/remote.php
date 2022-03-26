@@ -719,7 +719,7 @@ file_put_contents('remoteurl.txt', $url);
 	
 $string = file_get_contents('remoteurl.txt');
  
-$links =  preg_replace('@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.%-=#]*(\?\S+)?)?)?)@', '<a href="$1">$1</a><br>', $url);
+$links =  preg_replace('/(.*)/', '<a href="$1">$1</a><br>', $url);
 file_put_contents('remotehtmlurl.txt', $links);
 
 	
@@ -951,8 +951,8 @@ echo $content;
 	
 	
 
-
-echo '链接：'.file_get_contents("remotehtmlurl.txt");
+$line = count(file('remotehtmlurl.txt')); //获取行数
+echo $line.'个链接：'.file_get_contents("remotehtmlurl.txt");
 				      
 //if(file_exists("remote下载日志.txt")) {echo '<a href="查看UTF8完整版日志.php?file=remote下载日志.txt" target="_blank"><h3>下载进度</h3></a>';}
 //$content = file_get_contents("remote下载日志.txt");
