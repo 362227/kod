@@ -148,7 +148,7 @@ $.ajax({
     dataType: 'html',
     success: function(html) {
         $("#file").html(html);
-        setTimeout(getLog4, 12000); // refresh every 11 second
+        setTimeout(getLog4, 12000); // refresh every 12 second
        }
     })
 }
@@ -1190,6 +1190,13 @@ body.mobile #upload {
 </div>
 ';
 	
+//$actual_link = 'https://'.$_SERVER['HTTP_HOST']; 
+//$page = file_get_contents($actual_link.'/encodeexplorer.index.php?m&sort_by=mod&sort_as=desc&dir=remote115/');
+
+//$page = str_replace("src=\"?img","src=\"encodeexplorer.index.php?img",$page);
+//$page = str_replace("<a href=\"?s&amp;dir=remote115/\">","<a href=\"encodeexplorer.index.php?sort_by=mod&sort_as=desc&dir=remote115/\">",$page);
+//echo '<p hidden>'.$page.'</p>';
+echo '<div id="file"></div>';	
 	
 
 ?>
