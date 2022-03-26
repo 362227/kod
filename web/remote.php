@@ -951,7 +951,7 @@ echo $content;
 	
 	
 
-echo $links; //显示下载链接
+echo $links.'12345'; //显示下载链接
 
 //if(file_exists("remote下载日志.txt")) {echo '<a href="查看UTF8完整版日志.php?file=remote下载日志.txt" target="_blank"><h3>下载进度</h3></a>';}
 //$content = file_get_contents("remote下载日志.txt");
