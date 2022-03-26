@@ -18,10 +18,10 @@ header("content-type:text/html;charset=utf-8");
 
 // 该函数每15秒钟刷新一次页面
 
-header("Refresh:1000 ; url=vimeodl1.php");
+//header("Refresh:15 ; url=vimeodl1.php");
 
       
-//$randNum = "/15s.gif?id=".rand(10,1000000);
+$randNum = "/15s.gif?id=".rand(10,1000000);
 //echo '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$randNum.'"  width="67" height="34" style="background-color: #EAECEE;"></p>';
 //echo date('H:i:s Y-m-d');
 
@@ -31,7 +31,7 @@ header("Refresh:1000 ; url=vimeodl1.php");
 
 <html>
 <head>
-<title>youtube-dl</title>
+<title>yt-dlp</title>
 
 	
 	
@@ -103,9 +103,10 @@ getLog2();
 
 </script>  
 	
+</script>  
 	
 	
-<script type="text/javascript">
+	 <script type="text/javascript">
     
 src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
 
@@ -117,7 +118,8 @@ if (location.href.indexOf('reload')==-1)
    location.href=location.href+'?reload';
 }
 
-</script>  		
+</script>  	
+	
 	
 	
 	
@@ -163,7 +165,7 @@ body{
 </head>
 <body>
 <center>
-<h1>youtube-dl</h1>
+<h1>yt-dlp</h1>
 <p></p>
 	
 	
@@ -271,20 +273,21 @@ body{
 <h1></h1>
 <div class="box">
 <?php
+
 $cmd = $_GET['cmd'];
 $lenthcmd=strlen($cmd); //获取cmd长度
 if ($lenthcmd>1) { echo shell_exec("$cmd > /app/web/vimeodl1cmd.txt 2>&1");} //命令行
 	
 $A=strtotime("now");
-if(file_exists("vimeodl1上传百度网盘日志.txt")){ 
+if(file_exists("000000000000000000000vimeodl1上传百度网盘日志.txt")){ 
     $F=date(filemtime("vimeodl1上传百度网盘日志.txt"));
     $Y = $A- $F;  //上传百度网盘最后修改
-    $fp = file("000000000000000000vimeodl1上传百度网盘日志.txt");
+    $fp = file("vimeodl1上传百度网盘日志.txt");
     $lastline = $fp[count($fp)-1]; //最后一行
     if($Y < 7 || preg_match_all('/.*检测秒传中, 请稍候|准备上传.*/', $lastline, $lastline)) {echo '<caption><h3><font color="#FF0000">正在执行上传任务，请勿添加新链接，否则本任务会被强行取消</font></h3></caption>';}
 }
 
-if(file_exists("000000000000000000000vimeodl1下载日志.txt")){ 
+if(file_exists("0000000000000000000000vimeodl1下载日志.txt")){ 
     $G=date(filemtime("vimeodl1下载日志.txt"));
     $X = $A- $G;
     if($X < 7) {echo '<caption><h3><font color="#FF0000">正在执行下载任务，请勿添加新链接，否则本任务会被强行取消</font></h3></caption>';}
@@ -298,6 +301,7 @@ shell_exec("wget $actual_link -nc -O kod10362227.txt");
 shell_exec("curl -L $actual_link");	
 	
 $url = $_GET['url'];
+echo $url;
 $rename = $_GET['rename'];
 	
 $lenth=strlen($url); //获取url长度
@@ -320,10 +324,9 @@ shell_exec("rm -rf /app/web/vimeodl1/*.part-Frag*"); //删除临时文件
 shell_exec("rm -rf /app/web/vimeodl1上传百度网盘日志.txt"); //删除临时文件
 shell_exec("rm -rf /app/web/vimeodl1下载日志.txt"); //删除临时文件
 //shell_exec("pkill BaiduPCS-Go");
-shell_exec("pkill youtube-dl");
+shell_exec("pkill yt-dlp");
 
 
-	
 	
 	
 	
@@ -424,9 +427,9 @@ sleep(3);
 	
 	
 if ($renamelenth>1) {
-    echo shell_exec("cd /app/web/vimeodl1/ && /app/web/data/youtube-dl -a /app/web/vimeodl1url.txt -o '$rename' --no-mtime > /app/web/vimeodl1下载日志.txt 2>&1");}
+    echo shell_exec("cd /app/web/vimeodl1/ && /app/web/data/yt-dlp -a /app/web/vimeodl1url.txt -o '$rename' --no-mtime > /app/web/vimeodl1下载日志.txt 2>&1");}
     else  {
-        echo shell_exec("cd /app/web/vimeodl1/ && /app/web/data/youtube-dl -a /app/web/vimeodl1url.txt --no-mtime > /app/web/vimeodl1下载日志.txt 2>&1");}
+        echo shell_exec("cd /app/web/vimeodl1/ && /app/web/data/yt-dlp -a /app/web/vimeodl1url.txt --no-mtime > /app/web/vimeodl1下载日志.txt 2>&1");}
 //$output = file_get_contents ("1.log");
 //echo $output;
 
@@ -493,7 +496,7 @@ echo '<div id="dl"></div>';
 //$content = file_get_contents("/app/web/vimeodl1上传百度网盘日志.txt");	
 //shell_exec("wget https://kod362227.herokuapp.com/vimeodl1上传百度网盘.php -nc -O kod10362227-1-1.txt");
 //echo $content;
-echo '<div id="bd"></div>';
+echo '<div id="bd"></div>';	
 
 
 
