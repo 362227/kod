@@ -524,11 +524,11 @@ body{
         <fieldset>
         <p>
             <label for="url" >输入链接（URL）：</label>
-            <textarea name="url"  rows="3" align="left" style="font-size:18px; width:70%" ></textarea>
+            <textarea name="url"  rows="3" align="left" style="font-size:18px; width:85%" ></textarea>
         </p>
         <p>
             <label for="rename">重命名（可留空）：</label>
-            <input type="text" id="rename" name="rename" align="left" style="font-size:18px; width:70%">
+            <input type="text" id="rename" name="rename" align="left" style="font-size:18px; width:85%">
         </p>
         
 <body>
@@ -540,7 +540,7 @@ body{
 
         <p>
             <label for="cmd">命令行（可留空）：</label>
-            <input type="text" id="cmd" name="cmd" align="left" style="font-size:20px">
+            <input type="text" id="cmd" name="cmd" align="left" style="font-size:20px; width:80%">
         </p>
 
 
@@ -611,7 +611,7 @@ body{
 
 
 <p hidden><button id="btn1" class="button" onclick="funa()" target="iframe">提交</button></p>
-<p><button id="btn1" class="button"  onclick="window.location.href='remote.php'">提交</button></p>
+<p><button id="btn1" class="blue button"  onclick="window.location.href='remote.php'">提交</button></p>
 <div1 id="abc" style="display: none">
 
 
