@@ -529,7 +529,7 @@ body{
         </p>
         <p>
             <label for="rename">重命名（可留空）：</label>
-            <input type="text" id="rename" name="rename" align="left" style="font-size:18px; width:85%">
+            <input type="text" id="rename" name="rename" placeholder="仅支持单条链接..." align="left" style="font-size:18px; width:85%">
         </p>
         
 <body>
