@@ -139,7 +139,13 @@ if (location.href.indexOf('reload')==-1)
 	
 	
 	
-	
+ <style>
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #aab2bd;
+    font-size: 11px;  
+}
+</style>	
 <style>
 body{
 	background-color:#EAECEE;
