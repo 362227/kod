@@ -716,6 +716,14 @@ $renamelenth=strlen($rename); //获取rename长度
 if ($lenth>8) {
 $url = str_replace(array(' ','\n'), array('#','#'), $url);
 file_put_contents('remoteurl.txt', $url);
+	
+function replaceLinks($s) {
+    return preg_replace('@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.%-=#]*(\?\S+)?)?)?)@', '<a href="$1">$1</a><br>', $s);
+}
+
+$string = file_get_contents('remoteurl.txt');
+ 
+$links =  replaceLinks($string);
 
 	
 $date = date('Y-m-d-H-i-s');
@@ -945,9 +953,8 @@ $content = file_get_contents("remotecmd.txt");
 echo $content;
 	
 	
-$url1 = file_get_contents("remoteurl.txt");
-$url2 = preg_replace('/(^http|^youtube|^vimeo|^www)([\s\S]{8,50}).*/','$1$2', $url1); //取url前8-50个作为超链名字
-echo '<p>链接：<a href="remoteurl.txt" target="_blank">'.$url1.'</a></p>';
+
+echo $links; //显示下载链接
 
 //if(file_exists("remote下载日志.txt")) {echo '<a href="查看UTF8完整版日志.php?file=remote下载日志.txt" target="_blank"><h3>下载进度</h3></a>';}
 //$content = file_get_contents("remote下载日志.txt");
