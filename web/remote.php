@@ -895,7 +895,7 @@ echo '<div id="dl"></div>';
 	
 echo '<a href="remote上传谷歌网盘.txt" target="_blank"><h3>上传谷歌网盘进度</h3></a>';
 //$content = file_get_contents("/app/web/remote上传谷歌网盘.txt");	
-////$content = preg_replace('/[\s\S]*([\s\S]{180}$)/','$1', $content); //读取后面180个字符
+//$content = preg_replace('/[\s\S]*([\s\S]{180}$)/','$1', $content); //读取后面180个字符
 echo '<div id="rclone"></div>';
 	
 echo '<a href="remote上传百度网盘日志.php" target="_blank"><h3>上传百度网盘进度</h3></a>';
