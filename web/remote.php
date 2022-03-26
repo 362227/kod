@@ -124,7 +124,7 @@ $.ajax({
     dataType: 'html',
     success: function(html) {
         $("#115").html(html);
-        setTimeout(getLog2, 5000); // refresh every 5 second
+        setTimeout(getLog3, 5000); // refresh every 5 second
        }
     })
 }
