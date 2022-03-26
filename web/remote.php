@@ -1199,7 +1199,7 @@ body.mobile #upload {
 <body class="mobile">
 <div id="frame">
 <div id="top">
-	li
+	
 </div>
 <body class="mobile">
 ';
