@@ -86,6 +86,29 @@ getLog1();
 	
 	
 	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script type="text/javascript">
+    
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
+
+$( document ).ready(function() {
+console.log( "ready!" );
+});
+function getLog2() {
+$.ajax({
+    url: 'remote上传谷歌网盘日志.php',
+    dataType: 'html',
+    success: function(html) {
+        $("#rclone").html(html);
+        setTimeout(getLog2, 5000); // refresh every 5 second
+       }
+    })
+}
+getLog2();
+
+</script> 
+	
+	
 	
 	
 	
@@ -871,9 +894,9 @@ echo '<a href="remote下载日志.txt" target="_blank"><h3>下载进度</h3></a>
 echo '<div id="dl"></div>';
 	
 echo '<a href="remote上传谷歌网盘.txt" target="_blank"><h3>上传谷歌网盘进度</h3></a>';
-$content = file_get_contents("/app/web/remote上传谷歌网盘.txt");	
-$content = preg_replace('/[\s\S]*([\s\S]{180}$)/','$1', $content); //读取后面180个字符
-echo $content;
+//$content = file_get_contents("/app/web/remote上传谷歌网盘.txt");	
+////$content = preg_replace('/[\s\S]*([\s\S]{180}$)/','$1', $content); //读取后面180个字符
+echo '<div id="rclone"></div>';
 	
 echo '<a href="remote上传百度网盘日志.php" target="_blank"><h3>上传百度网盘进度</h3></a>';
 //$content = file_get_contents("/app/web/remote上传百度网盘.txt");	
