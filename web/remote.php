@@ -36,6 +36,30 @@ header("Refresh:1000 ; url=remote.php");
 	
 	
 	
+
+	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script type="text/javascript">
+    
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
+
+$( document ).ready(function() {
+console.log4( "ready!" );
+});
+function getLog4() {
+$.ajax({
+    url: 'remote的115文件管理.php',
+    dataType: 'html',
+    success: function(html) {
+        $("#file").html(html);
+        setTimeout(getLog4, 12000); // refresh every 12 second
+       }
+    })
+}
+getLog4();
+
+</script>  
+	
 	
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script type="text/javascript">
@@ -134,27 +158,7 @@ getLog3();
 	
 	
 	
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script type="text/javascript">
-    
-src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
 
-$( document ).ready(function() {
-console.log4( "ready!" );
-});
-function getLog4() {
-$.ajax({
-    url: 'remote的115文件管理.php',
-    dataType: 'html',
-    success: function(html) {
-        $("#file").html(html);
-        setTimeout(getLog4, 12000); // refresh every 12 second
-       }
-    })
-}
-getLog4();
-
-</script>  
 	
 	
 	
