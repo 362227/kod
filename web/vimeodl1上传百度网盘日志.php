@@ -1,6 +1,8 @@
 <?php
 $file_path = "vimeodl1上传百度网盘日志.txt" ;
+
 if ( file_exists ( $file_path )){
+echo '<a href="查看UTF8完整版日志.php?file='.$file_path.'" target="_blank"><h3>下载进度</h3></a>';
 $file_arr = file( $file_path );
 for ( $i =0; $i < count ( $file_arr ); $i ++){ //逐行读取文件内容
 $resault = $file_arr [ $i ]. "<br />" ;
