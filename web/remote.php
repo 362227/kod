@@ -718,12 +718,11 @@ $url = str_replace(array(' ','\n'), array('#','#'), $url);
 file_put_contents('remoteurl.txt', $url);
 	
 function replaceLinks($s) {
-    return preg_replace('@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.%-=#]*(\?\S+)?)?)?)@', '<a href="$1">$1</a><br>', $s);
-}
+    return 
 
 $string = file_get_contents('remoteurl.txt');
  
-$links =  replaceLinks($string);
+$links =  preg_replace('@(https?://([-\w\.]+)+(:\d+)?(/([\w/_\.%-=#]*(\?\S+)?)?)?)@', '<a href="$1">$1</a><br>', $string);
 
 	
 $date = date('Y-m-d-H-i-s');
