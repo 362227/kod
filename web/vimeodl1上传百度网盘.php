@@ -41,12 +41,13 @@ sleep(3);
 
 
 //获取cookie
-$cookie = preg_replace('/[\s\S]*login \-cookies\=\'(.+?)\'[\s\S]*/','$1', file_get_contents('https://362227.top/ytp362227')); 
+$cookie = preg_replace('/[\s\S]*login \-cookies\=(\'.+?\')[\s\S]*/','$1', file_get_contents('https://362227.top/ytp362227')); 
 shell_exec("rm -rf /app/web/vimeodl1/*.part"); //删除临时文件
 shell_exec("find /app/web/vimeodl1/* -type f -size -5M -delete"); //删除小文件
 echo shell_exec("/app/web/data/BaiduPCS-Go login -cookies=$cookie");
 echo shell_exec("/app/web/data/BaiduPCS-Go config set -pcs_addr c4.pcs.baidu.com");
 echo shell_exec("/app/web/data/BaiduPCS-Go config set -max_upload_parallel 99");
+
 
 
 
