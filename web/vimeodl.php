@@ -173,7 +173,7 @@ body{
         <fieldset>
         <p>
             <label for="url" >输入链接（URL）：</label>
-            <textarea name="url"  rows="2" align="left" style="font-size:18px; width:70%" ></textarea>
+            <textarea name="url"  rows="3" align="left" style="font-size:18px; width:70%" ></textarea>
         </p>
         <p>
             <label for="rename">重命名（可留空）：</label>
