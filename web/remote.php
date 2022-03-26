@@ -1197,6 +1197,7 @@ body.mobile #upload {
 <div id="top">
 	
 </div>
+<body class="mobile">
 ';
 	
 //$actual_link = 'https://'.$_SERVER['HTTP_HOST']; 
