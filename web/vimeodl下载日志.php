@@ -31,7 +31,7 @@ for ( $i =0; $i < count ( $file_arr ); $i ++){ //逐行读取文件内容
 $content = preg_replace('/.*\: Downloading.*/','', $file_arr);
 $content = $file_arr [ $i ]. "" ;
 $content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content);
-$content = preg_replace('/.*\: Downloading.*/','', $content); //去除Downloading行
+$content = preg_replace('/.*\: Downloading.*|.*\[redirect\].*/','', $content); //去除Downloading行
 $content = preg_replace('/(^\[.*)/','<br>$1$2', $content); //保留有用的，在每行的[添加<br>让页面看起来正常
 
  echo $content;
