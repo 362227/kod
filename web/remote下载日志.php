@@ -1,7 +1,11 @@
 <?php
 $file_path = "remote下载日志.txt" ;
-if(file_exists($file_path)) {
 
+
+if(file_exists($file_path)) {
+echo '<a href="查看UTF8完整版日志.php?file='.$file_path.'" target="_blank"><h3>下载进度</h3></a>';
+ 
+ 
 $A=strtotime("now");
 $B=date(filemtime($file_path));
 
