@@ -655,14 +655,14 @@ if ($lenthcmd>1) { echo shell_exec("$cmd > /app/web/remotecmd.txt 2>&1");} //命
 
 
 $A=strtotime("now");
-if(file_exists("remote上传百度网盘.txt")){ 
+if(file_exists("000000000remote上传百度网盘.txt")){ 
     $F=date(filemtime("remote上传百度网盘.txt"));
     $Y = $A- $F;  //上传百度网盘最后修改
     $fp = file("remote上传百度网盘.txt");
     $lastline = $fp[count($fp)-1]; //最后一行
     if($Y < 7 || preg_match_all('/.*检测秒传中, 请稍候|准备上传.*/', $lastline, $lastline)) {echo '<caption><h3><font color="#FF0000">正在执行上传任务，请勿添加新链接，否则本任务会被强行取消</font></h3></caption>';}
 }
-if(file_exists("remote下载日志.txt")){ 
+if(file_exists("0000000000000remote下载日志.txt")){ 
     $G=date(filemtime("remote下载日志.txt"));
     $X = $A- $G;
     if($X < 7) {echo '<caption><h3><font color="#FF0000">正在执行下载任务，请勿添加新链接，否则本任务会被强行取消</font></h3></caption>';}
