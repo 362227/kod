@@ -1208,13 +1208,14 @@ body.mobile #upload {
 //echo '<p hidden>'.$page.'</p>';
 	
 echo '<body class="mobile">';
-echo '<div id="file"></div>';	
 echo '</body>';
+echo '<div id="file"></div>';	
+
 
 ?>
 </p>
-
+<body class="mobile">
 <p align="center"><a href="查看UTF8完整版日志.php?file=remote下载日志.txt" target="_blank"><font size="2">下载日志</font></a>  ·  <a href="查看UTF8完整版日志.php?file=remote上传百度网盘日志.txt" target="_blank"><font size="2">上传百度网盘日志</font></a>  ·  <a href="查看UTF8完整版日志.php?file=remote上传115网盘日志.txt" target="_blank"><font size="2">上传115网盘日志</font>  ·  <a href="查看UTF8完整版日志.php?file=remote上传谷歌网盘日志.txt" target="_blank"><font size="2">上传谷歌网盘日志</font></a></p>
-
+</body>
 </body>
 </html>
