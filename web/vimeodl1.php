@@ -418,7 +418,7 @@ body{
         
 <body>
 
-<p><button id="btn1" class="blue button"  onclick="window.location.href='remote.php'">提交</button></p>
+<button id="btn" onclick="fun()" class="small button" value="Go Elsewhere" formaction="/elsewhere" target="iframe">显示/隐藏“高级选项”</button>
 <div id="con" style="display: none">
 
 
