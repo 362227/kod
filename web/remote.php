@@ -953,7 +953,7 @@ echo '<hr /><br>'.$page;
 ?>
 </p>
 
-<p><a href="remote下载日志.txt" target="_blank"><font size="2">下载日志</font></a>  ·  <a href="remote上传百度网盘日志.php" target="_blank"><font size="2">上传百度网盘日志</font></a>  ·  <a href="remote上传115网盘.txt" target="_blank"><font size="2">上传115网盘日志</font>  ·  <a href="remote上传谷歌网盘.txt" target="_blank"><font size="2">上传谷歌网盘日志</font></a></p>
+<p><a href="查看UTF8完整版日志.php?file=remote下载日志.txt" target="_blank"><font size="2">下载日志</font></a>  ·  <a href="查看UTF8完整版日志.php?file=remote上传百度网盘日志.php" target="_blank"><font size="2">上传百度网盘日志</font></a>  ·  <a href="查看UTF8完整版日志.php?file=remote上传115网盘日志.txt" target="_blank"><font size="2">上传115网盘日志</font>  ·  <a href="查看UTF8完整版日志.php?file=remote上传谷歌网盘日志.txt" target="_blank"><font size="2">上传谷歌网盘日志</font></a></p>
 
 </body>
 </html>
