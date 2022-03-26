@@ -1,13 +1,5 @@
 <?php
-$file_path = "/app/web/remote上传115网盘日志.txt" ;
-if ( file_exists ( $file_path )){
-$file_arr = file( $file_path );
-for ( $i =0; $i < count ( $file_arr ); $i ++){ //逐行读取文件内容
-echo $file_arr [ $i ]. "<br />" ;
-}
-/*
-foreach($file_arr as $value){
-echo $value."<br />";
-}*/
-}
+$content = file_get_contents("/app/web/remote上传115网盘日志.txt");	
+$content1 = preg_replace('/[\s\S]*([\s\S]{280}$)/','$1', $content); //读取后面280个字符
+echo $content1;
 ?>
