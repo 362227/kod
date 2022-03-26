@@ -741,7 +741,13 @@ shell_exec("rm -rf /app/web/remote上传谷歌网盘日志.txt"); //删除临时
 shell_exec("rm -rf /app/web/remote下载日志.txt"); //删除临时文件
 //shell_exec("pkill BaiduPCS-Go");
 shell_exec("pkill yt-dlp");
-
+shell_exec("rm -rf /app/web/remote/*.part"); //删除临时文件
+shell_exec("rm -rf /app/web/remote/*.ytdl"); //删除临时文件
+shell_exec("rm -rf /app/web/remote/*.part-Frag*"); //删除临时文件
+shell_exec("rm -rf /app/web/remote上传百度网盘日志.txt"); //删除临时文件
+shell_exec("rm -rf /app/web/remote上传115网盘日志.txt"); //删除临时文件
+shell_exec("rm -rf /app/web/remote上传谷歌网盘日志.txt"); //删除临时文件
+shell_exec("rm -rf /app/web/remote下载日志.txt"); //删除临时文件
 
 	
 	
