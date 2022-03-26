@@ -227,19 +227,20 @@ body{
 }
 .box{
 	border: 1px solid;
-	min-width:10px;
+	min-width:50px;
 	margin:auto;
 }
 
         label{
             cursor: pointer;
             display: inline-block;
-            vertical-align:middle;
             padding: 3px 6px;
+            vertical-align:middle;
             text-align: right;
-	    min-width:50px;
+	    min-width:150px;
             vertical-align: top;
         }
+
         
 .button::-moz-focus-inner{
   border: 0;
