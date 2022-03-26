@@ -917,13 +917,13 @@ $url1 = file_get_contents("remoteurl.txt");
 $url2 = preg_replace('/(^http|^youtube|^vimeo|^www)([\s\S]{8,50}).*/','$1$2', $url1); //取url前8-50个作为超链名字
 echo '<p>链接：<a href="remoteurl.txt" target="_blank">'.$url1.'</a></p>';
 
-if(file_exists("remote下载日志.txt")) {echo '<a href="查看UTF8完整版日志.php?file=remote下载日志.txt" target="_blank"><h3>下载进度</h3></a>';}
+//if(file_exists("remote下载日志.txt")) {echo '<a href="查看UTF8完整版日志.php?file=remote下载日志.txt" target="_blank"><h3>下载进度</h3></a>';}
 //$content = file_get_contents("remote下载日志.txt");
 //$content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content); //不包含文件名
 //echo $content;
 echo '<div id="dl"></div>';
 	
-if(file_exists("remote下载日志.txt")) {echo '<a href="查看UTF8完整版日志.php?file=remote上传谷歌网盘日志.txt" target="_blank"><h3>上传谷歌网盘进度</h3></a>';}
+//if(file_exists("remote下载日志.txt")) {echo '<a href="查看UTF8完整版日志.php?file=remote上传谷歌网盘日志.txt" target="_blank"><h3>上传谷歌网盘进度</h3></a>';}
 //$content = file_get_contents("/app/web/remote上传谷歌网盘.txt");	
 //$content = preg_replace('/[\s\S]*([\s\S]{180}$)/','$1', $content); //读取后面180个字符
 echo '<div id="rclone"></div>';
@@ -934,7 +934,7 @@ if(file_exists("remote上传百度日志.txt")) {echo '<a href="查看UTF8完整
 //echo $content;
 echo '<div id="bd"></div>';
 
-if(file_exists("remote上传115日志.txt")) {echo '<a href="查看UTF8完整版日志.php?file=remote上传115网盘日志.txt" target="_blank"><h3>上传115网盘进度</h3></a>';}
+//if(file_exists("remote上传115日志.txt")) {echo '<a href="查看UTF8完整版日志.php?file=remote上传115网盘日志.txt" target="_blank"><h3>上传115网盘进度</h3></a>';}
 //$content = file_get_contents("/app/web/remote上传115网盘.txt");	
 //$content = preg_replace('/[\s\S]*([\s\S]{280}$)/','$1', $content); //读取后面280个字符
 echo '<div id="115"></div>';
