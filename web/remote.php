@@ -642,9 +642,9 @@ shell_exec("mkdir $date");
 shell_exec("rm -rf /app/web/remote/*.part"); //删除临时文件
 shell_exec("rm -rf /app/web/remote/*.ytdl"); //删除临时文件
 shell_exec("rm -rf /app/web/remote/*.part-Frag*"); //删除临时文件
-shell_exec("rm -rf /app/web/remote上传百度网盘.txt"); //删除临时文件
-shell_exec("rm -rf /app/web/remote上传115网盘.txt"); //删除临时文件
-shell_exec("rm -rf /app/web/remote上传谷歌网盘.txt"); //删除临时文件
+shell_exec("rm -rf /app/web/remote上传百度网盘日志.txt"); //删除临时文件
+shell_exec("rm -rf /app/web/remote上传115网盘日志.txt"); //删除临时文件
+shell_exec("rm -rf /app/web/remote上传谷歌网盘日志.txt"); //删除临时文件
 shell_exec("rm -rf /app/web/remote下载日志.txt"); //删除临时文件
 //shell_exec("pkill BaiduPCS-Go");
 shell_exec("pkill yt-dlp");
@@ -776,7 +776,7 @@ if ($renamelenth>1) {
 //上传谷歌网盘------------------------
 echo shell_exec("find /app/web/$gdname/* -type f -size -5M -delete"); //删除小文件
 shell_exec("wget https://362227.top/rclone.conf -nc -O /app/web/data/rclone.conf"); //下载rclone配置
-echo shell_exec("$ifgd /app/web/data/rclone  copy '/app/web/$gdname' $gdname:$gddir --transfers=2 -P --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php} > 'remote上传谷歌网盘.txt' ");
+echo shell_exec("$ifgd /app/web/data/rclone  copy '/app/web/$gdname' $gdname:$gddir --transfers=2 -P --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php} > 'remote上传谷歌网盘日志.txt' ");
 //上传谷歌网盘------------------------
 
 	
