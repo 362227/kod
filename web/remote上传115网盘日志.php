@@ -1,5 +1,5 @@
 <?php
-$file_path = "/app/web/remote上传115网盘.txt" ;
+$file_path = "/app/web/remote上传115网盘日志.txt" ;
 if ( file_exists ( $file_path )){
 $file_arr = file( $file_path );
 for ( $i =0; $i < count ( $file_arr ); $i ++){ //逐行读取文件内容
