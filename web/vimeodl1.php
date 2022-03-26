@@ -18,7 +18,7 @@ header("content-type:text/html;charset=utf-8");
 
 // 该函数每15秒钟刷新一次页面
 
-//header("Refresh:15 ; url=vimeodl1.php");
+header("Refresh:1000 ; url=vimeodl1.php");
 
       
 //$randNum = "/15s.gif?id=".rand(10,1000000);
@@ -171,7 +171,7 @@ body{
         <fieldset>
         <p>
             <label for="url" >输入链接（URL）：</label>
-            <textarea name="url"  rows="2" align="left" style="font-size:18px; width:70%" ></textarea>
+            <textarea name="url"  rows="3" align="left" style="font-size:18px; width:70%" ></textarea>
         </p>
         <p>
             <label for="rename">重命名（可留空）：</label>
