@@ -766,9 +766,7 @@ file_put_contents('remoteurl.txt', $url);
 $string = file_get_contents('remoteurl.txt');
  
 //$links =  preg_replace('/(.*)/', '<a href="$1">$1</a><br>', $url);
-$linkstxt = preg_replace('/(^.{22}).*(.{22}$)/','$1.....$2', $links); //取url前22个和后22个作为超链名字
-$linkslink = preg_replace('/(.*)/','$1', $links); //取url完整
-$links = '<a href="'.$linkslink.'">'.$linkstxt.'</a><br>';
+$links =  preg_replace('/(.{0,51})(.*)/', '<a href="$1$2">$1</a><br>', $string); 
 file_put_contents('remotehtmlurl.txt', $links);
 
 	
