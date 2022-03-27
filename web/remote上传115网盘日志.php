@@ -4,7 +4,7 @@ if(file_exists($file_path)) {echo '<a href="查看UTF8完整版日志.php?file=r
 
 $A=strtotime("now");
 $B=date(filemtime($file_path));
-
+$C= $A - $B;
 
 if ( $C < 5) { 
     
