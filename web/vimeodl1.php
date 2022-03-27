@@ -561,7 +561,7 @@ file_put_contents('vimeodl1url.txt', $url);
 	
 $string = file_get_contents('vimeodl1url.txt');
  
-$linkstxt = preg_replace('/([\s\S]{8,45}).*/','$1', $links); //取url前8-45个作为超链名字
+$linkstxt = preg_replace('/(^.{22}).*(.{22}$)/','$1.....$2', $links); //取url前22个和后22个作为超链名字
 $linkslink = preg_replace('/(.*)/','$1', $links); //取url完整
 $links = '<a href="'.$linkslink.'">'.$linkstxt.'</a><br>';
 file_put_contents('vimeodl1htmlurl.txt', $links);
