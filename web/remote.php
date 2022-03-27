@@ -545,7 +545,10 @@ body{
         </p>
         
 <body>
-
+ <select name="mvorlive" >MV还是现场
+        <option value="mv">MV</option>
+        <option value="live">现场</option>
+    </select></p>
 <button id="btn" onclick="fun()" class="small button" value="Go Elsewhere" formaction="/elsewhere" target="iframe">显示/隐藏“高级选项”</button>
 <div id="con" style="display: none">
 
@@ -558,10 +561,6 @@ body{
 
 
 <p>MV还是现场：  
- <select name="mvorlive" >MV还是现场
-        <option value="mv">MV</option>
-        <option value="live">现场</option>
-    </select></p>
     
 <p>上传谷歌网盘：  
  <select name="ifgd" >上传谷歌网盘
