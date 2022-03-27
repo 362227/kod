@@ -189,7 +189,46 @@ if (location.href.indexOf('reload')==-1)
 	
 	
 	
-	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script type="text/javascript">
+    //记忆刷新页面之前的选择
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
+ 
+        getTitleData=function(){
+            var mvorlive = $("#mvorlive").val();
+            var mvorlive = $.trim(mvorlive);
+ 
+           // window.location = 'history.php?id=' + mvorlive;
+            document.cookie = "id=" + mvorlive;    //将select选中的value写入cookie中
+        };
+        
+        selectIndex=function(){
+            var id = 0;
+            var coosStr = document.cookie;    //获取cookie中的数据
+            var coos=coosStr.split("; ");     //多个值之间用; 分隔
+            for(var i=0;i<coos.length;i++){   //获取select写入的id
+                var coo=coos[i].split("=");
+                if("id"==coo[0]){
+                 id=coo[1];
+              }
+            }
+            var stitle=document.getElementById("mvorlive");
+            if(stitle == 0){
+                stitle.selectedIndex = 0;
+            }
+            else{    //如果从cookie中获取的id和select中的一致则设为默认状态
+                var len = stitle.options.length;
+                for(var i=0;i<len;i++){
+                    if(stitle.options[i].value == id){
+                        stitle.selectedIndex=i;
+                        break;
+                    }
+                }
+            }
+           
+        }
+ 
+      </script>	
 	
 	
 	
@@ -545,10 +584,13 @@ body{
         </p>
         
 <body>
- <p>MV还是现场：<select name="mvorlive" >MV还是现场
+MV还是现场： <body onload="selectIndex();">
+        <select class='form-control' name='mvorlive' onchange='getTitleData()' type='text' id='mvorlive'>
         <option value="mv">MV</option>
         <option value="live">现场</option>
-    </select></p>
+            </select><br>
+        </form>
+</body>
 <button id="btn" onclick="fun()" class="small button" value="Go Elsewhere" formaction="/elsewhere" target="iframe">显示/隐藏“高级选项”</button>
 <div id="con" style="display: none">
 
