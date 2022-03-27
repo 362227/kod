@@ -13,17 +13,17 @@ date_default_timezone_set('PRC');
 
 header("content-type:text/html;charset=utf-8");
 
-echo "页面每60秒刷新一次
-";
+//echo "页面每60秒刷新一次
+//";
      
 
 // 该函数每60秒钟刷新一次页面
 
-header("Refresh:60 ; url=remote.php");
+header("Refresh:1000 ; url=remote.php");
 
       
-$randNum = "/60s.gif?id=".rand(1,1000000);
-echo '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$randNum.'"  width="38" height="21" style="background-color: #EAECEE;"></p>';
+//$randNum = "/60s.gif?id=".rand(1,1000000);
+//echo '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$randNum.'"  width="38" height="21" style="background-color: #EAECEE;"></p>';
 
     
 
@@ -32,6 +32,243 @@ echo '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="'.$randNum.'"  widt
 <html>
 <head>
 <title>youtube-dl</title>
+	
+	
+	
+	
+
+	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script type="text/javascript">
+    
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
+
+$( document ).ready(function() {
+console.log4( "ready!" );
+});
+function getLog4() {
+$.ajax({
+    url: 'remote的115文件管理.php',
+    dataType: 'html',
+    success: function(html) {
+        $("#file").html(html);
+        setTimeout(getLog4, 12000); // refresh every 12 second
+       }
+    })
+}
+getLog4();
+
+</script>  
+	
+	
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script type="text/javascript">
+    
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
+
+$( document ).ready(function() {
+console.log( "ready!" );
+});
+function getLog() {
+$.ajax({
+    url: 'remote上传百度网盘日志.php',
+    dataType: 'html',
+    success: function(html) {
+        $("#bd").html(html);
+        setTimeout(getLog, 5000); // refresh every 5 second
+       }
+    })
+}
+getLog();
+
+</script>  	
+	
+	
+
+	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script type="text/javascript">
+    
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
+
+$( document ).ready(function() {
+console.log( "ready!" );
+});
+function getLog1() {
+$.ajax({
+    url: 'remote下载日志.php',
+    dataType: 'html',
+    success: function(html) {
+        $("#dl").html(html);
+        setTimeout(getLog1, 5000); // refresh every 5 second
+       }
+    })
+}
+getLog1();
+
+</script>  		
+	
+	
+	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script type="text/javascript">
+    
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
+
+$( document ).ready(function() {
+console.log( "ready!" );
+});
+function getLog2() {
+$.ajax({
+    url: 'remote上传谷歌网盘日志.php',
+    dataType: 'html',
+    success: function(html) {
+        $("#rclone").html(html);
+        setTimeout(getLog2, 5000); // refresh every 5 second
+       }
+    })
+}
+getLog2();
+
+</script> 
+	
+	
+  
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script type="text/javascript">
+    
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
+
+$( document ).ready(function() {
+console.log( "ready!" );
+});
+function getLog3() {
+$.ajax({
+    url: 'remote上传115网盘日志.php',
+    dataType: 'html',
+    success: function(html) {
+        $("#115").html(html);
+        setTimeout(getLog3, 5000); // refresh every 5 second
+       }
+    })
+}
+getLog3();
+
+</script> 
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+ <script type="text/javascript">
+    
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
+
+
+var windowWidth = $(window).width();
+
+if (location.href.indexOf('reload')==-1)
+{
+   location.href=location.href+'?reload';
+}
+
+</script>  		
+	
+	
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script type="text/javascript">
+    //记忆刷新页面之前的选择
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
+ 
+        getTitleData=function(){
+            var mvorlive = $("#mvorlive").val();
+            var mvorlive = $.trim(mvorlive);
+ 
+           // window.location = 'history.php?id=' + mvorlive;
+            document.cookie = "id=" + mvorlive;    //将select选中的value写入cookie中
+        };
+        
+        selectIndex=function(){
+            var id = 0;
+            var coosStr = document.cookie;    //获取cookie中的数据
+            var coos=coosStr.split("; ");     //多个值之间用; 分隔
+            for(var i=0;i<coos.length;i++){   //获取select写入的id
+                var coo=coos[i].split("=");
+                if("id"==coo[0]){
+                 id=coo[1];
+              }
+            }
+            var stitle=document.getElementById("mvorlive");
+            if(stitle == 0){
+                stitle.selectedIndex = 0;
+            }
+            else{    //如果从cookie中获取的id和select中的一致则设为默认状态
+                var len = stitle.options.length;
+                for(var i=0;i<len;i++){
+                    if(stitle.options[i].value == id){
+                        stitle.selectedIndex=i;
+                        break;
+                    }
+                }
+            }
+           
+        }
+ 
+      </script>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+ <style>
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #aab2bd;
+    font-size: 11px;  
+}
+</style>
+
+	
 <style>
 body{
 	background-color:#EAECEE;
@@ -40,19 +277,20 @@ body{
 }
 .box{
 	border: 1px solid;
-	min-width:10px;
+	min-width:50px;
 	margin:auto;
 }
 
         label{
             cursor: pointer;
             display: inline-block;
-            vertical-align:middle;
             padding: 3px 6px;
+            vertical-align:middle;
             text-align: right;
-	    min-width:50px;
+	    min-width:150px;
             vertical-align: top;
         }
+
         
 .button::-moz-focus-inner{
   border: 0;
@@ -336,16 +574,24 @@ body{
 <form action="remote.php" method="get" value="Value-1" target="iframe">
         <fieldset>
         <p>
+         <div style="position:relative;">
             <label for="url" >输入链接（URL）：</label>
-            <textarea name="url"  rows="2" align="left" style="font-size:18px; width:70%" ></textarea>
-        </p>
+            <textarea name="url"  rows="3" align="left" placeholder="支持批量！注意：任务在运行时请勿提交链接" style="font-size:18px; width:100%" ></textarea>
+
         <p>
             <label for="rename">重命名（可留空）：</label>
-            <input type="text" id="rename" name="rename" align="left" style="font-size:18px; width:70%">
+            <input type="text" id="rename" name="rename" placeholder="仅支持单条链接..." align="left" style="font-size:21px; width:100%">
         </p>
         
 <body>
-
+MV还是现场： <body onload="selectIndex();">
+        <select class='form-control' name='mvorlive' onchange='getTitleData()' type='text' id='mvorlive'>
+        <option value="mv">MV</option>
+        <option value="live">现场</option>
+            </select><br>
+        </form>
+	</body>
+	<p></p>
 <button id="btn" onclick="fun()" class="small button" value="Go Elsewhere" formaction="/elsewhere" target="iframe">显示/隐藏“高级选项”</button>
 <div id="con" style="display: none">
 
@@ -353,15 +599,11 @@ body{
 
         <p>
             <label for="cmd">命令行（可留空）：</label>
-            <input type="text" id="cmd" name="cmd" align="left" style="font-size:20px">
+            <input type="text" id="cmd" name="cmd" align="left" style="font-size:20px; width:80%">
         </p>
 
 
-<p>MV还是现场：  
- <select name="mvorlive" >MV还是现场
-        <option value="mv">MV</option>
-        <option value="live">现场</option>
-    </select></p>
+
     
 <p>上传谷歌网盘：  
  <select name="ifgd" >上传谷歌网盘
@@ -369,7 +611,7 @@ body{
         <option value="已取消任务">否</option>
     </select>
 
-  账户： <select name="gdname" >谷歌网盘账号
+  账户：<select name="gdname" >谷歌网盘账号
         <option value="ysf2020">ysf2020</option>
         <option value="ysf20202">ysf20202</option>
         <option value="10362227">10362227</option>
@@ -417,13 +659,14 @@ body{
         }
     }
 </script>
-<iframe name="iframe" style="display:none"></iframe> 
+
         
 
 
 
 
-<p><button id="btn1" class="button" onclick="funa()" target="iframe">提交</button></p>
+<p hidden><button id="btn1" class="button" onclick="funa()" target="iframe">提交</button></p>
+<p><button id="btn1" class="blue button"  onclick="window.location.href='remote.php'">提交</button></p>
 <div1 id="abc" style="display: none">
 
 
@@ -467,14 +710,14 @@ if ($lenthcmd>1) { echo shell_exec("$cmd > /app/web/remotecmd.txt 2>&1");} //命
 
 
 $A=strtotime("now");
-if(file_exists("remote上传百度网盘.txt")){ 
+if(file_exists("000000000remote上传百度网盘.txt")){ 
     $F=date(filemtime("remote上传百度网盘.txt"));
     $Y = $A- $F;  //上传百度网盘最后修改
     $fp = file("remote上传百度网盘.txt");
     $lastline = $fp[count($fp)-1]; //最后一行
     if($Y < 7 || preg_match_all('/.*检测秒传中, 请稍候|准备上传.*/', $lastline, $lastline)) {echo '<caption><h3><font color="#FF0000">正在执行上传任务，请勿添加新链接，否则本任务会被强行取消</font></h3></caption>';}
 }
-if(file_exists("remote下载日志.txt")){ 
+if(file_exists("0000000000000remote下载日志.txt")){ 
     $G=date(filemtime("remote下载日志.txt"));
     $X = $A- $G;
     if($X < 7) {echo '<caption><h3><font color="#FF0000">正在执行下载任务，请勿添加新链接，否则本任务会被强行取消</font></h3></caption>';}
@@ -516,8 +759,15 @@ if ($mvorlivelenth < 3) {$gddir='大叔2019/Master/没有在硬盘';  //小于3�
 	
 $lenth=strlen($url); //获取url长度
 $renamelenth=strlen($rename); //获取rename长度
-if ($lenth<99999999) {
+if ($lenth<99999) {
+$url = str_replace(array(' ','\n'), array('#','#'), $url);
 file_put_contents('remoteurl.txt', $url);
+	
+$string = file_get_contents('remoteurl.txt');
+ 
+//$links =  preg_replace('/(.*)/', '<a href="$1">$1</a><br>', $url);
+$links =  preg_replace('/(.{0,51})(.*)/', '<a href="$1$2">$1</a><br>', $string); 
+file_put_contents('remotehtmlurl.txt', $links);
 
 	
 $date = date('Y-m-d-H-i-s');
@@ -528,13 +778,13 @@ shell_exec("mkdir $date");
 shell_exec("rm -rf /app/web/remote/*.part"); //删除临时文件
 shell_exec("rm -rf /app/web/remote/*.ytdl"); //删除临时文件
 shell_exec("rm -rf /app/web/remote/*.part-Frag*"); //删除临时文件
-shell_exec("rm -rf /app/web/remote上传百度网盘.txt"); //删除临时文件
-shell_exec("rm -rf /app/web/remote上传115网盘.txt"); //删除临时文件
-shell_exec("rm -rf /app/web/remote上传谷歌网盘.txt"); //删除临时文件
+shell_exec("rm -rf /app/web/remote上传百度网盘日志.txt"); //删除临时文件
+shell_exec("rm -rf /app/web/remote上传115网盘日志.txt"); //删除临时文件
+shell_exec("rm -rf /app/web/remote上传谷歌网盘日志.txt"); //删除临时文件
 shell_exec("rm -rf /app/web/remote下载日志.txt"); //删除临时文件
+shell_exec("rm -rf /app/web/remotecmd.txt"); //删除临时文件
 //shell_exec("pkill BaiduPCS-Go");
 shell_exec("pkill yt-dlp");
-sleep(3);
 
 	
 	
@@ -662,7 +912,7 @@ if ($renamelenth>1) {
 //上传谷歌网盘------------------------
 echo shell_exec("find /app/web/$gdname/* -type f -size -5M -delete"); //删除小文件
 shell_exec("wget https://362227.top/rclone.conf -nc -O /app/web/data/rclone.conf"); //下载rclone配置
-echo shell_exec("$ifgd /app/web/data/rclone  copy '/app/web/$gdname' $gdname:$gddir --transfers=2 -P --stats-one-line --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php}  --log-file 'remote上传谷歌网盘.txt' ");
+echo shell_exec("$ifgd /app/web/data/rclone  copy '/app/web/$gdname' $gdname:$gddir --transfers=2 -P --contimeout 5h --max-depth 1 --size-only --exclude *.{bak,txt,oexe,html,php} > 'remote上传谷歌网盘日志.txt' ");
 //上传谷歌网盘------------------------
 
 	
@@ -675,11 +925,11 @@ echo shell_exec("/app/web/data/BaiduPCS-Go config set --ignore_illegal true");
 echo shell_exec("/app/web/data/BaiduPCS-Go config set -max_upload_parallel 99");
 echo shell_exec("/app/web/data/BaiduPCS-Go config set -pcs_addr c4.pcs.baidu.com");
 if ($ifbdproxy === '已取消任务') { 
-    echo shell_exec("$ifbd /app/web/data/BaiduPCS-Go upload /app/web/$gdname/* '$bddir' --retry 8 -l 2 > /app/web/remote上传百度网盘.txt 2>&1");
+    echo shell_exec("$ifbd /app/web/data/BaiduPCS-Go upload /app/web/$gdname/* '$bddir' --retry 8 -l 2 > /app/web/remote上传百度网盘日志.txt 2>&1");
 	   
 }
  else {
-      echo shell_exec("$ifbd /app/web/data/proxychains /app/web/data/BaiduPCS-Go upload /app/web/$gdname/* '$bddir' --retry 8 -l 2 > /app/web/remote上传百度网盘.txt 2>&1"); //如果开代理运行此命令
+      echo shell_exec("$ifbd /app/web/data/proxychains /app/web/data/BaiduPCS-Go upload /app/web/$gdname/* '$bddir' --retry 8 -l 2 > /app/web/remote上传百度网盘日志.txt 2>&1"); //如果开代理运行此命令
  }
 
 //上传百度网盘------------------------
@@ -690,11 +940,11 @@ echo shell_exec("find /app/web/remote115/* -type f -size -5M -delete"); //删除
 echo shell_exec("mv /app/web/$gdname/* /app/web/remote115"); //移动到115文件夹，准备上传115网盘
 echo shell_exec("curl https://362227.top/fake115uploader.json > /app/web/data/fake115uploader.json");
 if ($if115proxy === '已取消任务') { 
-    echo shell_exec("$if115 /app/web/data/fake115uploader -retry 3 -e -c $dir115 -u /app/web/remote115/* > '/app/web/remote上传115网盘.txt' 2>&1");
+    echo shell_exec("$if115 /app/web/data/fake115uploader -retry 3 -e -c $dir115 -u /app/web/remote115/* > '/app/web/remote上传115网盘日志.txt' 2>&1");
 	   
 }
  else {
-      echo shell_exec("$if115 /app/web/data/proxychains /app/web/data/fake115uploader -retry 3 -e -c $dir115 -u /app/web/remote115/* > '/app/web/remote上传115网盘.txt' 2>&1"); //如果开代理运行此命令
+      echo shell_exec("$if115 /app/web/data/proxychains /app/web/data/fake115uploader -retry 3 -e -c $dir115 -u /app/web/remote115/* > '/app/web/remote上传115网盘日志.txt' 2>&1"); //如果开代理运行此命令
  }
 
 
@@ -715,7 +965,7 @@ $fp = '/app/web/remote115/';
     }
 
 //如果文件夹不为空，执行下列命令
-if (is_empty_dir($fp) === 1 ) {echo shell_exec("$if115 /app/web/data/fake115uploader -retry 3 -e -c $dir115 -m /app/web/remote115/* >> '/app/web/remote上传115网盘.txt' 2>&1");}
+if (is_empty_dir($fp) === 1 ) {echo shell_exec("$if115 /app/web/data/fake115uploader -retry 3 -e -c $dir115 -m /app/web/remote115/* >> '/app/web/remote上传115网盘日志.txt' 2>&1");}
 //上传115度网盘------------------------
 
 	
@@ -734,6 +984,7 @@ file_put_contents("/usr/share/nginx/kodexplorer/data/User/admin/home/10362227/ru
 ?>
 </div>
 <p>
+	
 <?php
 
 
@@ -746,46 +997,275 @@ $content = file_get_contents("remotecmd.txt");
 echo $content;
 	
 	
-$url1 = file_get_contents("remoteurl.txt");
-$url2 = preg_replace('/(^http|^youtube|^vimeo|^www)([\s\S]{8,50}).*/','$1$2', $url1); //取url前8-50个作为超链名字
-echo '<p>链接：<a href="'.$url1.'">'.$url1.'</a></p>';
 
-echo '<a href="remote下载日志.txt" target="_blank"><h3>下载进度</h3></a>';
-$content = file_get_contents("remote下载日志.txt");
-$content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content); //不包含文件名
-echo $content;
-
-echo '<a href="remote上传谷歌网盘.txt" target="_blank"><h3>上传谷歌网盘进度</h3></a>';
-$content = file_get_contents("/app/web/remote上传谷歌网盘.txt");	
-$content = preg_replace('/[\s\S]*([\s\S]{180}$)/','$1', $content); //读取后面180个字符
-echo $content;
+if(file_exists("remotehtmlurl.txt")) {$line = count(file('remotehtmlurl.txt'));} //获取行数
+echo '链接('.$line.')：'.file_get_contents("remotehtmlurl.txt");
+				      
+//if(file_exists("remote下载日志.txt")) {echo '<a href="查看UTF8完整版日志.php?file=remote下载日志.txt" target="_blank"><h3>下载进度</h3></a>';}
+//$content = file_get_contents("remote下载日志.txt");
+//$content = preg_replace('/[\s\S]*(\[download\].*)/','$1', $content); //不包含文件名
+//echo $content;
+echo '<div id="dl"></div>';
 	
-echo '<a href="remote上传百度网盘日志.php" target="_blank"><h3>上传百度网盘进度</h3></a>';
-$content = file_get_contents("/app/web/remote上传百度网盘.txt");	
-$content = preg_replace('/[\s\S]*([\s\S]{180}$)/','$1', $content); //读取后面180个字符
-echo $content;
+//if(file_exists("remote下载日志.txt")) {echo '<a href="查看UTF8完整版日志.php?file=remote上传谷歌网盘日志.txt" target="_blank"><h3>上传谷歌网盘进度</h3></a>';}
+//$content = file_get_contents("/app/web/remote上传谷歌网盘.txt");	
+//$content = preg_replace('/[\s\S]*([\s\S]{180}$)/','$1', $content); //读取后面180个字符
+echo '<div id="rclone"></div>';
+	
+if(file_exists("remote上传百度日志.txt")) {echo '<a href="查看UTF8完整版日志.php?file=remote上传百度网盘日志.txt" target="_blank"><h3>上传百度网盘进度</h3></a>';}
+//$content = file_get_contents("/app/web/remote上传百度网盘.txt");	
+//$content = preg_replace('/[\s\S]*([\s\S]{180}$)/','$1', $content); //读取后面180个字符
+//echo $content;
+echo '<div id="bd"></div>';
 
-
-echo '<a href="remote上传115网盘.php" target="_blank"><h3>上传115网盘进度</h3></a>';
-$content = file_get_contents("/app/web/remote上传115网盘.txt");	
-$content = preg_replace('/[\s\S]*([\s\S]{280}$)/','$1', $content); //读取后面280个字符
-echo $content;
+//if(file_exists("remote上传115日志.txt")) {echo '<a href="查看UTF8完整版日志.php?file=remote上传115网盘日志.txt" target="_blank"><h3>上传115网盘进度</h3></a>';}
+//$content = file_get_contents("/app/web/remote上传115网盘.txt");	
+//$content = preg_replace('/[\s\S]*([\s\S]{280}$)/','$1', $content); //读取后面280个字符
+echo '<div id="115"></div>';
 	
 
-$actual_link = 'https://'.$_SERVER['HTTP_HOST']; 
-$page = file_get_contents($actual_link.'/encodeexplorer.index.php?m&sort_by=mod&sort_as=desc&dir=remote115/');
+echo '<style type="text/css">
+/* General styles */
+BODY {
+	background-color:#EAECEE;
+	font-family:Verdana;
+	font-size:small;
+}
+A {
+	color: #000000;
+	text-decoration: none;
+}
+A:hover {
+	text-decoration: underline;
+}
+#top {
+	width:100%;
+	padding-bottom: 20px;
+}
+#top a span, #top a:hover, #top a span:hover{
+	color:#68a9d2;
+	font-weight:bold;
+	text-align:center;
+	font-size:large;
+}
+#top a {
+	display:block;
+	padding:20px 0 0 0;
+}
+#top span {
+	display:block;
+}
+div.subtitle{
+	width:80%;
+	margin: 0 auto;
+	color:#68a9d2;
+	text-align:center;
+}
+#frame {
+	border: 1px solid #CDD2D6;
+	text-align:left;
+	position: relative;
+	margin: 0 auto;
+	max-width:auto;
+	overflow:hidden;
+}
+#error {
+	max-width:450px;
+	background-color:#EAECEE;
+	color:#EAECEE;
+	padding:7pt;
+	position: relative;
+	margin: 10pt auto;
+	text-align:center;
+	border: 1px dotted #CDD2D6;
+}
+input {
+	border: 1px solid #CDD2D6;
+}
+.bar{
+	width:100%;
+	clear:both;
+	height:1px;
+}
+/* File list */
+table.table {
+	width:100%;
+	border-collapse: collapse;
+	table-layout: fixed;
+	word-wrap: break-word;
+}
+table.table td{
+	padding:3px;
+}
+table.table tr.row.two {
+	background-color:#E3E6F0;
+}
+table.table tr.row.one {
+	background-color:#f8f9fa;
+}
+table.table tr.row td.icon {
+	width:25px;
+	padding-top:3px;
+	padding-bottom:1px;
+}
+table.table td.del {
+	width:25px;
+}
+table.table tr.row td.size {
+	width: 100px;
+	text-align: right;
+}
+table.table tr.row td.changed {
+	width: 150px;
+	text-align: center;
+}
+table.table tr.header img {
+	vertical-align:bottom;
+}
+table img{
+	border:0;
+}
+/* Info area */
+#info {
+	color:#000000;
+	font-family:Verdana;
+	max-width:680px;
+	position: relative;
+	margin: 0 auto;
+	text-align:center;
+}
+/* Thumbnail area */
+#thumb {
+	position:absolute;
+	border: 1px solid #CDD2D6;
+	background:#f8f9fa;
+	display:none;
+	padding:3px;
+}
+#thumb img {
+	display:block;
+}
+/* Login bar (at the bottom of the page) */
+#login_bar {
+	margin: 0 auto;
+	margin-top:2px;
+	max-width:680px;
+}
+#login_bar input.submit{
+	float:right;
+}
+/* Upload area */
+#upload {
+	margin: 0 auto;
+	margin-top:2px;
+	max-width:680px;
+}
+#upload #password_container {
+	margin-right:20px;
+}
+#upload #newdir_container, #upload #password_container {
+	float:left;
+}
+#upload #upload_container{
+	float:right;
+}
+#upload input.upload_dirname, #upload input.upload_password{
+	width:140px;
+}
+#upload input.upload_file{
+	font-size:small;
+}
+/* Breadcrumbs */
+div.breadcrumbs {
+	display:block;
+	padding:1px 3px;
+	color:#cccccc;
+	font-size:x-small;
+}
+div.breadcrumbs a{
+	display:inline-block;
+	color:#cccccc;
+	padding:2px 0;
+	font-size:small;
+}
+/* Login area */
+#login {
+	max-width:280px;
+	text-align:right;
+	margin:15px auto 50px auto;
+}
+#login div {
+	display:block;
+	width:100%;
+	margin-top:5px;
+}
+#login label{
+	width: 120px;
+	text-align: right;
+}
+/* Mobile interface */
+body.mobile #frame, body.mobile #info, body.mobile #upload {
+	max-width:none;
+}
+body.mobile {
+	font-size:medium;
+}
+body.mobile a.item {
+	display:block;
+	padding:10px 0;
+}
+body.mobile a.item span.size {
+	float:right;
+	margin-left:10px;
+}
+body.mobile table.table {
+	margin-bottom:30px;
+}
+body.mobile table.table tr td {
+	border-top: 1px solid #CDD2D6;
+}
+body.mobile table.table tr.last td {
+	border-bottom: 1px solid #CDD2D6;
+}
+body.mobile #top {
+	padding-bottom:3px;
+}
+body.mobile #top a {
+	padding-top:3px;
+}
+body.mobile #upload #password_container, body.mobile #upload #upload_container, body.mobile #upload #newdir_container {
+	float:none;
+	margin-top:5px;
+}
+body.mobile #upload input.upload_dirname, body.mobile #upload input.upload_password{
+	width:240px;
+}
+body.mobile #upload {
+	margin-bottom:15px;
+}
+</style>
+<body class="mobile">
+<div id="frame">
+<div id="top">
+	
+</div>
+<body class="mobile">
+';
+	
+//$actual_link = 'https://'.$_SERVER['HTTP_HOST']; 
+//$page = file_get_contents($actual_link.'/encodeexplorer.index.php?m&sort_by=mod&sort_as=desc&dir=remote115/');
 
-$page = str_replace("src=\"?img","src=\"encodeexplorer.index.php?img",$page);
-$page = str_replace("<a href=\"?s&amp;dir=remote115/\">","<a href=\"encodeexplorer.index.php?sort_by=mod&sort_as=desc&dir=remote115/\" target=\"_blank\">",$page);
-echo '<hr /><br>'.$page;
+//$page = str_replace("src=\"?img","src=\"encodeexplorer.index.php?img",$page);
+//$page = str_replace("<a href=\"?s&amp;dir=remote115/\">","<a href=\"encodeexplorer.index.php?sort_by=mod&sort_as=desc&dir=remote115/\">",$page);
+//echo '<p hidden>'.$page.'</p>';
 	
-	
-	
+echo '<div id="file"></div>';	
+
 
 ?>
 </p>
 
-<p><a href="remote下载日志.txt" target="_blank"><font size="2">下载日志</font></a>  ·  <a href="remote上传百度网盘日志.php" target="_blank"><font size="2">上传百度网盘日志</font></a>  ·  <a href="remote上传115网盘.txt" target="_blank"><font size="2">上传115网盘日志</font>  ·  <a href="remote上传谷歌网盘.txt" target="_blank"><font size="2">上传谷歌网盘日志</font></a></p>
-
+<p align="center"><a href="查看UTF8完整版日志.php?file=remote下载日志.txt" target="_blank"><font size="2">下载日志</font></a>  ·  <a href="查看UTF8完整版日志.php?file=remote上传百度网盘日志.txt" target="_blank"><font size="2">上传百度网盘日志</font></a>  ·  <a href="查看UTF8完整版日志.php?file=remote上传115网盘日志.txt" target="_blank"><font size="2">上传115网盘日志</font>  ·  <a href="查看UTF8完整版日志.php?file=remote上传谷歌网盘日志.txt" target="_blank"><font size="2">上传谷歌网盘日志</font></a></p>
+</body>
 </body>
 </html>
