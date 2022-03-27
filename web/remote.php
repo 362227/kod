@@ -765,7 +765,8 @@ file_put_contents('remoteurl.txt', $url);
 	
 $string = file_get_contents('remoteurl.txt');
  
-$links =  preg_replace('/(.*)/', '<a href="$1">$1</a><br>', $url);
+//$links =  preg_replace('/(.*)/', '<a href="$1">$1</a><br>', $url);
+$links = preg_replace('/(^http|^youtube|^vimeo|^www)([\s\S]{8,45}).*/','$1$2', $links); //取url前8-45个作为超链名字
 file_put_contents('remotehtmlurl.txt', $links);
 
 	
