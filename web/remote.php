@@ -590,7 +590,8 @@ MV还是现场： <body onload="selectIndex();">
         <option value="live">现场</option>
             </select><br>
         </form>
-</body>
+	</body>
+	<p></p>
 <button id="btn" onclick="fun()" class="small button" value="Go Elsewhere" formaction="/elsewhere" target="iframe">显示/隐藏“高级选项”</button>
 <div id="con" style="display: none">
 
