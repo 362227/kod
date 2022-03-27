@@ -545,7 +545,7 @@ body{
         </p>
         
 <body>
- <select name="mvorlive" >MV还是现场
+ <p>MV还是现场：<select name="mvorlive" >MV还是现场
         <option value="mv">MV</option>
         <option value="live">现场</option>
     </select></p>
@@ -560,7 +560,7 @@ body{
         </p>
 
 
-<p>MV还是现场：  
+
     
 <p>上传谷歌网盘：  
  <select name="ifgd" >上传谷歌网盘
@@ -568,7 +568,7 @@ body{
         <option value="已取消任务">否</option>
     </select>
 
-  账户： <select name="gdname" >谷歌网盘账号
+  账户：<select name="gdname" >谷歌网盘账号
         <option value="ysf2020">ysf2020</option>
         <option value="ysf20202">ysf20202</option>
         <option value="10362227">10362227</option>
