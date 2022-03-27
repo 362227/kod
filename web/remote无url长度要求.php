@@ -641,7 +641,8 @@ MV还是现场： <body onload="selectIndex();">
         <option value="nohup">是</option>
     </select></p>
 
-<p><button id="bt" class="small red button" formaction="/remote无url长度要求.php&" target="iframe" >强制提交</button></p>
+<p hidden><button id="bt" class="small red button" formaction="/remote无url长度要求.php" target="iframe" >强制提交</button></p>
+<p><button id="bt" class="small red button"  onclick="window.location.href='remote无url长度要求.php'">强制提交</button></p>
 <button id="bt" value="killall" formaction="/killall.php" target="iframe" style="background-color: #F2462B;">杀掉所有进程</button>
 <button id="bt000" value="delete" formaction="/delete.php" target="iframe"style="background-color: #F2462B;">删掉所有中间文件</button>
 
@@ -759,7 +760,7 @@ if ($mvorlivelenth < 3) {$gddir='大叔2019/Master/没有在硬盘';  //小于3�
 	
 $lenth=strlen($url); //获取url长度
 $renamelenth=strlen($rename); //获取rename长度
-if ($lenth<99999) {
+if ($lenth<1118) {
 $url = str_replace(array(' ','\n'), array('#','#'), $url);
 file_put_contents('remoteurl.txt', $url);
 	
@@ -886,7 +887,7 @@ $v2rayconf = array_rand($v2rayconf, 1);
 	
 	
 shell_exec("pkill v2ray"); //杀死v2ray	
-shell_exec("nohup /app/web/data/v2ray -config /app/web/data/$v2rayconf > v2ray.txt& sleep 2"); //后台运行v2ray		
+shell_exec("nohup /app/web/data/v2ray -config /app/web/data/$v2rayconf > v2ray.txt & sleep 2"); //后台运行v2ray		
 	
 //下载+上传谷歌+上传百度网盘+上传115	
 shell_exec("find /app/web/remote/* -type f -size -5M -delete"); //删除小文件
