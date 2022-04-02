@@ -580,7 +580,28 @@ $singers = preg_replace('/.+?\"name\"\: \"(.+?)\"\, \"pubdate\".+?\"singers\".+?
 $song = preg_replace('/.+?\"name\"\: \"(.+?)\"\, \"pubdate\".+?\"singers\".+?\"name\"\: \"(.+?)\"[\s\S]*/', '$1', $qqpage1data); 
 //echo $song;
 $sid = preg_replace('/.+?\"sid\"\: (.+?)\,[\s\S]*/', '$1', $qqpage1data); 
+$sid = str_pad($sid,8,"0",STR_PAD_LEFT);
 //echo $sid;
+
+
+$qqpage1data = preg_replace('/[\s\S]*( \"singers\".* \"name\"\: \".+?\"\,)[\s\S]*/', '$1', $qqpage1data);  //获取艺人名字
+//echo $html;
+
+$date=date("Y-m-d H");
+if (preg_match_all('/\"name\"\: \"(.+?)\"/', $qqpage1data, $links) ) {
+    $size = count($links[0]);
+    for ($i = 0;$i < $size;$i++) {
+        $link = preg_replace('/\"name\"\: \"(.+?)\"/','$1', $links[0][$i]);
+        $artist.= $link.', ';
+
+    }
+//echo $artist;
+   
+}
+
+
+
+
 
 
 $qqpage2 = file_get_contents('https://vv.video.qq.com/getinfo?otype=ojson&vids='.$mvid);
@@ -591,8 +612,9 @@ $year =  preg_replace('/([0-9]{4})[\s\S]*/', '$1', $pubdate);
 //cho $year;
 
 
-$filename = $singers.' - '.$song.' '.$year.'_'.$sid;
-echo $filename.'<br>';
+$filename = $artist.' - '.$song.' '.$year.'_'.$sid;
+$filename = str_replace(array('0000000', '\\/', ',  - '), array('11111', '／', ' - '), $filename);
+//cho $filename.'<br>';
 
 $qqurl1 = 'http://50069.gzc.svp.tencent-cloud.com/'.$qmmv.'.f0.mp4';
 //echo $qqurl1;
