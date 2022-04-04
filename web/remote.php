@@ -917,7 +917,7 @@ echo shell_exec("$ifgd /app/web/data/rclone  copy '/app/web/$gdname' $gdname:$gd
 //上传谷歌网盘------------------------
 
 
-shell_exec("pkill v2ray && sleep 2"); //杀死v2ray	
+
 shell_exec("/app/web/data/v2ray -config /app/web/data/$v2rayconf > v2ray.txt & sleep 2"); //后台运行v2ray		
 //上传百度网盘------------------------
 echo shell_exec("find /app/web/$gdname/* -type f -size -5M -delete"); //删除小文件
@@ -938,7 +938,7 @@ if ($ifbdproxy === '已取消任务') {
 //上传百度网盘------------------------
 	
 
-shell_exec("pkill v2ray"); //杀死v2ray	
+
 shell_exec("/app/web/data/v2ray -config /app/web/data/$v2rayconf > v2ray.txt & sleep 2"); //后台运行v2ray			
 //上传115网盘------------------------
 echo shell_exec("find /app/web/remote115/* -type f -size -5M -delete"); //删除小文件
