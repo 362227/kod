@@ -949,7 +949,7 @@ if ($if115proxy === '已取消任务') {
 	   
 }
  else {
-      echo shell_exec("$if115 /app/web/data/proxychains /app/web/data/fake115uploader -retry 3 -e -c $dir115 -u /app/web/remote115/* > '/app/web/remote上传115网盘日志.txt' 2>&1"); //如果开代理运行此命令
+      echo shell_exec("$if115 /app/web/data/v2ray -config /app/web/data/$v2rayconf > v2ray.txt & sleep 2 && /app/web/data/proxychains /app/web/data/fake115uploader -retry 3 -e -c $dir115 -u /app/web/remote115/* > '/app/web/remote上传115网盘日志.txt' 2>&1"); //如果开代理运行此命令
  }
 
 
