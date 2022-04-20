@@ -749,7 +749,7 @@ $ifgd = $_GET['ifgd'];
 	
 $mvorlivelenth = strlen($mvorlive); // mv 2个字节 live 4 个字节
 if ($mvorlivelenth < 3) {$gddir='大叔2019/Master/没有在硬盘';  //小于3，就是MV
-	               $bddir='/DC大叔2019 2022-1-5/Master/没有在硬盘/';
+	               $bddir='/DC大叔2019 2022-4-20/Master/没有在硬盘/';
                    $dir115='2051423373887536630';
 }
  else {$gddir='Temp';
