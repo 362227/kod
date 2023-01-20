@@ -1,3 +1,6 @@
+PC页面数：294 288
+谷歌服务器：289
+
 ## Deploy to Heroku
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
