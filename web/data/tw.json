@@ -35,11 +35,11 @@
       "settings": {
         "vnext": [
           {
-            "address": "a.362227.top",
-            "port": 18443,
+            "address": "207.246.87.236",
+            "port": 25276,
             "users": [
               {
-                "id": "9cb3c260-a7ed-414a-9a9b-03cdaab47f7d",
+                "id": "f6b60486-6d0b-4d7e-8638-36fc2a019696",
                 "alterId": 0,
                 "email": "t@t.tt",
                 "security": "auto"
@@ -52,18 +52,15 @@
       },
       "streamSettings": {
         "network": "ws",
-        "security": "tls",
-        "tlsSettings": {
-          "allowInsecure": true,
-          "serverName": "a.362227.top"
-        },
+        "security": null,
+        "tlsSettings": null,
         "tcpSettings": null,
         "kcpSettings": null,
         "wsSettings": {
           "connectionReuse": true,
-          "path": "/0f7215667/",
+          "path": "/iDQMBqCZ/",
           "headers": {
-            "Host": "a.362227.top"
+            "Host": "go.362227.top"
           }
         },
         "httpSettings": null,
@@ -111,16 +108,6 @@
         "outboundTag": "api",
         "ip": null,
         "domain": null
-      },
-      {
-        "type": "field",
-        "port": null,
-        "inboundTag": null,
-        "outboundTag": "direct",
-        "ip": null,
-        "domain": [
-          "3vdo.362227.top"
-        ]
       }
     ]
   }
