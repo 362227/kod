@@ -4,6 +4,6 @@
 "listen": "127.0.0.1:8081",
 "debug": false,
 "insecure": false,
-"autoproxy": true,
+"autoproxy": false,
 "user-agent": ""
 }
