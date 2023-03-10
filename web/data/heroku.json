@@ -9,7 +9,7 @@
     {
       "tag": "proxy",
       "port": 1083,
-      "listen": "127.0.0.1",
+      "listen": "0.0.0.0",
       "protocol": "http",
       "sniffing": {
         "enabled": true,
@@ -35,7 +35,7 @@
       "settings": {
         "vnext": [
           {
-            "address": "uabreakdown3974.herokuapp.com",
+            "address": "x362227.herokuapp.com",
             "port": 443,
             "users": [
               {
