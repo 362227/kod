@@ -1,5 +1,4 @@
 {
-  "policy": null,
   "log": {
     "access": "",
     "error": "",
@@ -7,8 +6,44 @@
   },
   "inbounds": [
     {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ]
+      },
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "allowTransparent": false
+      }
+    },
+    {
       "tag": "http",
       "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ]
+      },
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "allowTransparent": false
+      }
+    },
+    {
+      "tag": "socks2",
+      "port": 10810,
       "listen": "0.0.0.0",
       "protocol": "socks",
       "sniffing": {
@@ -21,11 +56,26 @@
       "settings": {
         "auth": "noauth",
         "udp": true,
-        "ip": null,
-        "address": null,
-        "clients": null
+        "allowTransparent": false
+      }
+    },
+    {
+      "tag": "http2",
+      "port": 10811,
+      "listen": "0.0.0.0",
+      "protocol": "http",
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ]
       },
-      "streamSettings": null
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "allowTransparent": false
+      }
     }
   ],
   "outbounds": [
@@ -35,82 +85,69 @@
       "settings": {
         "vnext": [
           {
-            "address": "a.362227.top",
-            "port": 18443,
+            "address": "uk.362227.top",
+            "port": 443,
             "users": [
               {
-                "id": "9cb3c260-a7ed-414a-9a9b-03cdaab47f7d",
+                "id": "282f6cc8-872d-4d94-91a3-d57e0fa38657",
                 "alterId": 0,
                 "email": "t@t.tt",
                 "security": "auto"
               }
             ]
           }
-        ],
-        "servers": null,
-        "response": null
+        ]
       },
       "streamSettings": {
         "network": "ws",
         "security": "tls",
         "tlsSettings": {
           "allowInsecure": true,
-          "serverName": "a.362227.top"
+          "serverName": "uk.362227.top"
         },
-        "tcpSettings": null,
-        "kcpSettings": null,
         "wsSettings": {
-          "connectionReuse": true,
-          "path": "/0f7215667/",
+          "path": "/b5d7f7b4af2/",
           "headers": {
-            "Host": "a.362227.top"
+            "Host": "uk.362227.top"
           }
-        },
-        "httpSettings": null,
-        "quicSettings": null
+        }
       },
       "mux": {
-        "enabled": true
+        "enabled": false,
+        "concurrency": -1
       }
     },
     {
       "tag": "direct",
       "protocol": "freedom",
-      "settings": {
-        "vnext": null,
-        "servers": null,
-        "response": null
-      },
-      "streamSettings": null,
-      "mux": null
+      "settings": {}
     },
     {
       "tag": "block",
       "protocol": "blackhole",
       "settings": {
-        "vnext": null,
-        "servers": null,
         "response": {
           "type": "http"
         }
-      },
-      "streamSettings": null,
-      "mux": null
+      }
     }
   ],
-  "stats": null,
-  "api": null,
-  "dns": null,
   "routing": {
     "domainStrategy": "IPIfNonMatch",
     "rules": [
       {
         "type": "field",
-        "port": null,
-        "inboundTag": "api",
+        "inboundTag": [
+          "api"
+        ],
         "outboundTag": "api",
-        "ip": null,
-        "domain": null
+        "enabled": true
+      },
+      {
+        "type": "field",
+        "port": "0-65535",
+        "outboundTag": "proxy",
+        "enabled": true
       }
     ]
   }
