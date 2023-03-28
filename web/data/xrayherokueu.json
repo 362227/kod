@@ -85,7 +85,7 @@
       "settings": {
         "vnext": [
           {
-            "address": "x362227.herokuapp.com",
+            "address": "eu362227.herokuapp.com",
             "port": 443,
             "users": [
               {
