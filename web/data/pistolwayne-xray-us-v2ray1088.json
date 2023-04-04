@@ -1,4 +1,5 @@
 {
+  "policy": null,
   "log": {
     "access": "",
     "error": "",
@@ -6,10 +7,10 @@
   },
   "inbounds": [
     {
-      "tag": "socks",
-      "port": 10808,
-      "listen": "127.0.0.1",
-      "protocol": "socks",
+      "tag": "proxy",
+      "port": 1088,
+      "listen": "0.0.0.0",
+      "protocol": "http",
       "sniffing": {
         "enabled": true,
         "destOverride": [
@@ -20,111 +21,94 @@
       "settings": {
         "auth": "noauth",
         "udp": true,
-        "allowTransparent": false
-      }
-    },
-    {
-      "tag": "http",
-      "port": 1088,
-      "listen": "127.0.0.1",
-      "protocol": "http",
-      "sniffing": {
-        "enabled": true,
-        "destOverride": [
-          "http",
-          "tls"
-        ]
+        "ip": null,
+        "address": null,
+        "clients": null
       },
-      "settings": {
-        "udp": false,
-        "allowTransparent": false
-      }
+      "streamSettings": null
     }
   ],
   "outbounds": [
     {
       "tag": "proxy",
-      "protocol": "vless",
+      "protocol": "vmess",
       "settings": {
         "vnext": [
           {
-            "address": "pistolwayne-xray-us.herokuapp.com", //v2-3622271.10362227.workers.dev   v2-3622271.herokuapp.com  
+            "address": "pistolwayne-xray-us.herokuapp.com",
             "port": 443,
             "users": [
               {
-                "id": "ce7ea10b-5b27-49ab-a93d-6b184df9cce0", //ce7ea10b-5b27-49ab-a93d-6b184df9cce0  //ce7ea10b-5b27-49ab-a93d-6b184df9cce2
+                "id": "5c301bb8-6c77-41a0-a606-4ba11bbab084",
                 "alterId": 0,
                 "email": "t@t.tt",
-                "security": "auto",
-                "encryption": "none",
-                "flow": ""
+                "security": "auto"
               }
             ]
           }
-        ]
+        ],
+        "servers": null,
+        "response": null
       },
       "streamSettings": {
         "network": "ws",
         "security": "tls",
         "tlsSettings": {
-          "allowInsecure": false
+          "allowInsecure": true,
+          "serverName": null
         },
+        "tcpSettings": null,
+        "kcpSettings": null,
         "wsSettings": {
-          "path": "/"
-        }
+          "connectionReuse": true,
+          "path": "/s244?ed=2048",
+          "headers": null
+        },
+        "httpSettings": null,
+        "quicSettings": null
       },
       "mux": {
-        "enabled": false,
-        "concurrency": -1
+        "enabled": true
       }
     },
     {
       "tag": "direct",
       "protocol": "freedom",
-      "settings": {}
+      "settings": {
+        "vnext": null,
+        "servers": null,
+        "response": null
+      },
+      "streamSettings": null,
+      "mux": null
     },
     {
       "tag": "block",
       "protocol": "blackhole",
       "settings": {
+        "vnext": null,
+        "servers": null,
         "response": {
           "type": "http"
         }
-      }
+      },
+      "streamSettings": null,
+      "mux": null
     }
   ],
+  "stats": null,
+  "api": null,
+  "dns": null,
   "routing": {
     "domainStrategy": "IPIfNonMatch",
-    "domainMatcher": "linear",
     "rules": [
       {
         "type": "field",
-        "inboundTag": [
-          "api"
-        ],
-        "outboundTag": "api"
-      },
-      {
-        "type": "field",
-        "outboundTag": "proxy",
-        "domain": [
-          "geosite:google"
-        ]
-      },
-      {
-        "type": "field",
-        "outboundTag": "direct",
-        "domain": [
-          "domain:example-example.com",
-          "domain:example-example2.com"
-        ]
-      },
-      {
-        "type": "field",
-        "outboundTag": "block",
-        "domain": [
-          "geosite:category-ads-all"
-        ]
+        "port": null,
+        "inboundTag": "api",
+        "outboundTag": "api",
+        "ip": null,
+        "domain": null
       }
     ]
   }
