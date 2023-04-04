@@ -25,7 +25,7 @@
     },
     {
       "tag": "http",
-      "port": 1084,
+      "port": 1088,
       "listen": "127.0.0.1",
       "protocol": "http",
       "sniffing": {
