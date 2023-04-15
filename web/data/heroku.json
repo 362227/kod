@@ -35,12 +35,12 @@
       "settings": {
         "vnext": [
           {
-            "address": "a.362227.top",
-            "port": 18443,
+            "address": "sq-sql-concern-colleague.trycloudflare.com",
+            "port": 80,
             "users": [
               {
-                "id": "9cb3c260-a7ed-414a-9a9b-03cdaab47f7d",
-                "alterId": 0,
+                "id": "1f485fa1-795f-42b4-a4b6-3718bf66a6bf",
+                "alterId": 64,
                 "email": "t@t.tt",
                 "security": "auto"
               }
@@ -52,19 +52,14 @@
       },
       "streamSettings": {
         "network": "ws",
-        "security": "tls",
-        "tlsSettings": {
-          "allowInsecure": true,
-          "serverName": "a.362227.top"
-        },
+        "security": null,
+        "tlsSettings": null,
         "tcpSettings": null,
         "kcpSettings": null,
         "wsSettings": {
           "connectionReuse": true,
-          "path": "/0f7215667/",
-          "headers": {
-            "Host": "a.362227.top"
-          }
+          "path": null,
+          "headers": null
         },
         "httpSettings": null,
         "quicSettings": null
