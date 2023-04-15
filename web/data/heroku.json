@@ -35,11 +35,11 @@
       "settings": {
         "vnext": [
           {
-            "address": "sq-sql-concern-colleague.trycloudflare.com",
+            "address": "358b-34-139-96-19.jp.ngrok.io",
             "port": 80,
             "users": [
               {
-                "id": "1f485fa1-795f-42b4-a4b6-3718bf66a6bf",
+                "id": "0f42edf0-1fb5-44d8-8b55-6640468ec2b9",
                 "alterId": 64,
                 "email": "t@t.tt",
                 "security": "auto"
