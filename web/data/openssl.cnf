@@ -1,3 +1,0 @@
-ssl_conf = ssl_sect
-[ssl_sect]
-verify = off
