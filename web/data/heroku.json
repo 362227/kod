@@ -35,11 +35,11 @@
       "settings": {
         "vnext": [
           {
-            "address": "x362227.herokuapp.com",
-            "port": 443,
+            "address": "a.362227.top",
+            "port": 18443,
             "users": [
               {
-                "id": "5c301bb8-6c77-41a0-a606-4ba11bbab084",
+                "id": "9cb3c260-a7ed-414a-9a9b-03cdaab47f7d",
                 "alterId": 0,
                 "email": "t@t.tt",
                 "security": "auto"
@@ -55,14 +55,16 @@
         "security": "tls",
         "tlsSettings": {
           "allowInsecure": true,
-          "serverName": null
+          "serverName": "a.362227.top"
         },
         "tcpSettings": null,
         "kcpSettings": null,
         "wsSettings": {
           "connectionReuse": true,
-          "path": "/s244?ed=2048",
-          "headers": null
+          "path": "/0f7215667/",
+          "headers": {
+            "Host": "a.362227.top"
+          }
         },
         "httpSettings": null,
         "quicSettings": null
