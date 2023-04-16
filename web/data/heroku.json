@@ -8,7 +8,7 @@
   "inbounds": [
     {
       "tag": "proxy",
-      "port": 1083,
+      "port": 1089,
       "listen": "0.0.0.0",
       "protocol": "http",
       "sniffing": {
@@ -35,12 +35,12 @@
       "settings": {
         "vnext": [
           {
-            "address": "358b-34-139-96-19.jp.ngrok.io",
-            "port": 80,
+            "address": "pistolwayne-xray-eu.herokuapp.com",
+            "port": 443,
             "users": [
               {
-                "id": "0f42edf0-1fb5-44d8-8b55-6640468ec2b9",
-                "alterId": 64,
+                "id": "5c301bb8-6c77-41a0-a606-4ba11bbab084",
+                "alterId": 0,
                 "email": "t@t.tt",
                 "security": "auto"
               }
@@ -52,13 +52,16 @@
       },
       "streamSettings": {
         "network": "ws",
-        "security": null,
-        "tlsSettings": null,
+        "security": "tls",
+        "tlsSettings": {
+          "allowInsecure": true,
+          "serverName": null
+        },
         "tcpSettings": null,
         "kcpSettings": null,
         "wsSettings": {
           "connectionReuse": true,
-          "path": null,
+          "path": "/s244?ed=2048",
           "headers": null
         },
         "httpSettings": null,
