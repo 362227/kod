@@ -1,33 +1,28 @@
 import subprocess
-import ipywidgets as widgets
-from IPython.display import display, clear_output
+from ipywidgets import VBox, Label, Text, Button, Output
 
-# 创建输入框和按钮
-url_box = widgets.Text(description='URL:')
-download_button = widgets.Button(description='Download')
+# 创建输入框、按钮和输出框
+input_box = Text(description='输入命令:')
+output_box = Output()
+button = Button(description='执行命令')
 
-# 创建输出框
-output = widgets.Output()
+# 定义按钮点击事件的回调函数
+def on_button_click(b):
+    with output_box:
+        output_box.clear_output() # 清空输出框
+        cmd = input_box.value.strip() # 获取输入框的值并去掉首尾空格
+        process = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE, stderr=subprocess.STDOUT, bufsize=1, universal_newlines=True)
+        for line in process.stdout:
+            print(line.strip())
+        process.stdout.close()
+        return_code = process.wait()
+        print(f'命令执行结束，返回值为 {return_code}')
 
-# 定义点击按钮的回调函数
-def on_download_button_clicked(b):
-    # 清空输出框
-    with output:
-        clear_output()
-    # 获取输入框中的 URL
-    url = url_box.value
-    # 启动 yt-dlp 进程并捕获其输出
-    with subprocess.Popen(['yt-dlp', url], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, universal_newlines=True) as proc:
-        # 循环读取进程输出并发送到前端显示
-        for line in proc.stdout:
-            with output:
-                print(line.strip())
-                
-# 绑定按钮的回调函数
-download_button.on_click(on_download_button_clicked)
+# 将按钮点击事件的回调函数绑定到按钮上
+button.on_click(on_button_click)
 
-# 将输入框、按钮和输出框放在一个垂直布局中
-vbox = widgets.VBox([url_box, download_button, output])
+# 创建一个垂直布局并将输入框、按钮和输出框添加到其中
+vbox = VBox([Label('输入要执行的命令：'), input_box, button, Label('命令输出：'), output_box])
 
-# 在前端显示布局
+# 显示垂直布局
 display(vbox)
