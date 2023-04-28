@@ -1,6 +1,6 @@
 import subprocess
 from ipywidgets import VBox, Label, Text, Button, Output
-
+from IPython.display import display
 # 创建输入框、按钮和输出框
 input_box = Text(description='输入命令:')
 output_box = Output()
